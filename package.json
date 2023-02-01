@@ -1,0 +1,24 @@
+{
+  "name": "yaml-embedded-languages",
+  "displayName": "YAML Embedded Languages",
+  "description": "Support for syntax highlighting within YAML block-scalars.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/injection.json",
+        "scopeName": "inline.python",
+        "injectTo": ["source.yaml"],
+        "embeddedLanguages": {
+          "meta.embedded.inline.python": "python"
+        }
+      }
+    ]
+  }
+}
