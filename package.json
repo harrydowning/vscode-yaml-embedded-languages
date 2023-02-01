@@ -13,8 +13,10 @@
     "grammars": [
       {
         "path": "./syntaxes/injection.json",
-        "scopeName": "inline.python",
-        "injectTo": ["source.yaml"],
+        "scopeName": "inline.langs",
+        "injectTo": [
+          "source.yaml"
+        ],
         "embeddedLanguages": {
           "meta.embedded.inline.python": "python"
         }

@@ -1,7 +1,11 @@
 {
-  "scopeName": "inline.python",
+  "scopeName": "inline.langs",
   "injectionSelector": "L:source.yaml",
-  "patterns": [{"include": "#python-block-scalar"}],
+  "patterns": [
+    {
+      "include": "#python-block-scalar"
+    }
+  ],
   "repository": {
     "python-block-scalar": {
       "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python)[ \t]*\\n",
@@ -28,7 +32,11 @@
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.python",
-          "patterns": [{"include": "source.python"}]
+          "patterns": [
+            {
+              "include": "source.python"
+            }
+          ]
         }
       ]
     }
