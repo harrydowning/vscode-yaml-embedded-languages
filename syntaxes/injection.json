@@ -4,7 +4,7 @@
   "patterns": [{"include": "#python-block-scalar"}],
   "repository": {
     "python-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python)[ \t]*\\n?",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python)[ \t]*\\n",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
