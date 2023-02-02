@@ -1,0 +1,17 @@
+code:
+  python: | # python
+    print("Hello, World!")
+
+  c: | # c
+    #include <stdio.h>
+    int main() {
+      printf("Hello, World!");
+      return 0;
+    }
+  
+  java: | # java
+    class HelloWorld {
+      public static void main(String[] args) {
+          System.out.println("Hello, World!"); 
+      }
+    }

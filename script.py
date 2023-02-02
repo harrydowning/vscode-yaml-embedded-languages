@@ -1,70 +1,48 @@
 import json, os
 
 SCOPE = "inline.langs"
-LANGS = [
-    "abap",
-    "bat",
-    "bibtex",
+SOURCE_LANGS = [
+    "dosbatch",
     "clojure",
-    "coffeescript",
+    "coffee",
     "c",
     "cpp",
     "csharp",
-    "cuda-cpp",
     "css",
     "diff",
     "dockerfile",
     "fsharp",
-    "git-commit",
-    "git-rebase",
     "go",
     "groovy",
-    "handlebars",
-    "haml",
-    "html",
-    "ini",
+    "properties",
     "java",
-    "javascript",
-    "javascriptreact",
+    "js",
     "json",
-    "jsonc",
     "latex",
-    "less",
+    "css.less",
     "lua",
     "makefile",
-    "markdown",
-    "objective-c",
-    "objective-cpp",
+    "objc",
     "perl",
-    "perl6",
-    "php",
-    "plaintext",
+    "perl.6",
     "powershell",
-    "jade",
-    "pug",
     "python",
     "r",
-    "razor",
     "ruby",
     "rust",
-    "scss",
-    "sass",
+    "css.scss",
     "shaderlab",
-    "shellscript",
+    "shell",
     "slim",
     "sql",
-    "stylus",
     "swift",
-    "typescript",
-    "typescriptreact",
+    "ts",
+    "tsx",
     "tex",
-    "vb",
-    "vue",
-    "vue-html",
-    "xml",
-    "xsl",
     "yaml"
 ]
+
+TEXT_LANGS = [] # TODO
 
 def get_embedded_languages(langs):
     return {f"meta.embedded.inline.{lang}": f"{lang}" for lang in langs}
@@ -86,7 +64,7 @@ package = {
         "path": "./syntaxes/injection.json",
         "scopeName": SCOPE,
         "injectTo": ["source.yaml"],
-        "embeddedLanguages": get_embedded_languages(LANGS)
+        "embeddedLanguages": get_embedded_languages(SOURCE_LANGS)
       }
     ]
   }
@@ -134,8 +112,8 @@ def get_repository(langs):
 injection = {
     "scopeName": SCOPE,
     "injectionSelector": "L:source.yaml",
-    "patterns": get_patterns(LANGS),
-    "repository": get_repository(LANGS)
+    "patterns": get_patterns(SOURCE_LANGS),
+    "repository": get_repository(SOURCE_LANGS)
 }
 
 def main():
