@@ -44,6 +44,7 @@
           "meta.embedded.inline.properties": "properties",
           "meta.embedded.inline.python": "python",
           "meta.embedded.inline.r": "r",
+          "meta.embedded.inline.regex": "regex",
           "meta.embedded.inline.ruby": "ruby",
           "meta.embedded.inline.rust": "rust",
           "meta.embedded.inline.shaderlab": "shaderlab",

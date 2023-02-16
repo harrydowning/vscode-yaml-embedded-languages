@@ -28,6 +28,7 @@ LANGS = {
     "properties": "source.properties",
     "python": "source.python",
     "r": "source.r",
+    "regex": "source.regexp.python",
     "ruby": "source.ruby",
     "rust": "source.rust",
     "shaderlab": "source.shaderlab",

@@ -81,6 +81,9 @@
       "include": "#r-block-scalar"
     },
     {
+      "include": "#regex-block-scalar"
+    },
+    {
       "include": "#ruby-block-scalar"
     },
     {
@@ -971,6 +974,39 @@
           "patterns": [
             {
               "include": "source.r"
+            }
+          ]
+        }
+      ]
+    },
+    "regex-block-scalar": {
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*regex)[ \t]*\\n",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "comment.line.number-sign.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "^([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.regex",
+          "patterns": [
+            {
+              "include": "source.regexp.python"
             }
           ]
         }
