@@ -122,7 +122,7 @@
   ],
   "repository": {
     "c-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*c)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*c[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -137,6 +137,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -155,7 +166,7 @@
       ]
     },
     "clojure-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*clojure)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*clojure[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -170,6 +181,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -188,7 +210,7 @@
       ]
     },
     "coffee-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*coffee)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*coffee[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -203,6 +225,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -221,7 +254,7 @@
       ]
     },
     "cpp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*cpp)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*cpp[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -236,6 +269,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -254,7 +298,7 @@
       ]
     },
     "csharp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*csharp)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*csharp[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -269,6 +313,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -287,7 +342,7 @@
       ]
     },
     "css-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*css)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*css[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -302,6 +357,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -320,7 +386,7 @@
       ]
     },
     "diff-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*diff)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*diff[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -335,6 +401,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -353,7 +430,7 @@
       ]
     },
     "dockerfile-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dockerfile)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dockerfile[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -368,6 +445,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -386,7 +474,7 @@
       ]
     },
     "dosbatch-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dosbatch)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dosbatch[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -401,6 +489,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -419,7 +518,7 @@
       ]
     },
     "fsharp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*fsharp)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*fsharp[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -434,6 +533,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -452,7 +562,7 @@
       ]
     },
     "go-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*go)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*go[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -467,6 +577,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -485,7 +606,7 @@
       ]
     },
     "groovy-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*groovy)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*groovy[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -500,6 +621,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -518,7 +650,7 @@
       ]
     },
     "html-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*html)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*html[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -533,6 +665,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -551,7 +694,7 @@
       ]
     },
     "java-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*java)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*java[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -566,6 +709,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -584,7 +738,7 @@
       ]
     },
     "js-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*js)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*js[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -599,6 +753,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -617,7 +782,7 @@
       ]
     },
     "json-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*json)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*json[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -632,6 +797,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -650,7 +826,7 @@
       ]
     },
     "latex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*latex)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*latex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -665,6 +841,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -683,7 +870,7 @@
       ]
     },
     "lua-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*lua)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*lua[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -698,6 +885,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -716,7 +914,7 @@
       ]
     },
     "makefile-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*makefile)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*makefile[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -731,6 +929,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -749,7 +958,7 @@
       ]
     },
     "markdown-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*markdown)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*markdown[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -764,6 +973,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -782,7 +1002,7 @@
       ]
     },
     "objc-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*objc)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*objc[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -797,6 +1017,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -815,7 +1046,7 @@
       ]
     },
     "perl-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*perl)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*perl[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -830,6 +1061,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -848,7 +1090,7 @@
       ]
     },
     "powershell-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*powershell)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*powershell[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -863,6 +1105,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -881,7 +1134,7 @@
       ]
     },
     "properties-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*properties)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*properties[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -896,6 +1149,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -914,7 +1178,7 @@
       ]
     },
     "python-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -929,6 +1193,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -947,7 +1222,7 @@
       ]
     },
     "r-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*r)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*r[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -962,6 +1237,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -980,7 +1266,7 @@
       ]
     },
     "regex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*regex)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*regex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -995,6 +1281,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1013,7 +1310,7 @@
       ]
     },
     "ruby-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ruby)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ruby[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1028,6 +1325,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1046,7 +1354,7 @@
       ]
     },
     "rust-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*rust)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*rust[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1061,6 +1369,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1079,7 +1398,7 @@
       ]
     },
     "shaderlab-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shaderlab)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shaderlab[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1094,6 +1413,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1112,7 +1442,7 @@
       ]
     },
     "shell-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shell)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shell[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1127,6 +1457,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1145,7 +1486,7 @@
       ]
     },
     "slim-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*slim)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*slim[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1160,6 +1501,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1178,7 +1530,7 @@
       ]
     },
     "sql-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*sql)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*sql[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1193,6 +1545,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1211,7 +1574,7 @@
       ]
     },
     "swift-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*swift)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*swift[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1226,6 +1589,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1244,7 +1618,7 @@
       ]
     },
     "tex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tex)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1259,6 +1633,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1277,7 +1662,7 @@
       ]
     },
     "ts-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ts)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ts[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1292,6 +1677,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1310,7 +1706,7 @@
       ]
     },
     "tsx-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tsx)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tsx[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1325,6 +1721,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1343,7 +1750,7 @@
       ]
     },
     "xml-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*xml)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*xml[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1358,6 +1765,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },
@@ -1376,7 +1794,7 @@
       ]
     },
     "yaml-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*yaml)[ \t]*\\n",
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*yaml[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1391,6 +1809,17 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
           "name": "comment.line.number-sign.yaml"
         }
       },

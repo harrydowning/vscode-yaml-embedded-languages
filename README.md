@@ -1,5 +1,5 @@
 # YAML Embedded Languages
-> Note: Add shields
+
 ## Features
 
 Support for syntax highlighting within YAML block-scalars.
@@ -16,10 +16,10 @@ None
 
 ## Known Issues
 
-None
+- First line of C and C++ as '#include<...>' does not get highlighted
 
 ## Release Notes
 
 ### 0.0.1
 
-Initial release with python support
+Initial release

@@ -77,7 +77,7 @@ def get_patterns(names):
 def get_repository(langs):
     return {
         f"{name}-block-scalar": {
-            "begin": f"(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*{name})[ \t]*\\n",
+            "begin": f"(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*{name}[ \t]*\\n)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -92,7 +92,16 @@ def get_repository(langs):
                     "name": "storage.modifier.chomping-indicator.yaml"
                 },
                 "5": {
-                    "name": "comment.line.number-sign.yaml"
+                    "patterns": [
+                        {
+                            "begin": "#",
+                            "beginCaptures": {
+                                "0": {"name": "punctuation.definition.comment.yaml"}
+                            },
+                            "end": "\\n"
+                        }
+                    ],
+                    "name": "comment.line.number-sign.yaml"     
                 }
             },
             "end": "^(?=\\S)|(?!\\G)",
