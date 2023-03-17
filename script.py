@@ -16,9 +16,9 @@ LANGS = {
     'groovy': 'source.groovy',
     'html': 'text.html.derivative',
     'java': 'source.java',
-    'js': 'source.js',
+    '(?:js|javascript)': 'source.js',
     'json': 'source.json',
-    'latex': 'text.tex',
+    '(?:tex|latex)': 'text.tex',
     'lua': 'source.lua',
     'makefile': 'source.makefile',
     'markdown': 'text.html.markdown',
@@ -36,8 +36,7 @@ LANGS = {
     'slim': 'source.slim',
     'sql': 'source.sql',
     'swift': 'source.swift',
-    'tex': 'text.tex',
-    'ts': 'source.ts',
+    '(?:ts|typescript)': 'source.ts',
     'tsx': 'source.tsx',
     'xml': 'text.xml',
     'yaml': 'source.yaml'
@@ -77,7 +76,7 @@ def get_patterns(names):
 def get_repository(langs):
     return {
         f'{name}-block-scalar': {
-            'begin': f'(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*{name}[ \t]*\\n)',
+            'begin': f'(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*{name}[ \t]*\\n)',
             'beginCaptures': {
                 '1': {
                     'name': 'keyword.control.flow.block-scalar.literal.yaml'

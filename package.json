@@ -32,7 +32,7 @@
           "meta.embedded.inline.groovy": "groovy",
           "meta.embedded.inline.html": "html",
           "meta.embedded.inline.java": "java",
-          "meta.embedded.inline.js": "js",
+          "meta.embedded.inline.(?:js|javascript)": "(?:js|javascript)",
           "meta.embedded.inline.json": "json",
           "meta.embedded.inline.latex": "latex",
           "meta.embedded.inline.lua": "lua",

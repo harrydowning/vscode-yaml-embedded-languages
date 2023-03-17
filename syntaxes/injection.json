@@ -45,7 +45,7 @@
       "include": "#java-block-scalar"
     },
     {
-      "include": "#js-block-scalar"
+      "include": "#(?:js|javascript)-block-scalar"
     },
     {
       "include": "#json-block-scalar"
@@ -122,7 +122,7 @@
   ],
   "repository": {
     "c-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*c[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*c[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -166,7 +166,7 @@
       ]
     },
     "clojure-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*clojure[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*clojure[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -210,7 +210,7 @@
       ]
     },
     "coffee-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*coffee[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*coffee[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -254,7 +254,7 @@
       ]
     },
     "(?:cpp|c\\+\\+)-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:cpp|c\\+\\+)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:cpp|c\\+\\+)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -298,7 +298,7 @@
       ]
     },
     "csharp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*csharp[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*csharp[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -342,7 +342,7 @@
       ]
     },
     "css-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*css[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*css[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -386,7 +386,7 @@
       ]
     },
     "diff-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*diff[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*diff[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -430,7 +430,7 @@
       ]
     },
     "dockerfile-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dockerfile[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dockerfile[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -474,7 +474,7 @@
       ]
     },
     "dosbatch-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dosbatch[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*dosbatch[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -518,7 +518,7 @@
       ]
     },
     "fsharp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*fsharp[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*fsharp[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -562,7 +562,7 @@
       ]
     },
     "go-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*go[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*go[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -606,7 +606,7 @@
       ]
     },
     "groovy-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*groovy[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*groovy[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -650,7 +650,7 @@
       ]
     },
     "html-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*html[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*html[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -694,7 +694,7 @@
       ]
     },
     "java-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*java[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*java[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -737,8 +737,8 @@
         }
       ]
     },
-    "js-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*js[ \t]*\\n)",
+    "(?:js|javascript)-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:js|javascript)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -772,7 +772,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.js",
+          "name": "meta.embedded.inline.(?:js|javascript)",
           "patterns": [
             {
               "include": "source.js"
@@ -782,7 +782,7 @@
       ]
     },
     "json-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*json[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*json[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -826,7 +826,7 @@
       ]
     },
     "latex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*latex[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*latex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -870,7 +870,7 @@
       ]
     },
     "lua-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*lua[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*lua[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -914,7 +914,7 @@
       ]
     },
     "makefile-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*makefile[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*makefile[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -958,7 +958,7 @@
       ]
     },
     "markdown-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*markdown[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*markdown[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1002,7 +1002,7 @@
       ]
     },
     "objc-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*objc[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*objc[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1046,7 +1046,7 @@
       ]
     },
     "perl-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*perl[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*perl[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1090,7 +1090,7 @@
       ]
     },
     "powershell-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*powershell[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*powershell[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1134,7 +1134,7 @@
       ]
     },
     "properties-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*properties[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*properties[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1178,7 +1178,7 @@
       ]
     },
     "(?:python|py)-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:python|py)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:python|py)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1222,7 +1222,7 @@
       ]
     },
     "r-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*r[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*r[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1266,7 +1266,7 @@
       ]
     },
     "regex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*regex[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*regex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1310,7 +1310,7 @@
       ]
     },
     "ruby-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ruby[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ruby[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1354,7 +1354,7 @@
       ]
     },
     "rust-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*rust[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*rust[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1398,7 +1398,7 @@
       ]
     },
     "shaderlab-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shaderlab[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shaderlab[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1442,7 +1442,7 @@
       ]
     },
     "shell-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shell[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*shell[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1486,7 +1486,7 @@
       ]
     },
     "slim-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*slim[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*slim[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1530,7 +1530,7 @@
       ]
     },
     "sql-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*sql[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*sql[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1574,7 +1574,7 @@
       ]
     },
     "swift-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*swift[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*swift[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1618,7 +1618,7 @@
       ]
     },
     "tex-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tex[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tex[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1662,7 +1662,7 @@
       ]
     },
     "ts-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ts[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ts[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1706,7 +1706,7 @@
       ]
     },
     "tsx-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tsx[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tsx[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1750,7 +1750,7 @@
       ]
     },
     "xml-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*xml[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*xml[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1794,7 +1794,7 @@
       ]
     },
     "yaml-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*yaml[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*yaml[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
