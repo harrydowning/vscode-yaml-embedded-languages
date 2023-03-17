@@ -12,7 +12,7 @@
       "include": "#coffee-block-scalar"
     },
     {
-      "include": "#cpp-block-scalar"
+      "include": "#(?:cpp|c\\+\\+)-block-scalar"
     },
     {
       "include": "#csharp-block-scalar"
@@ -75,7 +75,7 @@
       "include": "#properties-block-scalar"
     },
     {
-      "include": "#python-block-scalar"
+      "include": "#(?:python|py)-block-scalar"
     },
     {
       "include": "#r-block-scalar"
@@ -253,8 +253,8 @@
         }
       ]
     },
-    "cpp-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*cpp[ \t]*\\n)",
+    "(?:cpp|c\\+\\+)-block-scalar": {
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:cpp|c\\+\\+)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -288,7 +288,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.cpp",
+          "name": "meta.embedded.inline.(?:cpp|c\\+\\+)",
           "patterns": [
             {
               "include": "source.cpp"
@@ -1177,8 +1177,8 @@
         }
       ]
     },
-    "python-block-scalar": {
-      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*python[ \t]*\\n)",
+    "(?:python|py)-block-scalar": {
+      "begin": "(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:python|py)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1212,7 +1212,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.python",
+          "name": "meta.embedded.inline.(?:python|py)",
           "patterns": [
             {
               "include": "source.python"

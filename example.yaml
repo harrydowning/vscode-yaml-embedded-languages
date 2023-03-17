@@ -15,5 +15,7 @@ code:
           System.out.println("Hello, World!"); 
       }
     }
-
+test:
+  some: |
+    some
 # some comment
