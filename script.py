@@ -24,6 +24,7 @@ LANGS = {
     'markdown': 'text.html.markdown',
     'objc': 'source.objc',
     'perl': 'source.perl',
+    '(?:pip|requirements)': 'source.pip-requirements',
     'powershell': 'source.powershell',
     'properties': 'source.properties',
     '(?:python|py)': 'source.python',

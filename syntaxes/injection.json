@@ -51,7 +51,7 @@
       "include": "#json-block-scalar"
     },
     {
-      "include": "#latex-block-scalar"
+      "include": "#(?:tex|latex)-block-scalar"
     },
     {
       "include": "#lua-block-scalar"
@@ -67,6 +67,9 @@
     },
     {
       "include": "#perl-block-scalar"
+    },
+    {
+      "include": "#(?:pip|requirements)-block-scalar"
     },
     {
       "include": "#powershell-block-scalar"
@@ -105,10 +108,7 @@
       "include": "#swift-block-scalar"
     },
     {
-      "include": "#tex-block-scalar"
-    },
-    {
-      "include": "#ts-block-scalar"
+      "include": "#(?:ts|typescript)-block-scalar"
     },
     {
       "include": "#tsx-block-scalar"
@@ -825,8 +825,8 @@
         }
       ]
     },
-    "latex-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*latex[ \t]*\\n)",
+    "(?:tex|latex)-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:tex|latex)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -860,7 +860,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.latex",
+          "name": "meta.embedded.inline.(?:tex|latex)",
           "patterns": [
             {
               "include": "text.tex"
@@ -1084,6 +1084,50 @@
           "patterns": [
             {
               "include": "source.perl"
+            }
+          ]
+        }
+      ]
+    },
+    "(?:pip|requirements)-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:pip|requirements)[ \t]*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
+          "name": "comment.line.number-sign.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "^([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.(?:pip|requirements)",
+          "patterns": [
+            {
+              "include": "source.pip-requirements"
             }
           ]
         }
@@ -1617,8 +1661,8 @@
         }
       ]
     },
-    "tex-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*tex[ \t]*\\n)",
+    "(?:ts|typescript)-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:ts|typescript)[ \t]*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1652,51 +1696,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.tex",
-          "patterns": [
-            {
-              "include": "text.tex"
-            }
-          ]
-        }
-      ]
-    },
-    "ts-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*ts[ \t]*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "^([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.ts",
+          "name": "meta.embedded.inline.(?:ts|typescript)",
           "patterns": [
             {
               "include": "source.ts"

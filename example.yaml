@@ -1,6 +1,8 @@
 code:
   python: | # python
+    import re
     print("Hello, World!")
+    a = 5
 
   c: | # c
     #include <stdio.h>
