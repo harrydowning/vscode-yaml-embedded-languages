@@ -93,6 +93,9 @@
       "include": "#rust-block-scalar"
     },
     {
+      "include": "#scss-block-scalar"
+    },
+    {
       "include": "#shaderlab-block-scalar"
     },
     {
@@ -1436,6 +1439,50 @@
           "patterns": [
             {
               "include": "source.rust"
+            }
+          ]
+        }
+      ]
+    },
+    "scss-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*scss[ \t]*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
+          "name": "comment.line.number-sign.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "^([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.scss",
+          "patterns": [
+            {
+              "include": "source.css.scss"
             }
           ]
         }

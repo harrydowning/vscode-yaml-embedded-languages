@@ -2,9 +2,9 @@
 
 ## Features
 
-Support for syntax highlighting within YAML block-scalars.
+Support for syntax highlighting within YAML block-scalars for 40 languages.
 
-> Note: Add animation or image
+![Example yaml file showing syntax highlighting](example.png)
 
 ## Requirements
 
@@ -16,10 +16,8 @@ None
 
 ## Known Issues
 
-- First line of C and C++ as '#include<...>' does not get highlighted
+- First line of C, C++, and pip do not get highlighted
 
 ## Release Notes
 
-### 0.0.1
-
-Initial release
+See [CHANGELOG](CHANGELOG.md)

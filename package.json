@@ -48,6 +48,7 @@
           "meta.embedded.inline.regex": "regex",
           "meta.embedded.inline.ruby": "ruby",
           "meta.embedded.inline.rust": "rust",
+          "meta.embedded.inline.scss": "scss",
           "meta.embedded.inline.shaderlab": "shaderlab",
           "meta.embedded.inline.shell": "shell",
           "meta.embedded.inline.slim": "slim",

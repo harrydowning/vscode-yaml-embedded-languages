@@ -32,6 +32,7 @@ LANGS = {
     'regex': 'source.regexp.python',
     'ruby': 'source.ruby',
     'rust': 'source.rust',
+    'scss': 'source.css.scss',
     'shaderlab': 'source.shaderlab',
     'shell': 'source.shell',
     'slim': 'source.slim',
