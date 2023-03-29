@@ -23,6 +23,7 @@ const getPackageJson = (languages) => ({
   "version": VERSION,
   "displayName": DISPLAY_NAME,
   "description": "Support for syntax highlighting within YAML block-scalars.",
+  "icon": "https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/icon.png",
   "publisher": "harrydowning",
   "author": {
     "name": "Harry Downing",
