@@ -4,7 +4,7 @@
 
 Support for syntax highlighting within YAML block-scalars for 40 languages.
 
-![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/example.png)
+![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
 ### Supported Languages
 The following list shows all valid language identifiers:
