@@ -144,6 +144,7 @@ def main():
         file.write(json.dumps(package, indent=2))
     with open(f'syntaxes{os.path.sep}injection.json', 'w') as file:
         file.write(json.dumps(injection, indent=2))
+    print(*LANGS.keys(), sep='\n-')
 
 if __name__ == '__main__':
     main()
