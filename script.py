@@ -1,5 +1,7 @@
 import json, os
 
+__version__ = '0.0.2'
+
 SCOPE = 'inline.langs'
 LANGS = {
     'c': 'source.c',
@@ -49,9 +51,21 @@ def get_embedded_languages(names):
 
 package = {
   'name': 'yaml-embedded-languages',
+  'version': __version__,
   'displayName': 'YAML Embedded Languages',
   'description': 'Support for syntax highlighting within YAML block-scalars.',
-  'version': '0.0.1',
+  'publisher': 'harrydowning',
+  'author': {
+		'name': 'Harry Downing',
+		'email': 'harry.downing17@gmail.com'
+	},
+  'homepage': 'https://github.com/harrydowning/yaml-embedded-languages#readme',
+  'repository': {
+		'type': 'git',
+		'url': 'https://github.com/harrydowning/yaml-embedded-languages.git'
+	},
+  'license': 'MIT',
+
   'engines': {
     'vscode': '^1.74.0'
   },

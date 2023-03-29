@@ -1,20 +1,19 @@
 {
   "name": "yaml-embedded-languages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
   "publisher": "harrydowning",
   "author": {
-		"name": "Harry Downing",
-		"email": "harry.downing17@gmail.com"
-	},
+    "name": "Harry Downing",
+    "email": "harry.downing17@gmail.com"
+  },
   "homepage": "https://github.com/harrydowning/yaml-embedded-languages#readme",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/harrydowning/yaml-embedded-languages.git"
-	},
+    "type": "git",
+    "url": "https://github.com/harrydowning/yaml-embedded-languages.git"
+  },
   "license": "MIT",
-
   "engines": {
     "vscode": "^1.74.0"
   },
