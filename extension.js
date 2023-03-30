@@ -1,11 +1,11 @@
-// const vscode = require('vscode');
+const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 
 const NAME = "yaml-embedded-languages";
 const VERSION = "0.1.0";
 const DISPLAY_NAME = "YAML Embedded Languages";
-const INJECTION_PATH = `.${path.sep}syntaxes${path.sep}injection.json`;
+const INJECTION_PATH = `syntaxes${path.sep}injection.json`;
 const SCOPE_NAME = `${NAME}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${NAME}.${SUB_INCLUDE_CONFIG}`;
