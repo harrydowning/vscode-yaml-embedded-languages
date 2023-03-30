@@ -9,13 +9,54 @@ const INJECTION_PATH = `.${path.sep}syntaxes${path.sep}injection.json`;
 const SCOPE_NAME = `${NAME}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${NAME}.${SUB_INCLUDE_CONFIG}`;
+const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline"
 
 const LANGUAGES = {
-
-};
+  "c": "source.c",
+  "clojure": "source.clojure",
+  "coffee": "source.coffee",
+  "cpp|c\\+\\+": "source.cpp",
+  "csharp": "source.csharp",
+  "css": "source.css",
+  "diff": "source.diff",
+  "dockerfile": "source.dockerfile",
+  "dosbatch": "source.dosbatch",
+  "fsharp": "source.fsharp",
+  "go": "source.go",
+  "groovy": "source.groovy",
+  "html": "text.html.derivative",
+  "java": "source.java",
+  "javascript|js": "source.js",
+  "json": "source.json",
+  "tex|latex": "text.tex",
+  "lua": "source.lua",
+  "makefile": "source.makefile",
+  "markdown": "text.html.markdown",
+  "objc": "source.objc",
+  "perl": "source.perl",
+  "pip|requirements": "source.pip-requirements",
+  "powershell": "source.powershell",
+  "properties": "source.properties",
+  "python|py": "source.python",
+  "r": "source.r",
+  "regex": "source.regexp.python",
+  "ruby": "source.ruby",
+  "rust": "source.rust",
+  "scss": "source.css.scss",
+  "shaderlab": "source.shaderlab",
+  "shell": "source.shell",
+  "slim": "source.slim",
+  "sql": "source.sql",
+  "swift": "source.swift",
+  "typescript|ts": "source.ts",
+  "tsx": "source.tsx",
+  "xml": "text.xml",
+  "yaml": "source.yaml"
+}
 
 const getEmbeddedLanguages = (languages) => {
-
+  const names = Object.keys(languages);
+  return Object.fromEntries(names.map(name => [`${LANGUAGE_SCOPE_PREFIX}.${name}`, name]));
 };
 
 const getPackageJson = (languages) => ({
@@ -23,7 +64,7 @@ const getPackageJson = (languages) => ({
   "version": VERSION,
   "displayName": DISPLAY_NAME,
   "description": "Support for syntax highlighting within YAML block-scalars.",
-  "icon": "https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/icon.png",
+  "icon": `images${path.sep}icon.png`,
   "publisher": "harrydowning",
   "author": {
     "name": "Harry Downing",
@@ -44,7 +85,7 @@ const getPackageJson = (languages) => ({
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": `.${path.sep}extension.js`,
+  "main": "extension.js",
   "contributes": {
     "grammars": [
       {
@@ -75,7 +116,47 @@ const getPackageJson = (languages) => ({
 });
 
 const getInjectionJson = (languages) => {
-
+  entries = Object.entries(languages);
+  return Object.fromEntries(entries.map(([name, scopeName]) => [
+    `${name}-block-scalar`, {
+      "begin": `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${name})[ \t]*\\n)`,
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                  "0": {"name": "punctuation.definition.comment.yaml"}
+              },
+              "end": "\\n"
+            }
+          ],
+          "name": "comment.line.number-sign.yaml"     
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "^([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": `${LANGUAGE_SCOPE_PREFIX}.${name}`,
+          "patterns": [{"include": scopeName}]
+        }
+      ]
+    }
+  ]));
 };
 
 const write = (filename, data) => {
@@ -85,20 +166,21 @@ const write = (filename, data) => {
   }); 
 };
 
-function activate(context) {
-  // TODO will reference contain updated config
-  const settings = vscode.workspace.getConfiguration(NAME);
+const generateFiles = (languages = LANGUAGES) => {
+  const packageJson = JSON.stringify(getPackageJson(allLanguages), null, 2);
+  const injectionJson = JSON.stringify(getInjectionJson(allLanguages), null, 2); 
   
+  write(`${__dirname}${path.sep}package.json`, packageJson);
+  write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);
+}
+
+function activate(context) {
   let disposable = vscode.workspace.onDidChangeConfiguration(event => {
     if(event.affectsConfiguration(INCLUDE_CONFIG)) {
+      const settings = vscode.workspace.getConfiguration(NAME);
       const includeLanguages = settings[SUB_INCLUDE_CONFIG];
       const allLanguages = {...includeLanguages, ...LANGUAGES};
-      
-      const packageJson = JSON.stringify(getPackageJson(allLanguages), null, 2);
-      const injectionJson = JSON.stringify(getInjectionJson(allLanguages), null, 2); 
-      
-      write(`${__dirname}${path.sep}package.json`, packageJson);
-      write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);
+      generateFiles(allLanguages);
     }
   })
 

@@ -3,6 +3,6 @@
 .gitignore
 
 example.yaml
-images
+images/icon.xcf
 
 script.py
