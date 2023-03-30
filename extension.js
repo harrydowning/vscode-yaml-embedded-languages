@@ -175,18 +175,19 @@ const getInjectionJson = (languages) => ({
 });
 
 const write = (filename, data) => {
-  fs.writeFile(filename, data, (err) => {
+  return fs.writeFile(filename, data, (err) => {
     if(err) return console.log(err);
     console.log(`File '${filename}' saved.`);
-  }); 
+  });
 };
 
 const generateFiles = (languages = LANGUAGES) => {
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2); 
   
-  write(`${__dirname}${path.sep}package.json`, packageJson);
-  write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);
+  const packageJsonPromise = write(`${__dirname}${path.sep}package.json`, packageJson);
+  const injectionJsonPromise = write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);
+  return Promise.all([packageJsonPromise, injectionJsonPromise])
 }
 
 function activate(context) {
@@ -195,13 +196,14 @@ function activate(context) {
       const settings = vscode.workspace.getConfiguration(NAME);
       const includeLanguages = settings[SUB_INCLUDE_CONFIG];
       const allLanguages = {...includeLanguages, ...LANGUAGES};
-      generateFiles(allLanguages);
 
-      const message = `Reload window to allow changes to take effect?`
-      const positive = 'Yes'
-      vscode.window.showInformationMessage(message, positive, 'No')
-      .then(response => {
-        if(response === positive) vscode.commands.executeCommand("workbench.action.reloadWindow")
+      generateFiles(allLanguages).then(resultArray => {
+        const message = `Reload window to allow changes to take effect?`
+        const positive = 'Yes'
+        vscode.window.showInformationMessage(message, positive, 'No')
+        .then(response => {
+          if(response === positive) vscode.commands.executeCommand("workbench.action.reloadWindow")
+        })
       })
     }
   })
