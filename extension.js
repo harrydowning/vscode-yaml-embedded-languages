@@ -65,7 +65,7 @@ const getPackageJson = (languages) => ({
   "version": VERSION,
   "displayName": DISPLAY_NAME,
   "description": "Support for syntax highlighting within YAML block-scalars.",
-  "icon": `images${path.sep}icon.png`,
+  "icon": "images/icon.png",
   "publisher": "harrydowning",
   "author": {
     "name": "Harry Downing",

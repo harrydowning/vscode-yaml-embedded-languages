@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
-  "icon": "images\\icon.png",
+  "icon": "images/icon.png",
   "publisher": "harrydowning",
   "author": {
     "name": "Harry Downing",
@@ -88,7 +88,7 @@
             }
           },
           "default": {},
-          "description": "Use the key to define the language identifier as a regex. Use the value to specify the language textMate scopeName."
+          "description": "Use the key to define the language identifier with regex. Use the value to specify the language textMate scopeName."
         }
       }
     }
