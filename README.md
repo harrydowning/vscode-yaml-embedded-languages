@@ -2,7 +2,7 @@
 
 ## Features [#](#features- 'Features')
 
-Syntax highlighting within YAML block-scalars for [40 built-in languages](#built-in-languages) and the ability to easily add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings) configuration setting.
+Syntax highlighting within YAML block-scalars for [40 built-in languages](#built-in-languages- 'Built-In Languages') and the ability to easily add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings- 'Extension Settings') configuration setting.
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
