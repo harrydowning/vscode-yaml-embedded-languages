@@ -196,6 +196,13 @@ function activate(context) {
       const includeLanguages = settings[SUB_INCLUDE_CONFIG];
       const allLanguages = {...includeLanguages, ...LANGUAGES};
       generateFiles(allLanguages);
+
+      const message = `Reload window to allow changes to take effect?`
+      const positive = 'Yes'
+      vscode.window.showInformationMessage(message, positive, 'No')
+      .then(response => {
+        if(response === positive) vscode.commands.executeCommand("workbench.action.reloadWindow")
+      })
     }
   })
 
