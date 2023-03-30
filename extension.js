@@ -1,4 +1,4 @@
-const vscode = require('vscode');
+// const vscode = require('vscode');
 const fs = require('fs');
 const path = require('path');
 
@@ -10,6 +10,7 @@ const SCOPE_NAME = `${NAME}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${NAME}.${SUB_INCLUDE_CONFIG}`;
 const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline"
+const REPOSITORY_SUFFIX = "block-scalar"
 
 const LANGUAGES = {
   "c": "source.c",
@@ -100,7 +101,7 @@ const getPackageJson = (languages) => ({
     "configuration": {
       "title": DISPLAY_NAME,
       "properties": {
-        INCLUDE_CONFIG: {
+        [INCLUDE_CONFIG]: {
           "type": "object",
           "patternProperties": {
             "^.*$": {
@@ -115,10 +116,17 @@ const getPackageJson = (languages) => ({
   }
 });
 
-const getInjectionJson = (languages) => {
+const getPatterns = (languages) => {
+  const names = Object.keys(languages);
+  return names.map(name => ({
+    "include": `#${name}-${REPOSITORY_SUFFIX}`
+  }))
+}
+
+const getRepository = (languages) => {
   entries = Object.entries(languages);
   return Object.fromEntries(entries.map(([name, scopeName]) => [
-    `${name}-block-scalar`, {
+    `${name}-${REPOSITORY_SUFFIX}`, {
       "begin": `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${name})[ \t]*\\n)`,
       "beginCaptures": {
         "1": {
@@ -159,6 +167,13 @@ const getInjectionJson = (languages) => {
   ]));
 };
 
+const getInjectionJson = (languages) => ({
+  "scopeName": SCOPE_NAME,
+  "injectionSelector": "L:source.yaml",
+  "patterns": getPatterns(languages),
+  "repository": getRepository(languages)
+});
+
 const write = (filename, data) => {
   fs.writeFile(filename, data, (err) => {
     if(err) return console.log(err);
@@ -167,8 +182,8 @@ const write = (filename, data) => {
 };
 
 const generateFiles = (languages = LANGUAGES) => {
-  const packageJson = JSON.stringify(getPackageJson(allLanguages), null, 2);
-  const injectionJson = JSON.stringify(getInjectionJson(allLanguages), null, 2); 
+  const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
+  const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2); 
   
   write(`${__dirname}${path.sep}package.json`, packageJson);
   write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);

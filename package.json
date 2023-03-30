@@ -1,8 +1,9 @@
 {
   "name": "yaml-embedded-languages",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
+  "icon": "images\\icon.png",
   "publisher": "harrydowning",
   "author": {
     "name": "Harry Downing",
@@ -20,11 +21,15 @@
   "categories": [
     "Programming Languages"
   ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "extension.js",
   "contributes": {
     "grammars": [
       {
-        "path": "./syntaxes/injection.json",
-        "scopeName": "inline.langs",
+        "path": ".\\syntaxes\\injection.json",
+        "scopeName": "yaml-embedded-languages.injection",
         "injectTo": [
           "source.yaml"
         ],
@@ -32,7 +37,7 @@
           "meta.embedded.inline.c": "c",
           "meta.embedded.inline.clojure": "clojure",
           "meta.embedded.inline.coffee": "coffee",
-          "meta.embedded.inline.(?:cpp|c\\+\\+)": "(?:cpp|c\\+\\+)",
+          "meta.embedded.inline.cpp|c\\+\\+": "cpp|c\\+\\+",
           "meta.embedded.inline.csharp": "csharp",
           "meta.embedded.inline.css": "css",
           "meta.embedded.inline.diff": "diff",
@@ -43,18 +48,18 @@
           "meta.embedded.inline.groovy": "groovy",
           "meta.embedded.inline.html": "html",
           "meta.embedded.inline.java": "java",
-          "meta.embedded.inline.(?:js|javascript)": "(?:js|javascript)",
+          "meta.embedded.inline.javascript|js": "javascript|js",
           "meta.embedded.inline.json": "json",
-          "meta.embedded.inline.(?:tex|latex)": "(?:tex|latex)",
+          "meta.embedded.inline.tex|latex": "tex|latex",
           "meta.embedded.inline.lua": "lua",
           "meta.embedded.inline.makefile": "makefile",
           "meta.embedded.inline.markdown": "markdown",
           "meta.embedded.inline.objc": "objc",
           "meta.embedded.inline.perl": "perl",
-          "meta.embedded.inline.(?:pip|requirements)": "(?:pip|requirements)",
+          "meta.embedded.inline.pip|requirements": "pip|requirements",
           "meta.embedded.inline.powershell": "powershell",
           "meta.embedded.inline.properties": "properties",
-          "meta.embedded.inline.(?:python|py)": "(?:python|py)",
+          "meta.embedded.inline.python|py": "python|py",
           "meta.embedded.inline.r": "r",
           "meta.embedded.inline.regex": "regex",
           "meta.embedded.inline.ruby": "ruby",
@@ -65,12 +70,27 @@
           "meta.embedded.inline.slim": "slim",
           "meta.embedded.inline.sql": "sql",
           "meta.embedded.inline.swift": "swift",
-          "meta.embedded.inline.(?:ts|typescript)": "(?:ts|typescript)",
+          "meta.embedded.inline.typescript|ts": "typescript|ts",
           "meta.embedded.inline.tsx": "tsx",
           "meta.embedded.inline.xml": "xml",
           "meta.embedded.inline.yaml": "yaml"
         }
       }
-    ]
+    ],
+    "configuration": {
+      "title": "YAML Embedded Languages",
+      "properties": {
+        "yaml-embedded-languages.include": {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "type": "string"
+            }
+          },
+          "default": {},
+          "description": "Use the key to define the language identifier as a regex. Use the value to specify the language textMate scopeName."
+        }
+      }
+    }
   }
 }
