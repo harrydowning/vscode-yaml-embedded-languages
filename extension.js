@@ -109,7 +109,7 @@ const getPackageJson = (languages) => ({
             }
           },
           "default": {},
-          "description": "Use the key to define the language identifier as a regex. Use the value to specify the language textMate scopeName."
+          "description": "Use the key to define the language identifier with regex. Use the value to specify the language textMate scopeName."
         }
       }
     }

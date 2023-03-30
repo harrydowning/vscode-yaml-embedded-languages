@@ -1,13 +1,13 @@
 # YAML Embedded Languages
 
-## Features
+## Features [#](#features- 'Features')
 
-Support for syntax highlighting within YAML block-scalars for 40 languages.
+Syntax highlighting within YAML block-scalars for [40 built-in languages](#built-in-languages) and the ability to easily add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings) configuration setting.
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
-### Supported Languages
-The following list shows all valid language identifiers:
+### Built-In Languages [#](#built-in-languages- 'Built-In Languages')
+The following list shows all valid identifiers for the built-in languages:
 - c
 - clojure
 - coffee
@@ -49,18 +49,20 @@ The following list shows all valid language identifiers:
 - xml
 - yaml
 
-## Requirements
+## Requirements [#](#requirements- 'Requirements')
 
 None
 
-## Extension Settings
+## Extension Settings [#](#extension-settings- 'Extension Settings')
 
-None
+| Name | Description |
+| ---- | ----------- |
+| `yaml-embedded-languages.include` | Allows the user to include their own languages by providing an object where each key defines the language identifier with regex and the corresponding value specifies the language TextMate `scopeName`. This can be used to add any other language, which could be from another extension. This also allows the user to override any language identifiers currently used for the built-in languages. |
 
-## Known Issues
+## Known Issues [#](#known-issues- 'Known Issues')
 
 - First line of C, C++, and pip do not get highlighted
 
-## Release Notes
+## Release Notes [#](#release-notes- 'Release Notes')
 
 See [CHANGELOG](CHANGELOG.md)
