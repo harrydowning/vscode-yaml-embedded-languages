@@ -28,7 +28,7 @@
   "contributes": {
     "grammars": [
       {
-        "path": "syntaxes\\injection.json",
+        "path": "./syntaxes/injection.json",
         "scopeName": "yaml-embedded-languages.injection",
         "injectTo": [
           "source.yaml"
