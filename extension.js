@@ -1,9 +1,9 @@
-const vscode = require('vscode');
+const devFlag = process.argv?.[2] == '-dev';
+const vscode = devFlag ? null : require('vscode');
 const fs = require('fs');
-const path = require('path');
 
 const NAME = "yaml-embedded-languages";
-const VERSION = "0.1.0";
+const VERSION = "0.2.0";
 const DISPLAY_NAME = "YAML Embedded Languages";
 const INJECTION_PATH = "./syntaxes/injection.json";
 const SCOPE_NAME = `${NAME}.injection`;
@@ -186,8 +186,8 @@ const generateFiles = (languages = LANGUAGES) => {
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2); 
   
-  const packageJsonPromise = write(`${__dirname}${path.sep}package.json`, packageJson);
-  const injectionJsonPromise = write(`${__dirname}${path.sep}syntaxes${path.sep}injection.json`, injectionJson);
+  const packageJsonPromise = write(`${__dirname}/package.json`, packageJson);
+  const injectionJsonPromise = write(`${__dirname}/syntaxes/injection.json`, injectionJson);
   return Promise.all([packageJsonPromise, injectionJsonPromise])
 }
 
@@ -213,6 +213,8 @@ function activate(context) {
 };
 
 function deactivate() {}
+
+if (devFlag) generateFiles(LANGUAGES);
 
 module.exports = {
   activate,

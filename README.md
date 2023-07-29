@@ -47,7 +47,7 @@ The following list shows all valid identifiers for the built-in languages:
 - typescript or ts
 - tsx
 - xml
-- yaml
+- yaml (Yes, YAML within YAML!)
 
 ## Requirements [#](#requirements- 'Requirements')
 
@@ -61,7 +61,12 @@ None
 
 ## Known Issues [#](#known-issues- 'Known Issues')
 
-- First line of C, C++, and pip do not get highlighted
+See [Issues](https://github.com/harrydowning/yaml-embedded-languages/issues)
+
+
+## Contribution Notes [#](#contribution-notes- 'Contribution Notes')
+
+See [CONTRIBUTING](CONTRIBUTING.md)
 
 ## Release Notes [#](#release-notes- 'Release Notes')
 
