@@ -1,6 +1,6 @@
 {
   "scopeName": "yaml-embedded-languages.injection",
-  "injectionSelector": "L:source.yaml",
+  "injectionSelector": "L:source.yaml,L:source.github-actions-workflow",
   "patterns": [
     {
       "include": "#c-block-scalar"

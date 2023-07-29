@@ -31,7 +31,8 @@
         "path": "./syntaxes/injection.json",
         "scopeName": "yaml-embedded-languages.injection",
         "injectTo": [
-          "source.yaml"
+          "source.yaml",
+          "source.github-actions-workflow"
         ],
         "embeddedLanguages": {
           "meta.embedded.inline.c": "c",

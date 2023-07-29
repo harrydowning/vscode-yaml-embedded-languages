@@ -93,7 +93,8 @@ const getPackageJson = (languages) => ({
         "path": INJECTION_PATH,
         "scopeName": SCOPE_NAME,
         "injectTo": [
-          "source.yaml"
+          "source.yaml",
+          "source.github-actions-workflow"
         ],
         "embeddedLanguages": getEmbeddedLanguages(languages)
       }
@@ -169,7 +170,7 @@ const getRepository = (languages) => {
 
 const getInjectionJson = (languages) => ({
   "scopeName": SCOPE_NAME,
-  "injectionSelector": "L:source.yaml",
+  "injectionSelector": "L:source.yaml,L:source.github-actions-workflow",
   "patterns": getPatterns(languages),
   "repository": getRepository(languages)
 });
