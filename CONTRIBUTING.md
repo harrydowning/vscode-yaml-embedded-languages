@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for considering contributing to this project. All contributions are welcome. Please find below the suggested contribution and development workflows.
+Thank you for taking an interest in contributing to this project. All contributions are welcome. Please find below the suggested contribution and development workflows.
 
 ## Contribution Workflow [#](#contribution-workflow- 'Contribution Workflow')
 - Raise/find an [issue](https://github.com/harrydowning/yaml-embedded-languages/issues) to fix
@@ -17,7 +17,7 @@ Thank you for considering contributing to this project. All contributions are we
 ## Release Workflow [#](#release-workflow- 'Release Workflow')
 - Ensure changes, updated `VERSION` in `extension.js`, and updated `CHANGELOG.md` are committed
 - Run `vsce package` to build the extension
-- Create new release
+- Create a new GitHub release
   - Use `VERSION` for the tag and title
   - Use latest in `CHANGELOG.md` for the body
   - Attach `*.vsix` build of the new release
