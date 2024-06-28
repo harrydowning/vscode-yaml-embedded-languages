@@ -72,6 +72,9 @@
       "include": "#pip|requirements-block-scalar"
     },
     {
+      "include": "#powerfx-block-scalar"
+    },
+    {
       "include": "#powershell-block-scalar"
     },
     {
@@ -1131,6 +1134,50 @@
           "patterns": [
             {
               "include": "source.pip-requirements"
+            }
+          ]
+        }
+      ]
+    },
+    "powerfx-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:powerfx)[ \t]*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "patterns": [
+            {
+              "begin": "#",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.definition.comment.yaml"
+                }
+              },
+              "end": "\\n"
+            }
+          ],
+          "name": "comment.line.number-sign.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "^([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.powerfx",
+          "patterns": [
+            {
+              "include": "source.js"
             }
           ]
         }

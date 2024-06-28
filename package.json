@@ -58,6 +58,7 @@
           "meta.embedded.inline.objc": "objc",
           "meta.embedded.inline.perl": "perl",
           "meta.embedded.inline.pip|requirements": "pip|requirements",
+          "meta.embedded.inline.powerfx": "powerfx",
           "meta.embedded.inline.powershell": "powershell",
           "meta.embedded.inline.properties": "properties",
           "meta.embedded.inline.python|py": "python|py",
