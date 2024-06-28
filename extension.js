@@ -3,7 +3,7 @@ const vscode = devFlag ? null : require('vscode');
 const fs = require('fs');
 
 const NAME = "yaml-embedded-languages";
-const VERSION = "0.2.0";
+const VERSION = "0.3.0";
 const DISPLAY_NAME = "YAML Embedded Languages";
 const INJECTION_PATH = "./syntaxes/injection.json";
 const SCOPE_NAME = `${NAME}.injection`;
