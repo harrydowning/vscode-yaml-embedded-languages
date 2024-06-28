@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 ## [0.3.0] - 2024-06-28
 ### Added
-- Support for Power Fx 
+- Support for Power Fx (Issue [#17])
 
 ## [0.2.0] - 2023-07-29
 ### Added
