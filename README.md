@@ -33,6 +33,7 @@ The following list shows all valid identifiers for the built-in languages:
 - objc
 - perl
 - pip or requirements
+- powerfx
 - powershell
 - properties
 - python or py
