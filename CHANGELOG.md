@@ -6,11 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.3.1] - 2024-06-29
+
+### Fixed
+
+- Broken link in CHANGELOG
+
 ## [0.3.0] - 2024-06-28
 
 ### Added
 
-- Support for Power Fx (Issue [#17])
+- Support for Power Fx (Issue [#17](https://github.com/harrydowning/yaml-embedded-languages/issues/17))
 
 ## [0.2.0] - 2023-07-29
 
@@ -47,7 +53,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.0.2...v0.1.0
