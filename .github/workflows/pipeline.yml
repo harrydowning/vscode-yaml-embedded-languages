@@ -5,7 +5,7 @@ on: [push]
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip release]')
+    if: github.ref == 'refs/heads/master' && !contains(github.event.head_commit.message, '[skip release]')
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
