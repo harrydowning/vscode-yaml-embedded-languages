@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for taking an interest in contributing to this project. All contributions are welcome. Please find below the suggested contribution and development workflows.
+Thank you for taking an interest in contributing to this project. All contributions are welcome. Please find below the suggested contribution, development, and release workflows.
 
 ## Contribution Workflow [#](#contribution-workflow- "Contribution Workflow")
 
@@ -17,10 +17,6 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 ## Release Workflow [#](#release-workflow- "Release Workflow")
 
-- Ensure changes, updated `VERSION` in `extension.js`, and updated `CHANGELOG.md` are committed
-- Run `vsce package` to build the extension
-- Create a new GitHub release
-  - Use `VERSION` for the tag and title
-  - Use latest in `CHANGELOG.md` for the body
-  - Attach `*.vsix` build of the new release
-- Run `vsce publish` to publish extension to the marketplace
+- Update `VERSION` in `extension.js` and run `node extension.js -dev`
+- Update `CHANGELOG.md`
+- Merge to master without `[skip release]` in the commit
