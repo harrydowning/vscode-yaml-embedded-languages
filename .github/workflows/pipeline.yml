@@ -1,0 +1,22 @@
+name: pipeline
+
+on: [push]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip release]')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - run: npm i
+      - run: npx vsce package
+      - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+      - run: gh release create v$VERSION --generate-notes yaml-embedded-languages-$VERSION.vsix
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: npx vsce publish
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}

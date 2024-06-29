@@ -112,6 +112,9 @@ const getPackageJson = (languages) => ({
       },
     },
   },
+  devDependencies: {
+    "@vscode/vsce": "^2.29.0",
+  },
 });
 
 const getPatterns = (languages) => {
