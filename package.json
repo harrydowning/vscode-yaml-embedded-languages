@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.29.0"
   }
 }
