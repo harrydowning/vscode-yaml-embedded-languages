@@ -12,11 +12,11 @@ jobs:
         with:
           node-version: "18"
       - run: npm i
-      - run: npm vsce package
+      - run: npx vsce package
       - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
       - run: gh release create v$VERSION --generate-notes yaml-embedded-languages-$VERSION.vsix
         env:
           GH_TOKEN: ${{ github.token }}
-      - run: yarn vsce publish
+      - run: npx vsce publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
