@@ -19,4 +19,4 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 - Update `VERSION` in `extension.js` and run `node extension.js -dev`
 - Update `CHANGELOG.md`
-- Merge to master without `[skip release]` in the commit
+- Merge to master with `[release]` in the commit title
