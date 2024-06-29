@@ -5,6 +5,10 @@ All notable changes to this extension will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
+## [0.3.0] - 2024-06-28
+### Added
+- Support for Power Fx (Issue [#17])
+
 ## [0.2.0] - 2023-07-29
 ### Added
 - Issue [#9](https://github.com/harrydowning/yaml-embedded-languages/issues/9)
