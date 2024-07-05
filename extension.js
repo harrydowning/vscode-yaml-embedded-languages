@@ -16,7 +16,8 @@ const LANGUAGES = {
   c: "source.c",
   clojure: "source.clojure",
   coffee: "source.coffee",
-  "cpp|c\\+\\+": "source.cpp",
+  cpp: "source.cpp",
+  "c\\+\\+": "source.cpp",
   csharp: "source.csharp",
   css: "source.css",
   diff: "source.diff",
@@ -27,19 +28,23 @@ const LANGUAGES = {
   groovy: "source.groovy",
   html: "text.html.derivative",
   java: "source.java",
-  "javascript|js": "source.js",
+  javascript: "source.js",
+  js: "source.js",
   json: "source.json",
-  "tex|latex": "text.tex",
+  tex: "text.tex",
+  latex: "text.tex",
   lua: "source.lua",
   makefile: "source.makefile",
   markdown: "text.html.markdown",
   objc: "source.objc",
   perl: "source.perl",
-  "pip|requirements": "source.pip-requirements",
+  pip: "source.pip-requirements",
+  requirements: "source.pip-requirements",
   powerfx: "source.js",
   powershell: "source.powershell",
   properties: "source.properties",
-  "python|py": "source.python",
+  python: "source.python",
+  py: "source.python",
   r: "source.r",
   regex: "source.regexp.python",
   ruby: "source.ruby",
@@ -50,7 +55,8 @@ const LANGUAGES = {
   slim: "source.slim",
   sql: "source.sql",
   swift: "source.swift",
-  "typescript|ts": "source.ts",
+  typescript: "source.ts",
+  ts: "source.ts",
   tsx: "source.tsx",
   xml: "text.xml",
   yaml: "source.yaml",
@@ -208,7 +214,7 @@ const generateFiles = (languages = LANGUAGES) => {
 const updateExtension = () => {
   const settings = vscode.workspace.getConfiguration(NAME);
   const includeLanguages = settings[SUB_INCLUDE_CONFIG];
-  const allLanguages = { ...includeLanguages, ...LANGUAGES };
+  const allLanguages = { ...LANGUAGES, ...includeLanguages };
 
   const filesChanged = generateFiles(allLanguages);
 

@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Extension update bug (Issue [#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
+- User languages reset on extension update (Issue [#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
+- User language override precedence
 
 ## [0.3.1] - 2024-06-29
 
