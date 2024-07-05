@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.3.2] - 2024-07-06
+
+### Fixed
+
+- User languages reset on extension update (Issue [#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
+- User language override precedence
+
 ## [0.3.1] - 2024-06-29
 
 ### Fixed
@@ -53,7 +60,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...HEAD
+[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.2...HEAD
+[0.3.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.1.0...v0.2.0
