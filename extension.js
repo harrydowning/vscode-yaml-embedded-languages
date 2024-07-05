@@ -1,5 +1,5 @@
-const devFlag = process.argv?.[2] == "-dev";
-const vscode = devFlag ? null : require("vscode");
+const DEV_MODE = process.argv?.[2] == "-dev";
+const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
 
 const NAME = "yaml-embedded-languages";
@@ -179,50 +179,69 @@ const getInjectionJson = (languages) => ({
 });
 
 const write = (filename, data) => {
-  return fs.writeFile(filename, data, (err) => {
-    if (err) return console.log(err);
-    console.log(`File '${filename}' saved.`);
-  });
+  const fileData = fs.readFileSync(filename).toString();
+
+  if (fileData === data) {
+    return false;
+  }
+
+  try {
+    fs.writeFileSync(filename, data);
+  } catch (err) {
+    console.error(err);
+  }
+
+  console.log(`File '${filename}' saved.`);
+  return true;
 };
 
 const generateFiles = (languages = LANGUAGES) => {
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
 
-  const packageJsonPromise = write(`${__dirname}/package.json`, packageJson);
-  const injectionJsonPromise = write(
-    `${__dirname}/syntaxes/injection.json`,
-    injectionJson,
+  return (
+    write(`${__dirname}/package.json`, packageJson) ||
+    write(`${__dirname}/syntaxes/injection.json`, injectionJson)
   );
-  return Promise.all([packageJsonPromise, injectionJsonPromise]);
 };
 
-function activate(context) {
+const updateExtension = () => {
+  const settings = vscode.workspace.getConfiguration(NAME);
+  const includeLanguages = settings[SUB_INCLUDE_CONFIG];
+  const allLanguages = { ...includeLanguages, ...LANGUAGES };
+
+  const filesChanged = generateFiles(allLanguages);
+
+  if (filesChanged) {
+    const message = `Reload window to allow changes to take effect?`;
+    const positive = "Yes";
+    vscode.window
+      .showInformationMessage(message, positive, "No")
+      .then((response) => {
+        if (response === positive) {
+          vscode.commands.executeCommand("workbench.action.reloadWindow");
+        }
+      });
+  }
+};
+
+const activate = (context) => {
+  updateExtension();
+
   let disposable = vscode.workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(INCLUDE_CONFIG)) {
-      const settings = vscode.workspace.getConfiguration(NAME);
-      const includeLanguages = settings[SUB_INCLUDE_CONFIG];
-      const allLanguages = { ...includeLanguages, ...LANGUAGES };
-
-      generateFiles(allLanguages).then((resultArray) => {
-        const message = `Reload window to allow changes to take effect?`;
-        const positive = "Yes";
-        vscode.window
-          .showInformationMessage(message, positive, "No")
-          .then((response) => {
-            if (response === positive)
-              vscode.commands.executeCommand("workbench.action.reloadWindow");
-          });
-      });
+      updateExtension();
     }
   });
 
   context.subscriptions.push(disposable);
+};
+
+const deactivate = () => {};
+
+if (DEV_MODE) {
+  generateFiles(LANGUAGES);
 }
-
-function deactivate() {}
-
-if (devFlag) generateFiles(LANGUAGES);
 
 module.exports = {
   activate,
