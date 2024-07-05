@@ -195,6 +195,7 @@ const write = (filename, data) => {
     fs.writeFileSync(filename, data);
   } catch (err) {
     console.error(err);
+    return false;
   }
 
   console.log(`File '${filename}' saved.`);
