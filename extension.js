@@ -200,7 +200,7 @@ const generateFiles = (languages = LANGUAGES) => {
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
 
   return (
-    write(`${__dirname}/package.json`, packageJson) ||
+    write(`${__dirname}/package.json`, packageJson) |
     write(`${__dirname}/syntaxes/injection.json`, injectionJson)
   );
 };
@@ -214,14 +214,12 @@ const updateExtension = () => {
 
   if (filesChanged) {
     const message = `Reload window to allow changes to take effect?`;
-    const positive = "Yes";
-    vscode.window
-      .showInformationMessage(message, positive, "No")
-      .then((response) => {
-        if (response === positive) {
-          vscode.commands.executeCommand("workbench.action.reloadWindow");
-        }
-      });
+    const items = ["Yes", "No"];
+    vscode.window.showInformationMessage(message, ...items).then((item) => {
+      if (item === items[0]) {
+        vscode.commands.executeCommand("workbench.action.reloadWindow");
+      }
+    });
   }
 };
 
