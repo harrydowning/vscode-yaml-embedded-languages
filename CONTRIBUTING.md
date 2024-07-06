@@ -6,7 +6,7 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 - Raise/find an [issue](https://github.com/harrydowning/yaml-embedded-languages/issues) to fix
 - Fork the repository
-- Implement changes (see [development workflow](#development-workflow-))
+- Implement changes (see [development workflow](#development-workflow))
 - Create pull request
 
 ## Development Workflow
