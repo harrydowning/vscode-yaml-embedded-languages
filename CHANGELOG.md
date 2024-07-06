@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 - Only update extension files on version update
+- Doc formatting and links
 
 ## [0.3.2] - 2024-07-06
 
