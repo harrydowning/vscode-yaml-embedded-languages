@@ -5,12 +5,14 @@ const fs = require("fs");
 const NAME = "yaml-embedded-languages";
 const VERSION = "0.3.2";
 const DISPLAY_NAME = "YAML Embedded Languages";
+const PUBLISHER = "harrydowning";
 const INJECTION_PATH = "./syntaxes/injection.json";
 const SCOPE_NAME = `${NAME}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${NAME}.${SUB_INCLUDE_CONFIG}`;
 const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline";
 const REPOSITORY_SUFFIX = "block-scalar";
+const GLOBAL_STATE_VERSION = "version";
 
 const LANGUAGES = {
   c: "source.c",
@@ -75,7 +77,7 @@ const getPackageJson = (languages) => ({
   displayName: DISPLAY_NAME,
   description: "Support for syntax highlighting within YAML block-scalars.",
   icon: "images/icon.png",
-  publisher: "harrydowning",
+  publisher: PUBLISHER,
   author: {
     name: "Harry Downing",
     email: "harry.downing17@gmail.com",
@@ -131,7 +133,7 @@ const getPatterns = (languages) => {
 };
 
 const getRepository = (languages) => {
-  entries = Object.entries(languages);
+  const entries = Object.entries(languages);
   return Object.fromEntries(
     entries.map(([name, scopeName]) => [
       `${name}-${REPOSITORY_SUFFIX}`,
@@ -231,7 +233,14 @@ const updateExtension = () => {
 };
 
 const activate = (context) => {
-  updateExtension();
+  const extension = vscode.extensions.getExtension(`${PUBLISHER}.${NAME}`);
+  const currentVersion = extension.packageJSON.version;
+  const previousVersion = context.globalState.get(GLOBAL_STATE_VERSION);
+
+  if (previousVersion !== currentVersion) {
+    updateExtension();
+    context.globalState.update(GLOBAL_STATE_VERSION, currentVersion);
+  }
 
   let disposable = vscode.workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(INCLUDE_CONFIG)) {
