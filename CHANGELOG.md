@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.3.4] - 2024-08-18
 
+### Added
+
+- Option to specify language name in `yaml-embedded-languages.include` config.
+
 ### Fixed
 
 - Correct language names (Issue [#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))

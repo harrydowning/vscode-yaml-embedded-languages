@@ -3,7 +3,7 @@ const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
 
 const NAME = "yaml-embedded-languages";
-const VERSION = "0.3.4";
+const VERSION = "0.4.0";
 const DISPLAY_NAME = "YAML Embedded Languages";
 const PUBLISHER = "harrydowning";
 const INJECTION_PATH = "./syntaxes/injection.json";
@@ -156,7 +156,7 @@ const getPackageJson = (languages) => ({
           },
           default: {},
           description:
-            "Use the key to define the language identifier with regex. Use the value to specify the language textMate scopeName.",
+            "Use the key to define the language identifier with regex. Use the value to specify the language TextMate 'scopeName'. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties 'name' and 'scopeName'.",
         },
       },
     },
