@@ -15,106 +15,43 @@ const REPOSITORY_SUFFIX = "block-scalar";
 const GLOBAL_STATE_VERSION = "version";
 
 const LANGUAGES = {
-  c: {
-    name: "c",
-    scopeName: "source.c",
-  },
-  clojure: {
-    name: "clojure",
-    scopeName: "source.clojure",
-  },
+  c: "source.c",
+  clojure: "source.clojure",
   coffee: {
     name: "coffeescript",
     scopeName: "source.coffee",
   },
-  cpp: {
-    name: "cpp",
-    scopeName: "source.cpp",
-  },
+  cpp: "source.cpp",
   "c\\+\\+": {
     name: "cpp",
     scopeName: "source.cpp",
   },
-  csharp: {
-    name: "csharp",
-    scopeName: "source.csharp",
-  },
-  css: {
-    name: "css",
-    scopeName: "source.css",
-  },
-  diff: {
-    name: "diff",
-    scopeName: "source.diff",
-  },
-  dockerfile: {
-    name: "dockerfile",
-    scopeName: "source.dockerfile",
-  },
-  dosbatch: {
-    name: "dosbatch",
-    scopeName: "source.dosbatch",
-  },
-  fsharp: {
-    name: "fsharp",
-    scopeName: "source.fsharp",
-  },
-  go: {
-    name: "go",
-    scopeName: "source.go",
-  },
-  groovy: {
-    name: "groovy",
-    scopeName: "source.groovy",
-  },
-  html: {
-    name: "html",
-    scopeName: "text.html.derivative",
-  },
-  java: {
-    name: "java",
-    scopeName: "source.java",
-  },
-  javascript: {
-    name: "javascript",
-    scopeName: "source.js",
-  },
+  csharp: "source.csharp",
+  css: "source.css",
+  diff: "source.diff",
+  dockerfile: "source.dockerfile",
+  dosbatch: "source.dosbatch",
+  fsharp: "source.fsharp",
+  go: "source.go",
+  groovy: "source.groovy",
+  html: "text.html.derivative",
+  java: "source.java",
+  javascript: "source.js",
   js: {
     name: "javascript",
     scopeName: "source.js",
   },
-  json: {
-    name: "json",
-    scopeName: "source.json",
-  },
-  tex: {
-    name: "tex",
-    scopeName: "text.tex",
-  },
-  latex: {
-    name: "latex",
-    scopeName: "text.tex",
-  },
-  lua: {
-    name: "lua",
-    scopeName: "source.lua",
-  },
-  makefile: {
-    name: "makefile",
-    scopeName: "source.makefile",
-  },
-  markdown: {
-    name: "markdown",
-    scopeName: "text.html.markdown",
-  },
+  json: "source.json",
+  tex: "text.tex",
+  latex: "text.tex",
+  lua: "source.lua",
+  makefile: "source.makefile",
+  markdown: "text.html.markdown",
   objc: {
     name: "objective-c",
     scopeName: "source.objc",
   },
-  perl: {
-    name: "perl",
-    scopeName: "source.perl",
-  },
+  perl: "source.perl",
   pip: {
     name: "pip-requirements",
     scopeName: "source.pip-requirements",
@@ -127,66 +64,27 @@ const LANGUAGES = {
     name: "javascript",
     scopeName: "source.js",
   },
-  powershell: {
-    name: "powershell",
-    scopeName: "source.powershell",
-  },
-  properties: {
-    name: "properties",
-    scopeName: "source.properties",
-  },
-  python: {
-    name: "python",
-    scopeName: "source.python",
-  },
+  powershell: "source.powershell",
+  properties: "source.properties",
+  python: "source.python",
   py: {
     name: "python",
     scopeName: "source.python",
   },
-  r: {
-    name: "r",
-    scopeName: "source.r",
-  },
-  regex: {
-    name: "regex",
-    scopeName: "source.regexp.python",
-  },
-  ruby: {
-    name: "ruby",
-    scopeName: "source.ruby",
-  },
-  rust: {
-    name: "rust",
-    scopeName: "source.rust",
-  },
-  scss: {
-    name: "scss",
-    scopeName: "source.css.scss",
-  },
-  shaderlab: {
-    name: "shaderlab",
-    scopeName: "source.shaderlab",
-  },
+  r: "source.r",
+  regex: "source.regexp.python",
+  ruby: "source.ruby",
+  rust: "source.rust",
+  scss: "source.css.scss",
+  shaderlab: "source.shaderlab",
   shell: {
     name: "shellscript",
     scopeName: "source.shell",
   },
-  slim: {
-    name: "slim",
-    scopeName: "source.slim",
-  },
-  sql: {
-    name: "sql",
-    scopeName: "source.sql",
-  },
-  swift: {
-    name: "swift",
-    scopeName: "source.swift",
-  },
-  typescript: {
-    name: "typescript",
-    scopeName: "source.ts",
-  },
+  slim: "source.slim",
+  sql: "source.sql",
+  swift: "source.swift",
+  typescript: "source.ts",
   ts: {
     name: "typescript",
     scopeName: "source.ts",
@@ -195,14 +93,8 @@ const LANGUAGES = {
     name: "typescriptreact",
     scopeName: "source.tsx",
   },
-  xml: {
-    name: "xml",
-    scopeName: "text.xml",
-  },
-  yaml: {
-    name: "yaml",
-    scopeName: "source.yaml",
-  },
+  xml: "text.xml",
+  yaml: "source.yaml",
 };
 
 const getEmbeddedLanguages = (languages) => {
@@ -251,7 +143,15 @@ const getPackageJson = (languages) => ({
           type: "object",
           patternProperties: {
             "^.*$": {
-              type: "string",
+              type: ["string", "object"],
+              properties: {
+                name: {
+                  type: "string",
+                },
+                scopeName: {
+                  type: "string",
+                },
+              },
             },
           },
           default: {},
@@ -345,7 +245,24 @@ const write = (filename, data) => {
   return true;
 };
 
+const normalizeLanguages = (languages) => {
+  const normalizedLanguages = {};
+  for (const id in languages) {
+    const language = languages[id];
+    if (typeof language === "string") {
+      normalizedLanguages[id] = {
+        name: id,
+        scopeName: language,
+      };
+    } else {
+      normalizedLanguages[id] = language;
+    }
+  }
+  return normalizedLanguages;
+};
+
 const generateFiles = (languages = LANGUAGES) => {
+  languages = normalizeLanguages(languages);
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
 
@@ -395,7 +312,7 @@ const activate = (context) => {
 const deactivate = () => {};
 
 if (DEV_MODE) {
-  generateFiles(LANGUAGES);
+  generateFiles();
 }
 
 module.exports = {

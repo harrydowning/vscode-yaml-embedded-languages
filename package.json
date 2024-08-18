@@ -92,7 +92,18 @@
           "type": "object",
           "patternProperties": {
             "^.*$": {
-              "type": "string"
+              "type": [
+                "string",
+                "object"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "scopeName": {
+                  "type": "string"
+                }
+              }
             }
           },
           "default": {},
