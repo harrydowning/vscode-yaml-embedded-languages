@@ -15,59 +15,200 @@ const REPOSITORY_SUFFIX = "block-scalar";
 const GLOBAL_STATE_VERSION = "version";
 
 const LANGUAGES = {
-  c: "source.c",
-  clojure: "source.clojure",
-  coffee: "source.coffee",
-  cpp: "source.cpp",
-  "c\\+\\+": "source.cpp",
-  csharp: "source.csharp",
-  css: "source.css",
-  diff: "source.diff",
-  dockerfile: "source.dockerfile",
-  dosbatch: "source.dosbatch",
-  fsharp: "source.fsharp",
-  go: "source.go",
-  groovy: "source.groovy",
-  html: "text.html.derivative",
-  java: "source.java",
-  javascript: "source.js",
-  js: "source.js",
-  json: "source.json",
-  tex: "text.tex",
-  latex: "text.tex",
-  lua: "source.lua",
-  makefile: "source.makefile",
-  markdown: "text.html.markdown",
-  objc: "source.objc",
-  perl: "source.perl",
-  pip: "source.pip-requirements",
-  requirements: "source.pip-requirements",
-  powerfx: "source.js",
-  powershell: "source.powershell",
-  properties: "source.properties",
-  python: "source.python",
-  py: "source.python",
-  r: "source.r",
-  regex: "source.regexp.python",
-  ruby: "source.ruby",
-  rust: "source.rust",
-  scss: "source.css.scss",
-  shaderlab: "source.shaderlab",
-  shell: "source.shell",
-  slim: "source.slim",
-  sql: "source.sql",
-  swift: "source.swift",
-  typescript: "source.ts",
-  ts: "source.ts",
-  tsx: "source.tsx",
-  xml: "text.xml",
-  yaml: "source.yaml",
+  c: {
+    name: "c",
+    scopeName: "source.c",
+  },
+  clojure: {
+    name: "clojure",
+    scopeName: "source.clojure",
+  },
+  coffee: {
+    name: "coffeescript",
+    scopeName: "source.coffee",
+  },
+  cpp: {
+    name: "cpp",
+    scopeName: "source.cpp",
+  },
+  "c\\+\\+": {
+    name: "cpp",
+    scopeName: "source.cpp",
+  },
+  csharp: {
+    name: "csharp",
+    scopeName: "source.csharp",
+  },
+  css: {
+    name: "css",
+    scopeName: "source.css",
+  },
+  diff: {
+    name: "diff",
+    scopeName: "source.diff",
+  },
+  dockerfile: {
+    name: "dockerfile",
+    scopeName: "source.dockerfile",
+  },
+  dosbatch: {
+    name: "dosbatch",
+    scopeName: "source.dosbatch",
+  },
+  fsharp: {
+    name: "fsharp",
+    scopeName: "source.fsharp",
+  },
+  go: {
+    name: "go",
+    scopeName: "source.go",
+  },
+  groovy: {
+    name: "groovy",
+    scopeName: "source.groovy",
+  },
+  html: {
+    name: "html",
+    scopeName: "text.html.derivative",
+  },
+  java: {
+    name: "java",
+    scopeName: "source.java",
+  },
+  javascript: {
+    name: "javascript",
+    scopeName: "source.js",
+  },
+  js: {
+    name: "javascript",
+    scopeName: "source.js",
+  },
+  json: {
+    name: "json",
+    scopeName: "source.json",
+  },
+  tex: {
+    name: "tex",
+    scopeName: "text.tex",
+  },
+  latex: {
+    name: "latex",
+    scopeName: "text.tex",
+  },
+  lua: {
+    name: "lua",
+    scopeName: "source.lua",
+  },
+  makefile: {
+    name: "makefile",
+    scopeName: "source.makefile",
+  },
+  markdown: {
+    name: "markdown",
+    scopeName: "text.html.markdown",
+  },
+  objc: {
+    name: "objective-c",
+    scopeName: "source.objc",
+  },
+  perl: {
+    name: "perl",
+    scopeName: "source.perl",
+  },
+  pip: {
+    name: "pip-requirements",
+    scopeName: "source.pip-requirements",
+  },
+  requirements: {
+    name: "pip-requirements",
+    scopeName: "source.pip-requirements",
+  },
+  powerfx: {
+    name: "javascript",
+    scopeName: "source.js",
+  },
+  powershell: {
+    name: "powershell",
+    scopeName: "source.powershell",
+  },
+  properties: {
+    name: "properties",
+    scopeName: "source.properties",
+  },
+  python: {
+    name: "python",
+    scopeName: "source.python",
+  },
+  py: {
+    name: "python",
+    scopeName: "source.python",
+  },
+  r: {
+    name: "r",
+    scopeName: "source.r",
+  },
+  regex: {
+    name: "regex",
+    scopeName: "source.regexp.python",
+  },
+  ruby: {
+    name: "ruby",
+    scopeName: "source.ruby",
+  },
+  rust: {
+    name: "rust",
+    scopeName: "source.rust",
+  },
+  scss: {
+    name: "scss",
+    scopeName: "source.css.scss",
+  },
+  shaderlab: {
+    name: "shaderlab",
+    scopeName: "source.shaderlab",
+  },
+  shell: {
+    name: "shellscript",
+    scopeName: "source.shell",
+  },
+  slim: {
+    name: "slim",
+    scopeName: "source.slim",
+  },
+  sql: {
+    name: "sql",
+    scopeName: "source.sql",
+  },
+  swift: {
+    name: "swift",
+    scopeName: "source.swift",
+  },
+  typescript: {
+    name: "typescript",
+    scopeName: "source.ts",
+  },
+  ts: {
+    name: "typescript",
+    scopeName: "source.ts",
+  },
+  tsx: {
+    name: "typescriptreact",
+    scopeName: "source.tsx",
+  },
+  xml: {
+    name: "xml",
+    scopeName: "text.xml",
+  },
+  yaml: {
+    name: "yaml",
+    scopeName: "source.yaml",
+  },
 };
 
 const getEmbeddedLanguages = (languages) => {
-  const names = Object.keys(languages);
+  const ids = Object.keys(languages);
   return Object.fromEntries(
-    names.map((name) => [`${LANGUAGE_SCOPE_PREFIX}.${name}`, name]),
+    ids.map((id) => [`${LANGUAGE_SCOPE_PREFIX}.${id}`, languages[id].name]),
   );
 };
 
@@ -126,19 +267,19 @@ const getPackageJson = (languages) => ({
 });
 
 const getPatterns = (languages) => {
-  const names = Object.keys(languages);
-  return names.map((name) => ({
-    include: `#${name}-${REPOSITORY_SUFFIX}`,
+  const ids = Object.keys(languages);
+  return ids.map((id) => ({
+    include: `#${id}-${REPOSITORY_SUFFIX}`,
   }));
 };
 
 const getRepository = (languages) => {
   const entries = Object.entries(languages);
   return Object.fromEntries(
-    entries.map(([name, scopeName]) => [
-      `${name}-${REPOSITORY_SUFFIX}`,
+    entries.map(([id, { scopeName }]) => [
+      `${id}-${REPOSITORY_SUFFIX}`,
       {
-        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${name})[ \t]*\\n)`,
+        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${id})[ \t]*\\n)`,
         beginCaptures: {
           1: {
             name: "keyword.control.flow.block-scalar.literal.yaml",
@@ -170,7 +311,7 @@ const getRepository = (languages) => {
           {
             begin: "^([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
-            name: `${LANGUAGE_SCOPE_PREFIX}.${name}`,
+            name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
             patterns: [{ include: scopeName }],
           },
         ],
