@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.3.4] - 2024-08-18
+
+### Fixed
+
+- Correct language names (Issue [#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
+
 ## [0.3.3] - 2024-07-06
 
 ### Changed
