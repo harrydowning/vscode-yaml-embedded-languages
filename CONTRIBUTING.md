@@ -11,12 +11,12 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 ## Development Workflow
 
-- Implement changes, ensuring any to `package.json` or `syntaxes/injection.json` are reflected in `extension.js`
+- Implement changes, noting that `package.json` is partially generated and `syntaxes/injection.json` is fully generated so relevant changes to these should be made in `extension.js`
 - Run `node extension.js -dev` to update `package.json` and `syntaxes/injection.json`
-- Use F5 within Vs Code to test the extension
+- Use F5 within VS Code to test the extension
 
 ## Release Workflow
 
-- Update `VERSION` in `extension.js` and run `node extension.js -dev`
+- Update `version` in `package.json` and run `npm i` to update `package-lock.json`
 - Update `CHANGELOG.md`
 - Merge to master with `[release]` in the commit message
