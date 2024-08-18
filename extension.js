@@ -1,15 +1,12 @@
 const DEV_MODE = process.argv?.[2] == "-dev";
 const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
+const packageJson = require("./package.json");
 
-const NAME = "yaml-embedded-languages";
-const VERSION = "0.4.0";
-const DISPLAY_NAME = "YAML Embedded Languages";
-const PUBLISHER = "harrydowning";
 const INJECTION_PATH = "./syntaxes/injection.json";
-const SCOPE_NAME = `${NAME}.injection`;
+const SCOPE_NAME = `${packageJson.name}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
-const INCLUDE_CONFIG = `${NAME}.${SUB_INCLUDE_CONFIG}`;
+const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
 const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline";
 const REPOSITORY_SUFFIX = "block-scalar";
 const GLOBAL_STATE_VERSION = "version";
@@ -105,28 +102,7 @@ const getEmbeddedLanguages = (languages) => {
 };
 
 const getPackageJson = (languages) => ({
-  name: NAME,
-  version: VERSION,
-  displayName: DISPLAY_NAME,
-  description: "Support for syntax highlighting within YAML block-scalars.",
-  icon: "images/icon.png",
-  publisher: PUBLISHER,
-  author: {
-    name: "Harry Downing",
-    email: "harry.downing17@gmail.com",
-  },
-  homepage: "https://github.com/harrydowning/yaml-embedded-languages#readme",
-  repository: {
-    type: "git",
-    url: "https://github.com/harrydowning/yaml-embedded-languages.git",
-  },
-  license: "MIT",
-  engines: {
-    vscode: "^1.74.0",
-  },
-  categories: ["Programming Languages"],
-  activationEvents: ["onStartupFinished"],
-  main: "extension.js",
+  ...packageJson,
   contributes: {
     grammars: [
       {
@@ -137,7 +113,7 @@ const getPackageJson = (languages) => ({
       },
     ],
     configuration: {
-      title: DISPLAY_NAME,
+      title: packageJson.displayName,
       properties: {
         [INCLUDE_CONFIG]: {
           type: "object",
@@ -160,9 +136,6 @@ const getPackageJson = (languages) => ({
         },
       },
     },
-  },
-  devDependencies: {
-    "@vscode/vsce": "^2.29.0",
   },
 });
 
@@ -273,7 +246,7 @@ const generateFiles = (languages = LANGUAGES) => {
 };
 
 const updateExtension = () => {
-  const settings = vscode.workspace.getConfiguration(NAME);
+  const settings = vscode.workspace.getConfiguration(packageJson.name);
   const includeLanguages = settings[SUB_INCLUDE_CONFIG];
   const allLanguages = { ...LANGUAGES, ...includeLanguages };
 
@@ -291,8 +264,7 @@ const updateExtension = () => {
 };
 
 const activate = (context) => {
-  const extension = vscode.extensions.getExtension(`${PUBLISHER}.${NAME}`);
-  const currentVersion = extension.packageJSON.version;
+  const currentVersion = packageJson.version;
   const previousVersion = context.globalState.get(GLOBAL_STATE_VERSION);
 
   if (previousVersion !== currentVersion) {
