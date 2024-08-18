@@ -1,6 +1,6 @@
 {
   "name": "yaml-embedded-languages",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
   "icon": "images/icon.png",
@@ -37,9 +37,9 @@
         "embeddedLanguages": {
           "meta.embedded.inline.c": "c",
           "meta.embedded.inline.clojure": "clojure",
-          "meta.embedded.inline.coffee": "coffee",
+          "meta.embedded.inline.coffee": "coffeescript",
           "meta.embedded.inline.cpp": "cpp",
-          "meta.embedded.inline.c\\+\\+": "c\\+\\+",
+          "meta.embedded.inline.c\\+\\+": "cpp",
           "meta.embedded.inline.csharp": "csharp",
           "meta.embedded.inline.css": "css",
           "meta.embedded.inline.diff": "diff",
@@ -51,35 +51,35 @@
           "meta.embedded.inline.html": "html",
           "meta.embedded.inline.java": "java",
           "meta.embedded.inline.javascript": "javascript",
-          "meta.embedded.inline.js": "js",
+          "meta.embedded.inline.js": "javascript",
           "meta.embedded.inline.json": "json",
           "meta.embedded.inline.tex": "tex",
           "meta.embedded.inline.latex": "latex",
           "meta.embedded.inline.lua": "lua",
           "meta.embedded.inline.makefile": "makefile",
           "meta.embedded.inline.markdown": "markdown",
-          "meta.embedded.inline.objc": "objc",
+          "meta.embedded.inline.objc": "objective-c",
           "meta.embedded.inline.perl": "perl",
-          "meta.embedded.inline.pip": "pip",
-          "meta.embedded.inline.requirements": "requirements",
-          "meta.embedded.inline.powerfx": "powerfx",
+          "meta.embedded.inline.pip": "pip-requirements",
+          "meta.embedded.inline.requirements": "pip-requirements",
+          "meta.embedded.inline.powerfx": "javascript",
           "meta.embedded.inline.powershell": "powershell",
           "meta.embedded.inline.properties": "properties",
           "meta.embedded.inline.python": "python",
-          "meta.embedded.inline.py": "py",
+          "meta.embedded.inline.py": "python",
           "meta.embedded.inline.r": "r",
           "meta.embedded.inline.regex": "regex",
           "meta.embedded.inline.ruby": "ruby",
           "meta.embedded.inline.rust": "rust",
           "meta.embedded.inline.scss": "scss",
           "meta.embedded.inline.shaderlab": "shaderlab",
-          "meta.embedded.inline.shell": "shell",
+          "meta.embedded.inline.shell": "shellscript",
           "meta.embedded.inline.slim": "slim",
           "meta.embedded.inline.sql": "sql",
           "meta.embedded.inline.swift": "swift",
           "meta.embedded.inline.typescript": "typescript",
-          "meta.embedded.inline.ts": "ts",
-          "meta.embedded.inline.tsx": "tsx",
+          "meta.embedded.inline.ts": "typescript",
+          "meta.embedded.inline.tsx": "typescriptreact",
           "meta.embedded.inline.xml": "xml",
           "meta.embedded.inline.yaml": "yaml"
         }
@@ -92,11 +92,22 @@
           "type": "object",
           "patternProperties": {
             "^.*$": {
-              "type": "string"
+              "type": [
+                "string",
+                "object"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "scopeName": {
+                  "type": "string"
+                }
+              }
             }
           },
           "default": {},
-          "description": "Use the key to define the language identifier with regex. Use the value to specify the language textMate scopeName."
+          "description": "Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName`."
         }
       }
     }

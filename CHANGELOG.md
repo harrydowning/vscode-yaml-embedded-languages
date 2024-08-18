@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.4.0] - 2024-08-18
+
+### Added
+
+- Option to specify language name in `yaml-embedded-languages.include` config.
+
+### Fixed
+
+- Correct language names (Issue [#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
+
 ## [0.3.3] - 2024-07-06
 
 ### Changed
@@ -67,7 +77,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.3...HEAD
+[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.0...v0.3.1

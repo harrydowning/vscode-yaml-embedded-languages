@@ -3,7 +3,7 @@ const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
 
 const NAME = "yaml-embedded-languages";
-const VERSION = "0.3.3";
+const VERSION = "0.4.0";
 const DISPLAY_NAME = "YAML Embedded Languages";
 const PUBLISHER = "harrydowning";
 const INJECTION_PATH = "./syntaxes/injection.json";
@@ -17,9 +17,15 @@ const GLOBAL_STATE_VERSION = "version";
 const LANGUAGES = {
   c: "source.c",
   clojure: "source.clojure",
-  coffee: "source.coffee",
+  coffee: {
+    name: "coffeescript",
+    scopeName: "source.coffee",
+  },
   cpp: "source.cpp",
-  "c\\+\\+": "source.cpp",
+  "c\\+\\+": {
+    name: "cpp",
+    scopeName: "source.cpp",
+  },
   csharp: "source.csharp",
   css: "source.css",
   diff: "source.diff",
@@ -31,43 +37,70 @@ const LANGUAGES = {
   html: "text.html.derivative",
   java: "source.java",
   javascript: "source.js",
-  js: "source.js",
+  js: {
+    name: "javascript",
+    scopeName: "source.js",
+  },
   json: "source.json",
   tex: "text.tex",
   latex: "text.tex",
   lua: "source.lua",
   makefile: "source.makefile",
   markdown: "text.html.markdown",
-  objc: "source.objc",
+  objc: {
+    name: "objective-c",
+    scopeName: "source.objc",
+  },
   perl: "source.perl",
-  pip: "source.pip-requirements",
-  requirements: "source.pip-requirements",
-  powerfx: "source.js",
+  pip: {
+    name: "pip-requirements",
+    scopeName: "source.pip-requirements",
+  },
+  requirements: {
+    name: "pip-requirements",
+    scopeName: "source.pip-requirements",
+  },
+  powerfx: {
+    name: "javascript",
+    scopeName: "source.js",
+  },
   powershell: "source.powershell",
   properties: "source.properties",
   python: "source.python",
-  py: "source.python",
+  py: {
+    name: "python",
+    scopeName: "source.python",
+  },
   r: "source.r",
   regex: "source.regexp.python",
   ruby: "source.ruby",
   rust: "source.rust",
   scss: "source.css.scss",
   shaderlab: "source.shaderlab",
-  shell: "source.shell",
+  shell: {
+    name: "shellscript",
+    scopeName: "source.shell",
+  },
   slim: "source.slim",
   sql: "source.sql",
   swift: "source.swift",
   typescript: "source.ts",
-  ts: "source.ts",
-  tsx: "source.tsx",
+  ts: {
+    name: "typescript",
+    scopeName: "source.ts",
+  },
+  tsx: {
+    name: "typescriptreact",
+    scopeName: "source.tsx",
+  },
   xml: "text.xml",
   yaml: "source.yaml",
 };
 
 const getEmbeddedLanguages = (languages) => {
-  const names = Object.keys(languages);
+  const ids = Object.keys(languages);
   return Object.fromEntries(
-    names.map((name) => [`${LANGUAGE_SCOPE_PREFIX}.${name}`, name]),
+    ids.map((id) => [`${LANGUAGE_SCOPE_PREFIX}.${id}`, languages[id].name]),
   );
 };
 
@@ -110,12 +143,20 @@ const getPackageJson = (languages) => ({
           type: "object",
           patternProperties: {
             "^.*$": {
-              type: "string",
+              type: ["string", "object"],
+              properties: {
+                name: {
+                  type: "string",
+                },
+                scopeName: {
+                  type: "string",
+                },
+              },
             },
           },
           default: {},
           description:
-            "Use the key to define the language identifier with regex. Use the value to specify the language textMate scopeName.",
+            "Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName`.",
         },
       },
     },
@@ -126,19 +167,19 @@ const getPackageJson = (languages) => ({
 });
 
 const getPatterns = (languages) => {
-  const names = Object.keys(languages);
-  return names.map((name) => ({
-    include: `#${name}-${REPOSITORY_SUFFIX}`,
+  const ids = Object.keys(languages);
+  return ids.map((id) => ({
+    include: `#${id}-${REPOSITORY_SUFFIX}`,
   }));
 };
 
 const getRepository = (languages) => {
   const entries = Object.entries(languages);
   return Object.fromEntries(
-    entries.map(([name, scopeName]) => [
-      `${name}-${REPOSITORY_SUFFIX}`,
+    entries.map(([id, { scopeName }]) => [
+      `${id}-${REPOSITORY_SUFFIX}`,
       {
-        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${name})[ \t]*\\n)`,
+        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${id})[ \t]*\\n)`,
         beginCaptures: {
           1: {
             name: "keyword.control.flow.block-scalar.literal.yaml",
@@ -170,7 +211,7 @@ const getRepository = (languages) => {
           {
             begin: "^([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
-            name: `${LANGUAGE_SCOPE_PREFIX}.${name}`,
+            name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
             patterns: [{ include: scopeName }],
           },
         ],
@@ -204,7 +245,24 @@ const write = (filename, data) => {
   return true;
 };
 
+const normalizeLanguages = (languages) => {
+  const normalizedLanguages = {};
+  for (const id in languages) {
+    const language = languages[id];
+    if (typeof language === "string") {
+      normalizedLanguages[id] = {
+        name: id,
+        scopeName: language,
+      };
+    } else {
+      normalizedLanguages[id] = language;
+    }
+  }
+  return normalizedLanguages;
+};
+
 const generateFiles = (languages = LANGUAGES) => {
+  languages = normalizeLanguages(languages);
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
 
@@ -254,7 +312,7 @@ const activate = (context) => {
 const deactivate = () => {};
 
 if (DEV_MODE) {
-  generateFiles(LANGUAGES);
+  generateFiles();
 }
 
 module.exports = {
