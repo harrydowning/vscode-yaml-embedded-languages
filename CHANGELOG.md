@@ -6,28 +6,41 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+
+- `stripIndent` language config option
+
+### Fixed
+
+- Markdown indentation ([#13](https://github.com/harrydowning/yaml-embedded-languages/issues/13))
+- Highlighting for new YAML grammar
+
+### Changed
+
+- Fully generated `package.json` to be partially generated
+
 ## [0.4.0] - 2024-08-18
 
 ### Added
 
-- Option to specify language name in `yaml-embedded-languages.include` config.
+- Option to specify language name in `yaml-embedded-languages.include` config
 
 ### Fixed
 
-- Correct language names (Issue [#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
+- Built-in language names ([#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
 
 ## [0.3.3] - 2024-07-06
 
 ### Changed
 
-- Only update extension files on version update
+- Extension to generate files on update
 - Doc formatting and links
 
 ## [0.3.2] - 2024-07-06
 
 ### Fixed
 
-- User languages reset on extension update (Issue [#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
+- User languages reset on extension update ([#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
 - User language override precedence
 
 ## [0.3.1] - 2024-06-29
@@ -40,19 +53,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Support for Power Fx (Issue [#17](https://github.com/harrydowning/yaml-embedded-languages/issues/17))
+- Support for Power Fx ([#17](https://github.com/harrydowning/yaml-embedded-languages/issues/17))
 
 ## [0.2.0] - 2023-07-29
 
 ### Added
 
-- Issue [#9](https://github.com/harrydowning/yaml-embedded-languages/issues/9)
+- Support for GitHub Actions ([#9](https://github.com/harrydowning/yaml-embedded-languages/issues/9))
 - `CONTRIBUTING.md` documentation
 - `-dev` flag on `extension.js`
 
 ### Fixed
 
-- Issue [#7](https://github.com/harrydowning/yaml-embedded-languages/issues/7)
+- Path separators on macOS ([#7](https://github.com/harrydowning/yaml-embedded-languages/issues/7))
 
 ### Changed
 
