@@ -185,7 +185,7 @@ const getRepository = (languages) => {
         end: "^(?=\\S)|(?!\\G)",
         patterns: [
           {
-            begin: "^([ ]+)(?! )",
+            begin: "(?>^|\\G)([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
             while: stripIndent ? "\\1" : undefined,
             name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
