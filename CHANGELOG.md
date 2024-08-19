@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Fixed
 
 - Markdown indentation ([#13](https://github.com/harrydowning/yaml-embedded-languages/issues/13))
+- Highlighting for new YAML grammar
 
 ### Changed
 
