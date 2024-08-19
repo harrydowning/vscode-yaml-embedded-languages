@@ -178,7 +178,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.c",
           "patterns": [
@@ -222,7 +222,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.clojure",
           "patterns": [
@@ -266,7 +266,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.coffee",
           "patterns": [
@@ -310,7 +310,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.cpp",
           "patterns": [
@@ -354,7 +354,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.c\\+\\+",
           "patterns": [
@@ -398,7 +398,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.csharp",
           "patterns": [
@@ -442,7 +442,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.css",
           "patterns": [
@@ -486,7 +486,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.diff",
           "patterns": [
@@ -530,7 +530,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.dockerfile",
           "patterns": [
@@ -574,7 +574,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.dosbatch",
           "patterns": [
@@ -618,7 +618,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.fsharp",
           "patterns": [
@@ -662,7 +662,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.go",
           "patterns": [
@@ -706,7 +706,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.groovy",
           "patterns": [
@@ -750,7 +750,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.html",
           "patterns": [
@@ -794,7 +794,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.java",
           "patterns": [
@@ -838,7 +838,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.javascript",
           "patterns": [
@@ -882,7 +882,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.js",
           "patterns": [
@@ -926,7 +926,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.json",
           "patterns": [
@@ -970,7 +970,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.tex",
           "patterns": [
@@ -1014,7 +1014,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.latex",
           "patterns": [
@@ -1058,7 +1058,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.lua",
           "patterns": [
@@ -1102,7 +1102,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.makefile",
           "patterns": [
@@ -1146,7 +1146,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "while": "\\1",
           "name": "meta.embedded.inline.markdown",
@@ -1191,7 +1191,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.objc",
           "patterns": [
@@ -1235,7 +1235,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.perl",
           "patterns": [
@@ -1279,7 +1279,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.pip",
           "patterns": [
@@ -1323,7 +1323,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.requirements",
           "patterns": [
@@ -1367,7 +1367,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.powerfx",
           "patterns": [
@@ -1411,7 +1411,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.powershell",
           "patterns": [
@@ -1455,7 +1455,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.properties",
           "patterns": [
@@ -1499,7 +1499,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.python",
           "patterns": [
@@ -1543,7 +1543,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.py",
           "patterns": [
@@ -1587,7 +1587,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.r",
           "patterns": [
@@ -1631,7 +1631,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.regex",
           "patterns": [
@@ -1675,7 +1675,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.ruby",
           "patterns": [
@@ -1719,7 +1719,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.rust",
           "patterns": [
@@ -1763,7 +1763,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.scss",
           "patterns": [
@@ -1807,7 +1807,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.shaderlab",
           "patterns": [
@@ -1851,7 +1851,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.shell",
           "patterns": [
@@ -1895,7 +1895,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.slim",
           "patterns": [
@@ -1939,7 +1939,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.sql",
           "patterns": [
@@ -1983,7 +1983,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.swift",
           "patterns": [
@@ -2027,7 +2027,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.typescript",
           "patterns": [
@@ -2071,7 +2071,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.ts",
           "patterns": [
@@ -2115,7 +2115,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.tsx",
           "patterns": [
@@ -2159,7 +2159,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.xml",
           "patterns": [
@@ -2203,7 +2203,7 @@
       "end": "^(?=\\S)|(?!\\G)",
       "patterns": [
         {
-          "begin": "^([ ]+)(?! )",
+          "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
           "name": "meta.embedded.inline.yaml",
           "patterns": [
