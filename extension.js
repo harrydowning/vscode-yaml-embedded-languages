@@ -43,7 +43,10 @@ const LANGUAGES = {
   latex: "text.tex",
   lua: "source.lua",
   makefile: "source.makefile",
-  markdown: "text.html.markdown",
+  markdown: {
+    scopeName: "text.html.markdown",
+    stripIndent: true,
+  },
   objc: {
     name: "objective-c",
     scopeName: "source.objc",
@@ -149,7 +152,7 @@ const getPatterns = (languages) => {
 const getRepository = (languages) => {
   const entries = Object.entries(languages);
   return Object.fromEntries(
-    entries.map(([id, { scopeName }]) => [
+    entries.map(([id, { scopeName, stripIndent }]) => [
       `${id}-${REPOSITORY_SUFFIX}`,
       {
         begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${id})[ \t]*\\n)`,
@@ -184,7 +187,7 @@ const getRepository = (languages) => {
           {
             begin: "^([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
-            while: "\\1",
+            while: stripIndent ? "\\1" : undefined,
             name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
             patterns: [{ include: scopeName }],
           },
@@ -222,14 +225,20 @@ const write = (filename, data) => {
 const normalizeLanguages = (languages) => {
   const normalizedLanguages = {};
   for (const id in languages) {
-    const language = languages[id];
+    let language = languages[id];
     if (typeof language === "string") {
+      language = { scopeName: language };
+    }
+
+    if (
+      typeof language === "object" &&
+      typeof language.scopeName === "string"
+    ) {
       normalizedLanguages[id] = {
-        name: id,
-        scopeName: language,
+        name: language.name || id,
+        scopeName: language.scopeName,
+        stripIndent: language.stripIndent || false,
       };
-    } else {
-      normalizedLanguages[id] = language;
     }
   }
   return normalizedLanguages;
