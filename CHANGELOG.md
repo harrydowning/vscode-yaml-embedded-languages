@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
 
-- Partially generate `package.json`
+- Fully generated `package.json` to be partially generated
 
 ## [0.4.0] - 2024-08-18
 
@@ -26,13 +26,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Correct language names ([#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
+- Built-in language names ([#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
 
 ## [0.3.3] - 2024-07-06
 
 ### Changed
 
-- Only update extension files on version update
+- Extension to generate files on update
 - Doc formatting and links
 
 ## [0.3.2] - 2024-07-06
