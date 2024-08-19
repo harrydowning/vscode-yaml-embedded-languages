@@ -184,6 +184,7 @@ const getRepository = (languages) => {
           {
             begin: "^([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
+            while: "\\1",
             name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
             patterns: [{ include: scopeName }],
           },

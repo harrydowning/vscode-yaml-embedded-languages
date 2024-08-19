@@ -180,6 +180,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.c",
           "patterns": [
             {
@@ -224,6 +225,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.clojure",
           "patterns": [
             {
@@ -268,6 +270,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.coffee",
           "patterns": [
             {
@@ -312,6 +315,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.cpp",
           "patterns": [
             {
@@ -356,6 +360,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.c\\+\\+",
           "patterns": [
             {
@@ -400,6 +405,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.csharp",
           "patterns": [
             {
@@ -444,6 +450,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.css",
           "patterns": [
             {
@@ -488,6 +495,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.diff",
           "patterns": [
             {
@@ -532,6 +540,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.dockerfile",
           "patterns": [
             {
@@ -576,6 +585,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.dosbatch",
           "patterns": [
             {
@@ -620,6 +630,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.fsharp",
           "patterns": [
             {
@@ -664,6 +675,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.go",
           "patterns": [
             {
@@ -708,6 +720,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.groovy",
           "patterns": [
             {
@@ -752,6 +765,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.html",
           "patterns": [
             {
@@ -796,6 +810,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.java",
           "patterns": [
             {
@@ -840,6 +855,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.javascript",
           "patterns": [
             {
@@ -884,6 +900,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.js",
           "patterns": [
             {
@@ -928,6 +945,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.json",
           "patterns": [
             {
@@ -972,6 +990,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.tex",
           "patterns": [
             {
@@ -1016,6 +1035,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.latex",
           "patterns": [
             {
@@ -1060,6 +1080,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.lua",
           "patterns": [
             {
@@ -1104,6 +1125,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.makefile",
           "patterns": [
             {
@@ -1148,6 +1170,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.markdown",
           "patterns": [
             {
@@ -1192,6 +1215,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.objc",
           "patterns": [
             {
@@ -1236,6 +1260,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.perl",
           "patterns": [
             {
@@ -1280,6 +1305,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.pip",
           "patterns": [
             {
@@ -1324,6 +1350,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.requirements",
           "patterns": [
             {
@@ -1368,6 +1395,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.powerfx",
           "patterns": [
             {
@@ -1412,6 +1440,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.powershell",
           "patterns": [
             {
@@ -1456,6 +1485,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.properties",
           "patterns": [
             {
@@ -1500,6 +1530,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.python",
           "patterns": [
             {
@@ -1544,6 +1575,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.py",
           "patterns": [
             {
@@ -1588,6 +1620,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.r",
           "patterns": [
             {
@@ -1632,6 +1665,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.regex",
           "patterns": [
             {
@@ -1676,6 +1710,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.ruby",
           "patterns": [
             {
@@ -1720,6 +1755,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.rust",
           "patterns": [
             {
@@ -1764,6 +1800,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.scss",
           "patterns": [
             {
@@ -1808,6 +1845,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.shaderlab",
           "patterns": [
             {
@@ -1852,6 +1890,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.shell",
           "patterns": [
             {
@@ -1896,6 +1935,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.slim",
           "patterns": [
             {
@@ -1940,6 +1980,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.sql",
           "patterns": [
             {
@@ -1984,6 +2025,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.swift",
           "patterns": [
             {
@@ -2028,6 +2070,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.typescript",
           "patterns": [
             {
@@ -2072,6 +2115,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.ts",
           "patterns": [
             {
@@ -2116,6 +2160,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.tsx",
           "patterns": [
             {
@@ -2160,6 +2205,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.xml",
           "patterns": [
             {
@@ -2204,6 +2250,7 @@
         {
           "begin": "^([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.yaml",
           "patterns": [
             {
