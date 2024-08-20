@@ -11,18 +11,19 @@ const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline";
 const REPOSITORY_SUFFIX = "block-scalar";
 const GLOBAL_STATE_VERSION = "version";
 
+/* eslint sort-keys: ["error", "asc"] */
 const LANGUAGES = {
   c: "source.c",
+  "c\\+\\+": {
+    name: "cpp",
+    scopeName: "source.cpp",
+  },
   clojure: "source.clojure",
   coffee: {
     name: "coffeescript",
     scopeName: "source.coffee",
   },
   cpp: "source.cpp",
-  "c\\+\\+": {
-    name: "cpp",
-    scopeName: "source.cpp",
-  },
   csharp: "source.csharp",
   css: "source.css",
   diff: "source.diff",
@@ -39,7 +40,6 @@ const LANGUAGES = {
     scopeName: "source.js",
   },
   json: "source.json",
-  tex: "text.tex",
   latex: "text.tex",
   lua: "source.lua",
   makefile: "source.makefile",
@@ -56,23 +56,23 @@ const LANGUAGES = {
     name: "pip-requirements",
     scopeName: "source.pip-requirements",
   },
-  requirements: {
-    name: "pip-requirements",
-    scopeName: "source.pip-requirements",
-  },
   powerfx: {
     name: "javascript",
     scopeName: "source.js",
   },
   powershell: "source.powershell",
   properties: "source.properties",
-  python: "source.python",
   py: {
     name: "python",
     scopeName: "source.python",
   },
+  python: "source.python",
   r: "source.r",
   regex: "source.regexp.python",
+  requirements: {
+    name: "pip-requirements",
+    scopeName: "source.pip-requirements",
+  },
   ruby: "source.ruby",
   rust: "source.rust",
   scss: "source.css.scss",
@@ -84,7 +84,7 @@ const LANGUAGES = {
   slim: "source.slim",
   sql: "source.sql",
   swift: "source.swift",
-  typescript: "source.ts",
+  tex: "text.tex",
   ts: {
     name: "typescript",
     scopeName: "source.ts",
@@ -93,9 +93,11 @@ const LANGUAGES = {
     name: "typescriptreact",
     scopeName: "source.tsx",
   },
+  typescript: "source.ts",
   xml: "text.xml",
   yaml: "source.yaml",
 };
+/* eslint-disable sort-keys */
 
 const getEmbeddedLanguages = (languages) => {
   const ids = Object.keys(languages);
