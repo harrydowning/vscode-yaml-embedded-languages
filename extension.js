@@ -13,6 +13,8 @@ const GLOBAL_STATE_VERSION = "version";
 
 /* eslint sort-keys: ["error", "asc"] */
 const LANGUAGES = {
+  bat: "source.batchfile",
+  bibtex: "text.bibtex",
   c: "source.c",
   "c\\+\\+": {
     name: "cpp",
@@ -23,16 +25,30 @@ const LANGUAGES = {
     name: "coffeescript",
     scopeName: "source.coffee",
   },
+  commit: {
+    name: "git-commit",
+    scopeName: "text.git-commit",
+  },
   cpp: "source.cpp",
   csharp: "source.csharp",
   css: "source.css",
+  cuda: {
+    name: "cuda-cpp",
+    scopeName: "source.cuda-cpp",
+  },
+  dart: "source.dart",
   diff: "source.diff",
+  dockercompose: "source.yaml",
   dockerfile: "source.dockerfile",
-  dosbatch: "source.dosbatch",
   fsharp: "source.fsharp",
   go: "source.go",
   groovy: "source.groovy",
+  handlebars: "text.html.handlebars",
+  hlsl: "source.hlsl",
   html: "text.html.derivative",
+  ignore: "source.ignore",
+  ini: "source.ini",
+  jade: "text.pug",
   java: "source.java",
   javascript: "source.js",
   js: {
@@ -40,18 +56,40 @@ const LANGUAGES = {
     scopeName: "source.js",
   },
   json: "source.json",
-  latex: "text.tex",
+  jsonc: "source.json.comments",
+  jsonl: "source.json.lines",
+  jsx: {
+    name: "javascriptreact",
+    scopeName: "source.js.jsx",
+  },
+  julia: "source.julia",
+  latex: "text.tex.latex",
+  less: "source.css.less",
+  log: "text.log",
   lua: "source.lua",
+  make: {
+    name: "makefile",
+    scopeName: "source.makefile",
+  },
   makefile: "source.makefile",
   markdown: {
     scopeName: "text.html.markdown",
     stripIndent: true,
   },
+  math: {
+    name: "markdown-math",
+    scopeName: "text.html.markdown.math",
+  },
   objc: {
     name: "objective-c",
     scopeName: "source.objc",
   },
+  objcpp: {
+    name: "objective-cpp",
+    scopeName: "source.objcpp",
+  },
   perl: "source.perl",
+  php: "text.html.php",
   pip: {
     name: "pip-requirements",
     scopeName: "source.pip-requirements",
@@ -68,10 +106,20 @@ const LANGUAGES = {
   },
   python: "source.python",
   r: "source.r",
+  raku: "source.perl.6",
+  razor: "text.html.cshtml",
+  rebase: {
+    name: "git-rebase",
+    scopeName: "text.git-rebase",
+  },
   regex: "source.regexp.python",
   requirements: {
     name: "pip-requirements",
     scopeName: "source.pip-requirements",
+  },
+  rst: {
+    name: "restructuredtext",
+    scopeName: "source.rst",
   },
   ruby: "source.ruby",
   rust: "source.rust",
@@ -94,7 +142,9 @@ const LANGUAGES = {
     scopeName: "source.tsx",
   },
   typescript: "source.ts",
+  vb: "source.asp.vb.net",
   xml: "text.xml",
+  xsl: "text.xml.xsl",
   yaml: "source.yaml",
 };
 /* eslint-disable sort-keys */
