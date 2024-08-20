@@ -10,9 +10,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "18"
-      - run: npm i --package-lock-only
+      - run: npm i
       - run: node extension.js -dev
       - run: "[[ -z $(git status --porcelain) ]]"
+      - run: npx eslint
   release:
     runs-on: ubuntu-latest
     needs: check

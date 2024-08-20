@@ -1,4 +1,4 @@
-const DEV_MODE = process.argv?.[2] == "-dev";
+const DEV_MODE = process.argv?.[2] === "-dev";
 const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
 const packageJson = require("./package.json");
