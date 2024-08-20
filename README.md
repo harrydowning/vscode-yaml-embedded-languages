@@ -18,47 +18,52 @@ Syntax highlighting within YAML block-scalars for [40+ built-in languages](#buil
 
 The following list shows all valid identifiers for the built-in languages:
 
-- c
-- clojure
-- coffee
-- cpp or c++
-- csharp
-- css
-- diff
-- dockerfile
-- dosbatch
-- fsharp
-- go
-- groovy
-- html
-- java
-- javascript or js
-- json
-- tex or latex
-- lua
-- makefile
-- markdown
-- objc
-- perl
-- pip or requirements
-- powerfx
-- powershell
-- properties
-- python or py
-- r
-- regex
-- ruby
-- rust
-- scss
-- shaderlab
-- shell
-- slim
-- sql
-- swift
-- typescript or ts
-- tsx
-- xml
-- yaml (Yes, YAML within YAML!)
+| Language         | Identifier            |
+| ---------------- | --------------------- |
+| c                | `c`                   |
+| clojure          | `clojure`             |
+| coffeescript     | `coffee`              |
+| cpp              | `cpp`, `c++`          |
+| csharp           | `csharp`              |
+| css              | `css`                 |
+| diff             | `diff`                |
+| dockerfile       | `dockerfile`          |
+| dosbatch         | `dosbatch`            |
+| fsharp           | `fsharp`              |
+| go               | `go`                  |
+| groovy           | `groovy`              |
+| html             | `html`                |
+| java             | `java`                |
+| javascript       | `js`, `javascript`    |
+| json             | `json`                |
+| latex            | `latex`               |
+| lua              | `lua`                 |
+| makefile         | `makefile`            |
+| markdown         | `markdown`            |
+| objective-c      | `objc`                |
+| perl             | `perl`                |
+| pip-requirements | `pip`, `requirements` |
+| power-fx\*       | `powerfx`             |
+| powershell       | `powershell`          |
+| properties       | `properties`          |
+| python           | `py`, `python`        |
+| r                | `r`                   |
+| regex\*          | `regex`               |
+| ruby             | `ruby`                |
+| rust             | `rust`                |
+| scss             | `scss`                |
+| shaderlab        | `shaderlab`           |
+| shellscript      | `shell`               |
+| slim             | `slim`                |
+| sql              | `sql`                 |
+| swift            | `swift`               |
+| tex              | `tex`                 |
+| typescript       | `ts`, `typescript`    |
+| typescriptreact  | `tsx`                 |
+| xml              | `xml`                 |
+| yaml             | `yaml`                |
+
+\*_Not actually a valid VS Code language_
 
 ## Requirements
 
