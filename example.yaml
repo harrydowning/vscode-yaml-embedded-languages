@@ -1,15 +1,57 @@
-example1: | # python
-  print('Hello World!')
+bat-example: | # bat
+  ECHO Hello World!
 
-example2: | # java
+bibtex-example: | # bibtex
+  @book{HelloWorld!}
+
+c-example: | # c
+  #include <stdio.h>
+  int main() {
+    printf("Hello World!");
+    return 0;
+  }
+
+clojure-example: | # clojure
+  (println "Hello, World!")
+
+coffeescript-example: | # coffee
+  console.log "Hello, World!"
+
+cpp-example: | # c++
+  #include <iostream>
+  int main()
+  {
+    std::cout << "Hello World!" << std::endl;
+    return 0;
+  }
+
+csharp-example: | # csharp
+  public class HelloWorld
+  {
+    public static void Main(string[] args)
+    {
+      System.Console.WriteLine("Hello, World!");
+    }
+  }
+
+css-example: | # css
+  .HelloWorld { }
+
+
+
+
+python-example: | # python
+  print("Hello World!")
+
+java-example: | # java
   class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World!"); 
     }
   }
 
-example3: | # js
-  console.log('Hello World!')
+javascript-example: | # js
+  console.log("Hello World!")
 
-example4: | # regex
+regex-example: | # regex
   [Hh]ello [Ww]orld!?

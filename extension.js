@@ -30,7 +30,7 @@ const LANGUAGES = {
     scopeName: "text.git-commit",
   },
   cpp: "source.cpp",
-  csharp: "source.csharp",
+  csharp: "source.cs",
   css: "source.css",
   cuda: {
     name: "cuda-cpp",

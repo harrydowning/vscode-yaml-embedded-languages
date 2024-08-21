@@ -613,7 +613,7 @@
           "name": "meta.embedded.inline.csharp",
           "patterns": [
             {
-              "include": "source.csharp"
+              "include": "source.cs"
             }
           ]
         }
