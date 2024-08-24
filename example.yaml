@@ -7,6 +7,7 @@ bibtex-example: | # bibtex
 c-example: | # c
   // First Line Issue
   #include <stdio.h>
+
   int main() {
     printf("Hello, World!");
     return 0;
@@ -21,6 +22,7 @@ coffeescript-example: | # coffee
 cpp-example: | # c++
   // First Line Issue
   #include <iostream>
+
   int main()
   {
     std::cout << "Hello, World!" << std::endl;
@@ -42,6 +44,7 @@ css-example: | # css
 cuda-cpp-example: | # cuda
   // First Line Issue
   #include <stdio.h>
+
   __global__ void hello_world(){
     printf("Hello, World!");
   }
@@ -74,21 +77,87 @@ fsharp-example: | # fsharp
   open System
   printfn "Hello, World!"
 
+git-commit-example: | # commit
 
+git-rebase-example: | # rebase
 
+go-example: | # go
+  package main
 
-python-example: | # python
-  print("Hello World!")
+  import "fmt"
+
+  func main() {
+    fmt.Println("Hello, World!")
+  }
+
+groovy-example: | # groovy
+  println 'Hello, World!'
+
+handlebars-example: | # handlebars
+  {{Hello}}, {{World}}!
+
+hlsl-example: | # hlsl
+  // First Line Issue
+  #ifdef GL_ES
+  precision mediump float;
+  #endif
+
+  uniform float u_time;
+
+  void main() {
+    gl_FragColor = vec4(1.0,0.0,0.0,1.0);
+  }
+
+html-example: | # html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hello, World!</title>
+    </head>
+    <body>
+      <h1>Hello, World!</h1>
+    </body>
+  </html>
+
+ignore-example: | # ignore
+
+ini-example: | # ini
+  [section]
+  message="Hello, World!"!
+
+jade-example: | # jade
+  //- First Line Issue
+  doctype html
+  html
+    head
+      title Hello, World!
+    body
+      h1 Hello, World!
 
 java-example: | # java
   class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello World!"); 
+        System.out.println("Hello, World!"); 
     }
   }
 
 javascript-example: | # js
-  console.log("Hello World!")
+  console.log("Hello, World!")
+
+javascriptreact-example: | # jsx
+  const HelloWorld = () => {
+    return <h1>Hello, World!</h1>;
+  }
+
+python-example: | # python
+  print("Hello World!")
+
+json-example: | # json
+  {
+    "message": "Hello, World!"
+  }
+
+
 
 regex-example: | # regex
   [Hh]ello [Ww]orld!?
