@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 
 - `stripIndent` language config option
+- Languages `bat`, `bibtex`, `cuda-cpp`, `dart`, `dockercompose`, `handlebars`, `hlsl`, `ini`, `jade`, `jsonc`, `jsonl`, `javascriptreact`, `julia`, `less`, `log`, `markdown-math`, `objective-cpp`, `php`, `raku`, `razor`, `restructuredtext`, `vb`, and `xsl`
+- Language aliases `c#`, `f#`, `make`
 
 ### Fixed
 
@@ -19,6 +21,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Fully generated `package.json` to be partially generated
 - `regex` language to use scope `source.js.regexp`
+- Extension logo
+
+### Removed
+
+- Languages `dosbatch` and `slim` (no built-in VS Code support)
 
 ## [0.4.0] - 2024-08-18
 

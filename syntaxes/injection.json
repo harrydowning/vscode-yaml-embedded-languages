@@ -39,6 +39,9 @@
       "include": "#dart-block-scalar"
     },
     {
+      "include": "#diff-block-scalar"
+    },
+    {
       "include": "#dockercompose-block-scalar"
     },
     {
@@ -605,6 +608,40 @@
           "patterns": [
             {
               "include": "source.dart"
+            }
+          ]
+        }
+      ]
+    },
+    "diff-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:diff)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
+          "name": "meta.embedded.inline.diff",
+          "patterns": [
+            {
+              "include": "source.diff"
             }
           ]
         }

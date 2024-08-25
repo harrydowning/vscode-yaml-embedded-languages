@@ -10,7 +10,7 @@
 
 ## Features
 
-Syntax highlighting within YAML block-scalars for [40+ built-in languages](#built-in-languages "Built-In Languages") and the ability to add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings "Extension Settings") configuration setting.
+Syntax highlighting within YAML block-scalars for [50+ built-in languages](#built-in-languages "Built-In Languages") and the ability to add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings "Extension Settings") configuration setting.
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
@@ -30,6 +30,7 @@ The following list shows all valid identifiers for the built-in languages:
 | css              | `css`                 |
 | cuda-cpp         | `cuda`                |
 | dart             | `dart`                |
+| diff             | `diff`                |
 | dockercompose    | `dockercompose`       |
 | dockerfile       | `dockerfile`          |
 | fsharp           | `fsharp`, `f#`        |

@@ -37,6 +37,10 @@ const LANGUAGES = {
     scopeName: "source.cuda-cpp",
   },
   dart: "source.dart",
+  diff: {
+    scopeName: "source.diff",
+    stripIndent: true,
+  },
   dockercompose: "source.yaml",
   dockerfile: "source.dockerfile",
   "f#": {

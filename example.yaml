@@ -61,6 +61,10 @@ dart-example: | # dart
     print('Hello, World!');
   }
 
+diff-example: | # diff
+  - Hello World!
+  + Hello, World!
+
 dockercompose-example: | # dockercompose
   services:
     hello-world:
