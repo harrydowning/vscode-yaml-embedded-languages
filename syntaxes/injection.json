@@ -24,9 +24,6 @@
       "include": "#coffee-block-scalar"
     },
     {
-      "include": "#commit-block-scalar"
-    },
-    {
       "include": "#cpp-block-scalar"
     },
     {
@@ -40,9 +37,6 @@
     },
     {
       "include": "#dart-block-scalar"
-    },
-    {
-      "include": "#diff-block-scalar"
     },
     {
       "include": "#dockercompose-block-scalar"
@@ -70,9 +64,6 @@
     },
     {
       "include": "#html-block-scalar"
-    },
-    {
-      "include": "#ignore-block-scalar"
     },
     {
       "include": "#ini-block-scalar"
@@ -166,9 +157,6 @@
     },
     {
       "include": "#razor-block-scalar"
-    },
-    {
-      "include": "#rebase-block-scalar"
     },
     {
       "include": "#regex-block-scalar"
@@ -457,39 +445,6 @@
         }
       ]
     },
-    "commit-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:commit)\\s*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "name": "entity.name.type.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.commit",
-          "patterns": [
-            {
-              "include": "text.git-commit"
-            }
-          ]
-        }
-      ]
-    },
     "cpp-block-scalar": {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cpp)\\s*\\n)",
       "beginCaptures": {
@@ -650,40 +605,6 @@
           "patterns": [
             {
               "include": "source.dart"
-            }
-          ]
-        }
-      ]
-    },
-    "diff-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:diff)\\s*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "name": "entity.name.type.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "while": "\\1",
-          "name": "meta.embedded.inline.diff",
-          "patterns": [
-            {
-              "include": "source.diff"
             }
           ]
         }
@@ -981,39 +902,6 @@
           "patterns": [
             {
               "include": "text.html.derivative"
-            }
-          ]
-        }
-      ]
-    },
-    "ignore-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ignore)\\s*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "name": "entity.name.type.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.ignore",
-          "patterns": [
-            {
-              "include": "source.ignore"
             }
           ]
         }
@@ -2039,39 +1927,6 @@
           "patterns": [
             {
               "include": "text.html.cshtml"
-            }
-          ]
-        }
-      ]
-    },
-    "rebase-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rebase)\\s*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "name": "entity.name.type.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.rebase",
-          "patterns": [
-            {
-              "include": "text.git-rebase"
             }
           ]
         }

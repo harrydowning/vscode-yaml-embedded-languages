@@ -29,10 +29,6 @@ const LANGUAGES = {
     name: "coffeescript",
     scopeName: "source.coffee",
   },
-  commit: {
-    name: "git-commit",
-    scopeName: "text.git-commit",
-  },
   cpp: "source.cpp",
   csharp: "source.cs",
   css: "source.css",
@@ -41,10 +37,6 @@ const LANGUAGES = {
     scopeName: "source.cuda-cpp",
   },
   dart: "source.dart",
-  diff: {
-    scopeName: "source.diff",
-    stripIndent: true,
-  },
   dockercompose: "source.yaml",
   dockerfile: "source.dockerfile",
   "f#": {
@@ -57,7 +49,6 @@ const LANGUAGES = {
   handlebars: "text.html.handlebars",
   hlsl: "source.hlsl",
   html: "text.html.derivative",
-  ignore: "source.ignore",
   ini: "source.ini",
   jade: "text.pug",
   java: "source.java",
@@ -122,10 +113,6 @@ const LANGUAGES = {
   r: "source.r",
   raku: "source.perl.6",
   razor: "text.html.cshtml",
-  rebase: {
-    name: "git-rebase",
-    scopeName: "text.git-rebase",
-  },
   regex: "source.js.regexp",
   requirements: {
     name: "pip-requirements",

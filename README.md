@@ -30,18 +30,14 @@ The following list shows all valid identifiers for the built-in languages:
 | css              | `css`                 |
 | cuda-cpp         | `cuda`                |
 | dart             | `dart`                |
-| diff             | `diff`                |
 | dockercompose    | `dockercompose`       |
 | dockerfile       | `dockerfile`          |
 | fsharp           | `fsharp`, `f#`        |
-| git-commit       | `commit`              |
-| git-rebase       | `rebase`              |
 | go               | `go`                  |
 | groovy           | `groovy`              |
 | handlebars       | `handlebars`          |
 | hlsl             | `hlsl`                |
 | html             | `html`                |
-| ignore           | `ignore`              |
 | ini              | `ini`                 |
 | jade             | `jade`                |
 | java             | `java`                |

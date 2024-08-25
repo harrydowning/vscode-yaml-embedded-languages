@@ -61,10 +61,6 @@ dart-example: | # dart
     print('Hello, World!');
   }
 
-diff-example: | # diff
-  - Hello World!
-  + Hello, World!
-
 dockercompose-example: | # dockercompose
   services:
     hello-world:
@@ -78,10 +74,6 @@ dockerfile-example: | # dockerfile
 fsharp-example: | # fsharp
   open System
   printfn "Hello, World!"
-
-git-commit-example: | # commit
-
-git-rebase-example: | # rebase
 
 go-example: | # go
   package main
@@ -114,8 +106,6 @@ html-example: | # html
       <h1>Hello, World!</h1>
     </body>
   </html>
-
-ignore-example: | # ignore
 
 ini-example: | # ini
   [section]
