@@ -26,14 +26,14 @@ The following list shows all valid identifiers for the built-in languages:
 | clojure          | `clojure`             |
 | coffeescript     | `coffee`              |
 | cpp              | `cpp`, `c++`          |
-| csharp           | `csharp`              |
+| csharp           | `csharp`, `c#`        |
 | css              | `css`                 |
 | cuda-cpp         | `cuda`                |
 | dart             | `dart`                |
 | diff             | `diff`                |
 | dockercompose    | `dockercompose`       |
 | dockerfile       | `dockerfile`          |
-| fsharp           | `fsharp`              |
+| fsharp           | `fsharp`, `f#`        |
 | git-commit       | `commit`              |
 | git-rebase       | `rebase`              |
 | go               | `go`                  |

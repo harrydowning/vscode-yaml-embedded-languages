@@ -16,6 +16,10 @@ const LANGUAGES = {
   bat: "source.batchfile",
   bibtex: "text.bibtex",
   c: "source.c",
+  "c#": {
+    name: "csharp",
+    scopeName: "source.cs",
+  },
   "c\\+\\+": {
     name: "cpp",
     scopeName: "source.cpp",
@@ -43,6 +47,10 @@ const LANGUAGES = {
   },
   dockercompose: "source.yaml",
   dockerfile: "source.dockerfile",
+  "f#": {
+    name: "fsharp",
+    scopeName: "source.fsharp",
+  },
   fsharp: "source.fsharp",
   go: "source.go",
   groovy: "source.groovy",
@@ -190,7 +198,7 @@ const getRepository = (languages) => {
     entries.map(([id, { scopeName, stripIndent }]) => [
       `${id}-${REPOSITORY_SUFFIX}`,
       {
-        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:${id})[ \t]*\\n)`,
+        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
         beginCaptures: {
           1: {
             name: "keyword.control.flow.block-scalar.literal.yaml",
@@ -205,16 +213,7 @@ const getRepository = (languages) => {
             name: "storage.modifier.chomping-indicator.yaml",
           },
           5: {
-            patterns: [
-              {
-                begin: "#",
-                beginCaptures: {
-                  0: { name: "punctuation.definition.comment.yaml" },
-                },
-                end: "\\n",
-              },
-            ],
-            name: "comment.line.number-sign.yaml",
+            name: "entity.name.type.yaml",
           },
         },
         end: "^(?=\\S)|(?!\\G)",

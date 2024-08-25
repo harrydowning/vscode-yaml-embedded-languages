@@ -99,15 +99,9 @@ handlebars-example: | # handlebars
   {{Hello}}, {{World}}!
 
 hlsl-example: | # hlsl
-  // First Line Issue
-  #ifdef GL_ES
-  precision mediump float;
-  #endif
-
-  uniform float u_time;
-
-  void main() {
-    gl_FragColor = vec4(1.0,0.0,0.0,1.0);
+  float4 PS_Main(float4 pos : SV_Position) : SV_Target
+  {
+    return float4(1.0f, 0.0f, 0.0f, 1.0f);
   }
 
 html-example: | # html
@@ -303,4 +297,26 @@ scss-example: | # scss
 
   h1::before {
     content: $content;
+  }
+
+shaderlab-example: | # shaderlab
+  Shader "Examples/ShaderSyntax"
+  {
+      CustomEditor = "ExampleCustomEditor"
+
+      Properties
+      {
+        // Material property declarations go here
+      }
+      SubShader
+      {
+        // The code that defines the rest of the SubShader goes here
+
+        Pass
+        {
+          // The code that defines the Pass goes here
+        }
+      }
+
+      Fallback "ExampleFallbackShader"
   }
