@@ -1,8 +1,9 @@
-.vscode/**
-.vscode-test/**
-.github/**
-.gitignore
+**
 
-example.yaml
-images/icon.xcf
-eslint.config.mjs
+!extension.js
+!syntaxes/injection.json
+!images/icon.png
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
