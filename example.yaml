@@ -209,6 +209,48 @@ markdown-math-example: | # math
   When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
   $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
+objective-c-example: | # objc
+  // First Line Issue
+  #import <Foundation/Foundation.h>
+
+  int main(int argc, const char * argv[]) {
+      @autoreleasepool {
+          NSLog(@"Hello, World!");
+      }
+      return 0;
+  }
+
+objective-cpp-example: | # objcpp
+  // First Line Issue
+  #import <Foundation/Foundation.h>
+  #include <iostream>
+
+  int main(int argc, const char * argv[]) {
+      @autoreleasepool {
+        std::cout << "Hello, World!" << std::endl;
+      }
+      return 0;
+  }
+
+perl-example: | # perl
+  use strict;
+  use warnings;
+  print("Hello, World!");
+
+php-example: | # php
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hello, World!</title>
+    </head>
+    <body>
+      <h1><?php echo 'Hello, World!'; ?></h1>
+    </body>
+  </html>
+
+pip-requirements-example: | # pip
+  # First Line Issue
+  package==1.0.0
 
 regex-example: | # regex
   [Hh]ello, [Ww]orld!?

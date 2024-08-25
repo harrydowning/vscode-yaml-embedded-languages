@@ -165,6 +165,7 @@ const getEmbeddedLanguages = (languages) => {
 const getPackageJson = (languages) => ({
   ...packageJson,
   contributes: {
+    ...packageJson.contributes,
     grammars: [
       {
         path: INJECTION_PATH,
@@ -173,30 +174,6 @@ const getPackageJson = (languages) => ({
         embeddedLanguages: getEmbeddedLanguages(languages),
       },
     ],
-    configuration: {
-      title: packageJson.displayName,
-      properties: {
-        [INCLUDE_CONFIG]: {
-          type: "object",
-          patternProperties: {
-            "^.*$": {
-              type: ["string", "object"],
-              properties: {
-                name: {
-                  type: "string",
-                },
-                scopeName: {
-                  type: "string",
-                },
-              },
-            },
-          },
-          default: {},
-          description:
-            "Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName`.",
-        },
-      },
-    },
   },
 });
 
