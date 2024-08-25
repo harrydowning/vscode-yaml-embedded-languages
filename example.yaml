@@ -233,7 +233,7 @@ pip-requirements-example: | # pip
   # https://github.com/harrydowning/yaml-embedded-languages/issues/32
   package==1.0.0
 
-power-fx-example: | # powerfx
+powerfx-example: | # powerfx
   =Notify("Hello, World!")
 
 powershell-example: | # powershell

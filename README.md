@@ -59,7 +59,7 @@ The following list shows all valid identifiers for the built-in languages:
 | perl             | `perl`                |
 | php              | `php`                 |
 | pip-requirements | `pip`, `requirements` |
-| power-fx\*       | `powerfx`             |
+| powerfx\*        | `powerfx`             |
 | powershell       | `powershell`          |
 | properties       | `properties`          |
 | python           | `py`, `python`        |
