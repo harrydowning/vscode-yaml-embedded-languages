@@ -5,7 +5,7 @@ bibtex-example: | # bibtex
   @book{HelloWorld}
 
 c-example: | # c
-  // First Line Issue
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
   #include <stdio.h>
 
   int main() {
@@ -20,7 +20,7 @@ coffeescript-example: | # coffee
   console.log "Hello, World!"
 
 cpp-example: | # c++
-  // First Line Issue
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
   #include <iostream>
 
   int main()
@@ -44,7 +44,7 @@ css-example: | # css
   }
 
 cuda-cpp-example: | # cuda
-  // First Line Issue
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
   #include <stdio.h>
 
   __global__ void hello_world(){
@@ -71,7 +71,7 @@ dockercompose-example: | # dockercompose
       build: .
 
 dockerfile-example: | # dockerfile
-  # First Line Issue
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
   FROM alpine:latest
   CMD ["echo", "Hello, World!"]
 
@@ -122,7 +122,7 @@ ini-example: | # ini
   message="Hello, World!"
 
 jade-example: | # jade
-  //- First Line Issue
+  //- https://github.com/harrydowning/yaml-embedded-languages/issues/32
   doctype html
   html
     head
@@ -185,7 +185,7 @@ lua-example: | # lua
   print("Hello, World!")
 
 makefile-example: | # make
-  # First Line Issue
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
   target:
     echo "Hello, World!"
 
@@ -201,7 +201,7 @@ markdown-math-example: | # math
   $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 objective-c-example: | # objc
-  // First Line Issue
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
   #import <Foundation/Foundation.h>
 
   int main(int argc, const char * argv[]) {
@@ -212,7 +212,7 @@ objective-c-example: | # objc
   }
 
 objective-cpp-example: | # objcpp
-  // First Line Issue
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
   #import <Foundation/Foundation.h>
   #include <iostream>
 
@@ -240,7 +240,7 @@ php-example: | # php
   </html>
 
 pip-requirements-example: | # pip
-  # First Line Issue
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
   package==1.0.0
 
 power-fx-example: | # powerfx
@@ -322,7 +322,7 @@ shaderlab-example: | # shaderlab
   }
 
 shellscript-example: | # shell
-  # First Line Issue
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
   echo "Hello, World!"
 
 sql-example: | # sql
