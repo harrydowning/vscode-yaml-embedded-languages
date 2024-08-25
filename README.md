@@ -77,7 +77,6 @@ The following list shows all valid identifiers for the built-in languages:
 | scss             | `scss`                |
 | shaderlab        | `shaderlab`           |
 | shellscript      | `shell`               |
-| slim             | `slim`                |
 | sql              | `sql`                 |
 | swift            | `swift`               |
 | tex              | `tex`                 |

@@ -99,7 +99,6 @@
           "meta.embedded.inline.scss": "scss",
           "meta.embedded.inline.shaderlab": "shaderlab",
           "meta.embedded.inline.shell": "shellscript",
-          "meta.embedded.inline.slim": "slim",
           "meta.embedded.inline.sql": "sql",
           "meta.embedded.inline.swift": "swift",
           "meta.embedded.inline.tex": "tex",

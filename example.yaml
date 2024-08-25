@@ -141,9 +141,9 @@ javascript-example: | # js
   console.log("Hello, World!")
 
 javascriptreact-example: | # jsx
-  const HelloWorld = () => {
+  function HelloWorld() {
     return <h1>Hello, World!</h1>;
-  }
+  };
 
 json-example: | # json
   {
@@ -320,3 +320,56 @@ shaderlab-example: | # shaderlab
 
       Fallback "ExampleFallbackShader"
   }
+
+shellscript-example: | # shell
+  # First Line Issue
+  echo "Hello, World!"
+
+sql-example: | # sql
+  SELECT * FROM Example WHERE content="Hello, World!"
+
+swift-example: | # swift
+  print("Hello, World!")
+
+tex-example: | # tex
+  Hello, World!
+  \bye
+
+typescript-example: | # ts
+  console.log("Hello, World!") as void;
+
+typescriptreact-example: | # tsx
+  function HelloWorld(): JSX.Element {
+    return <h1>Hello, World!</h1>;
+  };
+
+vb-example: | # vb
+  Module Program
+    Sub Main()
+      Console.WriteLine("Hello, World!")
+    End Sub
+  End Module
+
+xml-example: | # xml
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <root>
+    <message>Hello, World!</message>
+  </root>
+
+xsl-example: | # xsl
+  <?xml version="1.0" encoding="UTF-8"?>
+  <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+      <html>
+        <head>
+          <title><xsl:value-of select="/root/message"/></title>
+        </head>
+        <body>
+          <h1><xsl:value-of select="/root/message"/></h1>
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
+
+yaml-example: | # yaml
+  message: Hello, World!

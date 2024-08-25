@@ -143,7 +143,6 @@ const LANGUAGES = {
     name: "shellscript",
     scopeName: "source.shell",
   },
-  slim: "source.slim",
   sql: "source.sql",
   swift: "source.swift",
   tex: "text.tex",
