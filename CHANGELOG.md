@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 - Fully generated `package.json` to be partially generated
+- `regex` language to use scope `source.js.regexp`
 
 ## [0.4.0] - 2024-08-18
 

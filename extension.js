@@ -105,7 +105,7 @@ const LANGUAGES = {
     scopeName: "source.js",
   },
   powershell: "source.powershell",
-  properties: "source.properties",
+  properties: "source.ini",
   py: {
     name: "python",
     scopeName: "source.python",
@@ -118,7 +118,7 @@ const LANGUAGES = {
     name: "git-rebase",
     scopeName: "text.git-rebase",
   },
-  regex: "source.regexp.python",
+  regex: "source.js.regexp",
   requirements: {
     name: "pip-requirements",
     scopeName: "source.pip-requirements",

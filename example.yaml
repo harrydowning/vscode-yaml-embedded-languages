@@ -125,7 +125,7 @@ ignore-example: | # ignore
 
 ini-example: | # ini
   [section]
-  message="Hello, World!"!
+  message="Hello, World!"
 
 jade-example: | # jade
   //- First Line Issue
@@ -150,9 +150,6 @@ javascriptreact-example: | # jsx
   const HelloWorld = () => {
     return <h1>Hello, World!</h1>;
   }
-
-python-example: | # python
-  print("Hello World!")
 
 json-example: | # json
   {
@@ -203,7 +200,7 @@ markdown-example: | # markdown
   Text
   *Italic*
   **Bold**
-  `code`
+  `Code`
 
 markdown-math-example: | # math
   When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
@@ -252,5 +249,58 @@ pip-requirements-example: | # pip
   # First Line Issue
   package==1.0.0
 
+power-fx-example: | # powerfx
+  =Notify("Hello, World!")
+
+powershell-example: | # powershell
+  Write-Host 'Hello, World!'
+
+properties: | # properties
+  message="Hello, World!"
+
+python-example: | # python
+  print("Hello, World!")
+
+r-example: | # r
+  print("Hello, World!")
+
+raku-example: | # raku
+  say 'Hello, World!';
+
+razor-example: | # razor
+  <!DOCTYPE html>
+  <html>
+    <head>
+        <title>Hello, World!</title>
+    </head>
+    <body>
+        @{ var message = "Hello, World!"; }
+        <h1>@message</h1>
+    </body>
+  </html>
+
 regex-example: | # regex
-  [Hh]ello, [Ww]orld!?
+  ^[Hh]ello, [Ww]orld!?$
+
+restructuredtext-example: | # rst
+  Hello, World!
+  =============
+  Text
+  *Italic*
+  **Bold**
+  ``Code``
+
+ruby-example: | # ruby
+  puts "Hello, World!"
+
+rust-example: | # rust
+  fn main() {
+    println!("Hello World!");
+  }
+
+scss-example: | # scss
+  $content: "Hello, World!";
+
+  h1::before {
+    content: $content;
+  }

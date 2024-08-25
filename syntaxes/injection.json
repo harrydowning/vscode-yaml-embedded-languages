@@ -2332,7 +2332,7 @@
           "name": "meta.embedded.inline.properties",
           "patterns": [
             {
-              "include": "source.properties"
+              "include": "source.ini"
             }
           ]
         }
@@ -2640,7 +2640,7 @@
           "name": "meta.embedded.inline.regex",
           "patterns": [
             {
-              "include": "source.regexp.python"
+              "include": "source.js.regexp"
             }
           ]
         }
