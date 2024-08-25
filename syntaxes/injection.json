@@ -786,6 +786,7 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.diff",
           "patterns": [
             {

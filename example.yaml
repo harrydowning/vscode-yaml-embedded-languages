@@ -40,7 +40,7 @@ csharp-example: | # csharp
 
 css-example: | # css
   h1::before {
-    content: "Hello, World!"
+    content: "Hello, World!";
   }
 
 cuda-cpp-example: | # cuda
@@ -177,8 +177,38 @@ latex-example: | # latex
   Hello world!
   \end{document}
 
+less-example: | # less
+  @content: "Hello, World!";
+  h1::before {
+    content: @content;
+  }
 
+log-example: | # log
+  [DEBUG] 2024-08-25T10:05:07.470Z - Hello, World! example.js:1
+  [VERBOSE] 2024-08-25T10:05:07.470Z - Hello, World! example.js:2
+  [INFO] 2024-08-25T10:05:07.470Z - Hello, World! example.js:3
+  [WARN] 2024-08-25T10:05:07.470Z - Hello, World! example.js:4
+  [ERROR] 2024-08-25T10:05:07.470Z - Hello, World! example.js:5
+
+lua-example: | # lua
+  print("Hello, World!")
+
+makefile-example: | # make
+  # First Line Issue
+  target:
+    echo "Hello, World!"
+
+markdown-example: | # markdown
+  # Hello, World!
+  Text
+  *Italic*
+  **Bold**
+  `code`
+
+markdown-math-example: | # math
+  When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+  $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 
 regex-example: | # regex
-  [Hh]ello [Ww]orld!?
+  [Hh]ello, [Ww]orld!?
