@@ -39,7 +39,9 @@ csharp-example: | # csharp
   }
 
 css-example: | # css
-  .HelloWorld { }
+  h1::before {
+    content: "Hello, World!"
+  }
 
 cuda-cpp-example: | # cuda
   // First Line Issue
@@ -156,6 +158,25 @@ json-example: | # json
   {
     "message": "Hello, World!"
   }
+
+jsonc-example: | # jsonc
+  { // comment
+    "message": "Hello, World!"
+  }
+
+jsonl-example: | # jsonl
+  {"message": "Hello, World!"}
+  {"message": "Hello, World!"}
+
+julia-example: | # julia
+  println("hello world")
+
+latex-example: | # latex
+  \documentclass[12pt]{article}
+  \begin{document}
+  Hello world!
+  \end{document}
+
 
 
 

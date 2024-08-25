@@ -63,7 +63,10 @@ const LANGUAGES = {
     scopeName: "source.js.jsx",
   },
   julia: "source.julia",
-  latex: "text.tex.latex",
+  latex: {
+    scopeName: "text.tex.latex",
+    stripIndent: true,
+  },
   less: "source.css.less",
   log: "text.log",
   lua: "source.lua",
