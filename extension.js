@@ -211,7 +211,7 @@ const getRepository = (languages) => {
           {
             begin: "(?>^|\\G)([ ]+)(?! )",
             end: "^(?!\\1|\\s*$)",
-            while: stripIndent ? "\\1" : undefined,
+            while: stripIndent ? "^$|\\1" : undefined,
             name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
             patterns: [{ include: scopeName }],
           },
