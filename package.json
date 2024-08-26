@@ -130,7 +130,10 @@
                 "stripIndent": {
                   "type": "boolean"
                 }
-              }
+              },
+              "required": [
+                "scopeName"
+              ]
             }
           },
           "default": {},
