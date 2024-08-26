@@ -134,7 +134,7 @@
             }
           },
           "default": {},
-          "description": "Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName`."
+          "description": "Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName` (required)."
         }
       }
     }
@@ -143,6 +143,14 @@
     "@eslint/js": "^9.9.0",
     "@vscode/vsce": "^2.29.0",
     "eslint": "^9.9.0",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "generate": "node extension.js -dev",
+    "lint:check": "eslint",
+    "lint:fix": "eslint --fix",
+    "format:check": "prettier . --check",
+    "format:fix": "prettier . --write"
   }
 }
