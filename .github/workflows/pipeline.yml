@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: "18"
       - run: npm i
-      - run: node run generate
+      - run: npm run generate
       - run: "[[ -z $(git status --porcelain) ]]"
       - run: npm run lint:check
       - run: npm run format:check
