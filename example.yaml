@@ -1,15 +1,369 @@
-example1: | # python
-  print('Hello World!')
+bat-example: | # bat
+  ECHO Hello, World!
 
-example2: | # java
-  class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello World!"); 
+bibtex-example: | # bibtex
+  @book{HelloWorld}
+
+c-example: | # c
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  #include <stdio.h>
+
+  int main() {
+    printf("Hello, World!");
+    return 0;
+  }
+
+clojure-example: | # clojure
+  (println "Hello, World!")
+
+coffeescript-example: | # coffee
+  console.log "Hello, World!"
+
+cpp-example: | # c++
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  #include <iostream>
+
+  int main()
+  {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+  }
+
+csharp-example: | # csharp
+  public class HelloWorld
+  {
+    public static void Main(string[] args)
+    {
+      System.Console.WriteLine("Hello, World!");
     }
   }
 
-example3: | # js
-  console.log('Hello World!')
+css-example: | # css
+  h1::before {
+    content: "Hello, World!";
+  }
 
-example4: | # regex
-  [Hh]ello [Ww]orld!?
+cuda-cpp-example: | # cuda
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  #include <stdio.h>
+
+  __global__ void hello_world(){
+    printf("Hello, World!");
+  }
+
+  int main() {
+      hello_world<<<1,1>>>();
+      return 0;
+  }
+
+dart-example: | # dart
+  void main() {
+    print('Hello, World!');
+  }
+
+diff-example: | # diff
+  - Hello World!
+  + Hello, World!
+
+dockercompose-example: | # dockercompose
+  services:
+    hello-world:
+      build: .
+
+dockerfile-example: | # dockerfile
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  FROM alpine:latest
+  CMD ["echo", "Hello, World!"]
+
+fsharp-example: | # fsharp
+  open System
+  printfn "Hello, World!"
+
+go-example: | # go
+  package main
+
+  import "fmt"
+
+  func main() {
+    fmt.Println("Hello, World!")
+  }
+
+groovy-example: | # groovy
+  println 'Hello, World!'
+
+handlebars-example: | # handlebars
+  {{Hello}}, {{World}}!
+
+hlsl-example: | # hlsl
+  float4 PS_Main(float4 pos : SV_Position) : SV_Target
+  {
+    return float4(1.0f, 0.0f, 0.0f, 1.0f);
+  }
+
+html-example: | # html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hello, World!</title>
+    </head>
+    <body>
+      <h1>Hello, World!</h1>
+    </body>
+  </html>
+
+ini-example: | # ini
+  [section]
+  message="Hello, World!"
+
+jade-example: | # jade
+  //- https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  doctype html
+  html
+    head
+      title Hello, World!
+    body
+      h1 Hello, World!
+
+java-example: | # java
+  class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!"); 
+    }
+  }
+
+javascript-example: | # js
+  console.log("Hello, World!")
+
+javascriptreact-example: | # jsx
+  function HelloWorld() {
+    return <h1>Hello, World!</h1>;
+  };
+
+json-example: | # json
+  {
+    "message": "Hello, World!"
+  }
+
+jsonc-example: | # jsonc
+  { // comment
+    "message": "Hello, World!"
+  }
+
+jsonl-example: | # jsonl
+  {"message": "Hello, World!"}
+  {"message": "Hello, World!"}
+
+julia-example: | # julia
+  println("hello world")
+
+latex-example: | # latex
+  \documentclass[12pt]{article}
+  \begin{document}
+  Hello world!
+  \end{document}
+
+less-example: | # less
+  @content: "Hello, World!";
+  h1::before {
+    content: @content;
+  }
+
+log-example: | # log
+  [DEBUG] 2024-08-25T10:05:07.470Z - Hello, World! example.js:1
+  [VERBOSE] 2024-08-25T10:05:07.470Z - Hello, World! example.js:2
+  [INFO] 2024-08-25T10:05:07.470Z - Hello, World! example.js:3
+  [WARN] 2024-08-25T10:05:07.470Z - Hello, World! example.js:4
+  [ERROR] 2024-08-25T10:05:07.470Z - Hello, World! example.js:5
+
+lua-example: | # lua
+  print("Hello, World!")
+
+makefile-example: | # make
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  target:
+    echo "Hello, World!"
+
+markdown-example: | # markdown
+  # Hello, World!
+  Text
+  *Italic*
+  **Bold**
+  `Code`
+
+markdown-math-example: | # math
+  When $a \ne 0$, there are two solutions to $(ax^2 + bx + c = 0)$ and they are
+  $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+objective-c-example: | # objc
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  #import <Foundation/Foundation.h>
+
+  int main(int argc, const char * argv[]) {
+      @autoreleasepool {
+          NSLog(@"Hello, World!");
+      }
+      return 0;
+  }
+
+objective-cpp-example: | # objcpp
+  // https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  #import <Foundation/Foundation.h>
+  #include <iostream>
+
+  int main(int argc, const char * argv[]) {
+      @autoreleasepool {
+        std::cout << "Hello, World!" << std::endl;
+      }
+      return 0;
+  }
+
+perl-example: | # perl
+  use strict;
+  use warnings;
+  print("Hello, World!");
+
+php-example: | # php
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Hello, World!</title>
+    </head>
+    <body>
+      <h1><?php echo 'Hello, World!'; ?></h1>
+    </body>
+  </html>
+
+pip-requirements-example: | # pip
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  package==1.0.0
+
+powerfx-example: | # powerfx
+  =Notify("Hello, World!")
+
+powershell-example: | # powershell
+  Write-Host 'Hello, World!'
+
+properties: | # properties
+  message="Hello, World!"
+
+python-example: | # python
+  print("Hello, World!")
+
+r-example: | # r
+  print("Hello, World!")
+
+raku-example: | # raku
+  say 'Hello, World!';
+
+razor-example: | # razor
+  <!DOCTYPE html>
+  <html>
+    <head>
+        <title>Hello, World!</title>
+    </head>
+    <body>
+        @{ var message = "Hello, World!"; }
+        <h1>@message</h1>
+    </body>
+  </html>
+
+regex-example: | # regex
+  ^[Hh]ello, [Ww]orld!?$
+
+restructuredtext-example: | # rst
+  Hello, World!
+  =============
+  Text
+  *Italic*
+  **Bold**
+  ``Code``
+
+ruby-example: | # ruby
+  puts "Hello, World!"
+
+rust-example: | # rust
+  fn main() {
+    println!("Hello World!");
+  }
+
+scss-example: | # scss
+  $content: "Hello, World!";
+
+  h1::before {
+    content: $content;
+  }
+
+shaderlab-example: | # shaderlab
+  Shader "Examples/ShaderSyntax"
+  {
+      CustomEditor = "ExampleCustomEditor"
+
+      Properties
+      {
+        // Material property declarations go here
+      }
+      SubShader
+      {
+        // The code that defines the rest of the SubShader goes here
+
+        Pass
+        {
+          // The code that defines the Pass goes here
+        }
+      }
+
+      Fallback "ExampleFallbackShader"
+  }
+
+shellscript-example: | # shell
+  # https://github.com/harrydowning/yaml-embedded-languages/issues/32
+  echo "Hello, World!"
+
+sql-example: | # sql
+  SELECT * FROM Example WHERE content="Hello, World!"
+
+swift-example: | # swift
+  print("Hello, World!")
+
+tex-example: | # tex
+  Hello, World!
+  \bye
+
+typescript-example: | # ts
+  console.log("Hello, World!") as void;
+
+typescriptreact-example: | # tsx
+  function HelloWorld(): JSX.Element {
+    return <h1>Hello, World!</h1>;
+  };
+
+vb-example: | # vb
+  Module Program
+    Sub Main()
+      Console.WriteLine("Hello, World!")
+    End Sub
+  End Module
+
+xml-example: | # xml
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <root>
+    <message>Hello, World!</message>
+  </root>
+
+xsl-example: | # xsl
+  <?xml version="1.0" encoding="UTF-8"?>
+  <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+      <html>
+        <head>
+          <title><xsl:value-of select="/root/message"/></title>
+        </head>
+        <body>
+          <h1><xsl:value-of select="/root/message"/></h1>
+        </body>
+      </html>
+    </xsl:template>
+  </xsl:stylesheet>
+
+yaml-example: | # yaml
+  message: Hello, World!

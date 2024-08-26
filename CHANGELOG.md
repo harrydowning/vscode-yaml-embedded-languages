@@ -6,18 +6,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.0] - 2024-08-26
+
 ### Added
 
 - `stripIndent` language config option
+- Languages `bat`, `bibtex`, `cuda-cpp`, `dart`, `dockercompose`, `handlebars`, `hlsl`, `ini`, `jade`, `jsonc`, `jsonl`, `javascriptreact`, `julia`, `less`, `log`, `markdown-math`, `objective-cpp`, `php`, `raku`, `razor`, `restructuredtext`, `vb`, and `xsl`
+- Language aliases `c#`, `f#`, `make`
 
 ### Fixed
 
 - Markdown indentation ([#13](https://github.com/harrydowning/yaml-embedded-languages/issues/13))
 - Highlighting for new YAML grammar
+- `csharp` highlighting
 
 ### Changed
 
 - Fully generated `package.json` to be partially generated
+- `regex` language to use scope `source.js.regexp`
+- Extension logo
+- Scope of language identifier comment to highlight recognized languages
+
+### Removed
+
+- Languages `dosbatch` and `slim` (no built-in VS Code support)
 
 ## [0.4.0] - 2024-08-18
 
@@ -90,7 +102,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...v0.3.2

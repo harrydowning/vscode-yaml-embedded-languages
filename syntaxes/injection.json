@@ -3,7 +3,19 @@
   "injectionSelector": "L:source.yaml,L:source.github-actions-workflow",
   "patterns": [
     {
+      "include": "#bat-block-scalar"
+    },
+    {
+      "include": "#bibtex-block-scalar"
+    },
+    {
       "include": "#c-block-scalar"
+    },
+    {
+      "include": "#c#-block-scalar"
+    },
+    {
+      "include": "#c\\+\\+-block-scalar"
     },
     {
       "include": "#clojure-block-scalar"
@@ -15,22 +27,28 @@
       "include": "#cpp-block-scalar"
     },
     {
-      "include": "#c\\+\\+-block-scalar"
-    },
-    {
       "include": "#csharp-block-scalar"
     },
     {
       "include": "#css-block-scalar"
     },
     {
+      "include": "#cuda-block-scalar"
+    },
+    {
+      "include": "#dart-block-scalar"
+    },
+    {
       "include": "#diff-block-scalar"
+    },
+    {
+      "include": "#dockercompose-block-scalar"
     },
     {
       "include": "#dockerfile-block-scalar"
     },
     {
-      "include": "#dosbatch-block-scalar"
+      "include": "#f#-block-scalar"
     },
     {
       "include": "#fsharp-block-scalar"
@@ -42,7 +60,19 @@
       "include": "#groovy-block-scalar"
     },
     {
+      "include": "#handlebars-block-scalar"
+    },
+    {
+      "include": "#hlsl-block-scalar"
+    },
+    {
       "include": "#html-block-scalar"
+    },
+    {
+      "include": "#ini-block-scalar"
+    },
+    {
+      "include": "#jade-block-scalar"
     },
     {
       "include": "#java-block-scalar"
@@ -57,13 +87,31 @@
       "include": "#json-block-scalar"
     },
     {
-      "include": "#tex-block-scalar"
+      "include": "#jsonc-block-scalar"
+    },
+    {
+      "include": "#jsonl-block-scalar"
+    },
+    {
+      "include": "#jsx-block-scalar"
+    },
+    {
+      "include": "#julia-block-scalar"
     },
     {
       "include": "#latex-block-scalar"
     },
     {
+      "include": "#less-block-scalar"
+    },
+    {
+      "include": "#log-block-scalar"
+    },
+    {
       "include": "#lua-block-scalar"
+    },
+    {
+      "include": "#make-block-scalar"
     },
     {
       "include": "#makefile-block-scalar"
@@ -72,16 +120,22 @@
       "include": "#markdown-block-scalar"
     },
     {
+      "include": "#math-block-scalar"
+    },
+    {
       "include": "#objc-block-scalar"
+    },
+    {
+      "include": "#objcpp-block-scalar"
     },
     {
       "include": "#perl-block-scalar"
     },
     {
-      "include": "#pip-block-scalar"
+      "include": "#php-block-scalar"
     },
     {
-      "include": "#requirements-block-scalar"
+      "include": "#pip-block-scalar"
     },
     {
       "include": "#powerfx-block-scalar"
@@ -93,16 +147,28 @@
       "include": "#properties-block-scalar"
     },
     {
-      "include": "#python-block-scalar"
+      "include": "#py-block-scalar"
     },
     {
-      "include": "#py-block-scalar"
+      "include": "#python-block-scalar"
     },
     {
       "include": "#r-block-scalar"
     },
     {
+      "include": "#raku-block-scalar"
+    },
+    {
+      "include": "#razor-block-scalar"
+    },
+    {
       "include": "#regex-block-scalar"
+    },
+    {
+      "include": "#requirements-block-scalar"
+    },
+    {
+      "include": "#rst-block-scalar"
     },
     {
       "include": "#ruby-block-scalar"
@@ -120,16 +186,13 @@
       "include": "#shell-block-scalar"
     },
     {
-      "include": "#slim-block-scalar"
-    },
-    {
       "include": "#sql-block-scalar"
     },
     {
       "include": "#swift-block-scalar"
     },
     {
-      "include": "#typescript-block-scalar"
+      "include": "#tex-block-scalar"
     },
     {
       "include": "#ts-block-scalar"
@@ -138,15 +201,24 @@
       "include": "#tsx-block-scalar"
     },
     {
+      "include": "#typescript-block-scalar"
+    },
+    {
+      "include": "#vb-block-scalar"
+    },
+    {
       "include": "#xml-block-scalar"
+    },
+    {
+      "include": "#xsl-block-scalar"
     },
     {
       "include": "#yaml-block-scalar"
     }
   ],
   "repository": {
-    "c-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:c)[ \t]*\\n)",
+    "bat-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bat)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -161,18 +233,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.bat",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.batchfile"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "bibtex-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bibtex)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.bibtex",
+          "patterns": [
+            {
+              "include": "text.bibtex"
+            }
+          ]
+        }
+      ]
+    },
+    "c-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -189,8 +316,8 @@
         }
       ]
     },
-    "clojure-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:clojure)[ \t]*\\n)",
+    "c#-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c#)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -205,18 +332,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.c#",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.cs"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "c\\+\\+-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c\\+\\+)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.c\\+\\+",
+          "patterns": [
+            {
+              "include": "source.cpp"
+            }
+          ]
+        }
+      ]
+    },
+    "clojure-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:clojure)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -234,7 +416,7 @@
       ]
     },
     "coffee-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:coffee)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:coffee)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -249,18 +431,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -278,7 +449,7 @@
       ]
     },
     "cpp-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:cpp)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cpp)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -293,18 +464,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -321,52 +481,8 @@
         }
       ]
     },
-    "c\\+\\+-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:c\\+\\+)[ \t]*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.c\\+\\+",
-          "patterns": [
-            {
-              "include": "source.cpp"
-            }
-          ]
-        }
-      ]
-    },
     "csharp-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:csharp)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:csharp)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -381,18 +497,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -403,14 +508,14 @@
           "name": "meta.embedded.inline.csharp",
           "patterns": [
             {
-              "include": "source.csharp"
+              "include": "source.cs"
             }
           ]
         }
       ]
     },
     "css-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:css)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:css)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -425,18 +530,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -453,8 +547,8 @@
         }
       ]
     },
-    "diff-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:diff)[ \t]*\\n)",
+    "cuda-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cuda)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -469,18 +563,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -488,6 +571,73 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.cuda",
+          "patterns": [
+            {
+              "include": "source.cuda-cpp"
+            }
+          ]
+        }
+      ]
+    },
+    "dart-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dart)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.dart",
+          "patterns": [
+            {
+              "include": "source.dart"
+            }
+          ]
+        }
+      ]
+    },
+    "diff-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:diff)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.diff",
           "patterns": [
             {
@@ -497,8 +647,8 @@
         }
       ]
     },
-    "dockerfile-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:dockerfile)[ \t]*\\n)",
+    "dockercompose-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockercompose)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -513,18 +663,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.dockercompose",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.yaml"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "dockerfile-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockerfile)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -541,8 +713,8 @@
         }
       ]
     },
-    "dosbatch-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:dosbatch)[ \t]*\\n)",
+    "f#-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:f#)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -557,18 +729,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -576,17 +737,17 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.dosbatch",
+          "name": "meta.embedded.inline.f#",
           "patterns": [
             {
-              "include": "source.dosbatch"
+              "include": "source.fsharp"
             }
           ]
         }
       ]
     },
     "fsharp-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:fsharp)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:fsharp)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -601,18 +762,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -630,7 +780,7 @@
       ]
     },
     "go-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:go)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:go)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -645,18 +795,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -674,7 +813,7 @@
       ]
     },
     "groovy-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:groovy)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:groovy)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -689,18 +828,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -717,8 +845,8 @@
         }
       ]
     },
-    "html-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:html)[ \t]*\\n)",
+    "handlebars-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:handlebars)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -733,18 +861,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.handlebars",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "text.html.handlebars"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "hlsl-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:hlsl)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.hlsl",
+          "patterns": [
+            {
+              "include": "source.hlsl"
+            }
+          ]
+        }
+      ]
+    },
+    "html-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:html)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -761,8 +944,8 @@
         }
       ]
     },
-    "java-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:java)[ \t]*\\n)",
+    "ini-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ini)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -777,18 +960,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.ini",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.ini"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "jade-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jade)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jade",
+          "patterns": [
+            {
+              "include": "text.pug"
+            }
+          ]
+        }
+      ]
+    },
+    "java-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:java)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -806,7 +1044,7 @@
       ]
     },
     "javascript-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:javascript)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:javascript)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -821,18 +1059,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -850,7 +1077,7 @@
       ]
     },
     "js-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:js)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:js)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -865,18 +1092,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -894,7 +1110,7 @@
       ]
     },
     "json-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:json)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:json)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -909,18 +1125,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -937,8 +1142,8 @@
         }
       ]
     },
-    "tex-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:tex)[ \t]*\\n)",
+    "jsonc-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonc)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -953,18 +1158,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -972,17 +1166,116 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.tex",
+          "name": "meta.embedded.inline.jsonc",
           "patterns": [
             {
-              "include": "text.tex"
+              "include": "source.json.comments"
+            }
+          ]
+        }
+      ]
+    },
+    "jsonl-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonl)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jsonl",
+          "patterns": [
+            {
+              "include": "source.json.lines"
+            }
+          ]
+        }
+      ]
+    },
+    "jsx-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsx)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.jsx",
+          "patterns": [
+            {
+              "include": "source.js.jsx"
+            }
+          ]
+        }
+      ]
+    },
+    "julia-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:julia)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.julia",
+          "patterns": [
+            {
+              "include": "source.julia"
             }
           ]
         }
       ]
     },
     "latex-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:latex)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:latex)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -997,18 +1290,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1016,17 +1298,18 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
+          "while": "\\1",
           "name": "meta.embedded.inline.latex",
           "patterns": [
             {
-              "include": "text.tex"
+              "include": "text.tex.latex"
             }
           ]
         }
       ]
     },
-    "lua-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:lua)[ \t]*\\n)",
+    "less-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:less)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1041,18 +1324,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.less",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.css.less"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "log-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:log)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.log",
+          "patterns": [
+            {
+              "include": "text.log"
+            }
+          ]
+        }
+      ]
+    },
+    "lua-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:lua)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1069,8 +1407,8 @@
         }
       ]
     },
-    "makefile-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:makefile)[ \t]*\\n)",
+    "make-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:make)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1085,18 +1423,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.make",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.makefile"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "makefile-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:makefile)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1114,7 +1474,7 @@
       ]
     },
     "markdown-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:markdown)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:markdown)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1129,18 +1489,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1158,8 +1507,8 @@
         }
       ]
     },
-    "objc-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:objc)[ \t]*\\n)",
+    "math-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:math)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1174,18 +1523,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.math",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "text.html.markdown.math"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "objc-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objc)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1202,8 +1573,8 @@
         }
       ]
     },
-    "perl-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:perl)[ \t]*\\n)",
+    "objcpp-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objcpp)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1218,18 +1589,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.objcpp",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.objcpp"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "perl-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:perl)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1246,8 +1639,8 @@
         }
       ]
     },
-    "pip-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:pip)[ \t]*\\n)",
+    "php-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:php)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1262,18 +1655,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.php",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "text.html.php"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "pip-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:pip)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1290,52 +1705,8 @@
         }
       ]
     },
-    "requirements-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:requirements)[ \t]*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.requirements",
-          "patterns": [
-            {
-              "include": "source.pip-requirements"
-            }
-          ]
-        }
-      ]
-    },
     "powerfx-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:powerfx)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powerfx)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1350,18 +1721,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1379,7 +1739,7 @@
       ]
     },
     "powershell-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:powershell)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powershell)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1394,18 +1754,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1423,7 +1772,7 @@
       ]
     },
     "properties-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:properties)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:properties)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1438,18 +1787,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1460,58 +1798,14 @@
           "name": "meta.embedded.inline.properties",
           "patterns": [
             {
-              "include": "source.properties"
-            }
-          ]
-        }
-      ]
-    },
-    "python-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:python)[ \t]*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.python",
-          "patterns": [
-            {
-              "include": "source.python"
+              "include": "source.ini"
             }
           ]
         }
       ]
     },
     "py-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:py)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:py)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1526,18 +1820,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1554,8 +1837,8 @@
         }
       ]
     },
-    "r-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:r)[ \t]*\\n)",
+    "python-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:python)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1570,18 +1853,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.python",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.python"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "r-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:r)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1598,8 +1903,8 @@
         }
       ]
     },
-    "regex-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:regex)[ \t]*\\n)",
+    "raku-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:raku)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1614,18 +1919,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.raku",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.perl.6"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "razor-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:razor)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.razor",
+          "patterns": [
+            {
+              "include": "text.html.cshtml"
+            }
+          ]
+        }
+      ]
+    },
+    "regex-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:regex)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1636,14 +1996,14 @@
           "name": "meta.embedded.inline.regex",
           "patterns": [
             {
-              "include": "source.regexp.python"
+              "include": "source.js.regexp"
             }
           ]
         }
       ]
     },
-    "ruby-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:ruby)[ \t]*\\n)",
+    "requirements-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:requirements)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1658,18 +2018,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.requirements",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.pip-requirements"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "rst-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rst)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.rst",
+          "patterns": [
+            {
+              "include": "source.rst"
+            }
+          ]
+        }
+      ]
+    },
+    "ruby-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ruby)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1687,7 +2102,7 @@
       ]
     },
     "rust-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:rust)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rust)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1702,18 +2117,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1731,7 +2135,7 @@
       ]
     },
     "scss-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:scss)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:scss)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1746,18 +2150,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1775,7 +2168,7 @@
       ]
     },
     "shaderlab-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:shaderlab)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shaderlab)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1790,18 +2183,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1819,7 +2201,7 @@
       ]
     },
     "shell-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:shell)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shell)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1834,18 +2216,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1862,52 +2233,8 @@
         }
       ]
     },
-    "slim-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:slim)[ \t]*\\n)",
-      "beginCaptures": {
-        "1": {
-          "name": "keyword.control.flow.block-scalar.literal.yaml"
-        },
-        "2": {
-          "name": "keyword.control.flow.block-scalar.folded.yaml"
-        },
-        "3": {
-          "name": "constant.numeric.indentation-indicator.yaml"
-        },
-        "4": {
-          "name": "storage.modifier.chomping-indicator.yaml"
-        },
-        "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
-        }
-      },
-      "end": "^(?=\\S)|(?!\\G)",
-      "patterns": [
-        {
-          "begin": "(?>^|\\G)([ ]+)(?! )",
-          "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.slim",
-          "patterns": [
-            {
-              "include": "source.slim"
-            }
-          ]
-        }
-      ]
-    },
     "sql-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:sql)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:sql)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1922,18 +2249,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1951,7 +2267,7 @@
       ]
     },
     "swift-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:swift)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:swift)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1966,18 +2282,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -1994,8 +2299,8 @@
         }
       ]
     },
-    "typescript-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:typescript)[ \t]*\\n)",
+    "tex-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tex)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2010,18 +2315,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -2029,17 +2323,17 @@
         {
           "begin": "(?>^|\\G)([ ]+)(?! )",
           "end": "^(?!\\1|\\s*$)",
-          "name": "meta.embedded.inline.typescript",
+          "name": "meta.embedded.inline.tex",
           "patterns": [
             {
-              "include": "source.ts"
+              "include": "text.tex"
             }
           ]
         }
       ]
     },
     "ts-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:ts)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ts)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2054,18 +2348,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -2083,7 +2366,7 @@
       ]
     },
     "tsx-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:tsx)[ \t]*\\n)",
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tsx)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2098,18 +2381,7 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
-          "patterns": [
-            {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
-            }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -2126,8 +2398,8 @@
         }
       ]
     },
-    "xml-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:xml)[ \t]*\\n)",
+    "typescript-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:typescript)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2142,18 +2414,73 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.typescript",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "source.ts"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "vb-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:vb)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.vb",
+          "patterns": [
+            {
+              "include": "source.asp.vb.net"
+            }
+          ]
+        }
+      ]
+    },
+    "xml-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xml)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",
@@ -2170,8 +2497,8 @@
         }
       ]
     },
-    "yaml-block-scalar": {
-      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?[ \t]+(#[ \t]*(?:yaml)[ \t]*\\n)",
+    "xsl-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xsl)\\s*\\n)",
       "beginCaptures": {
         "1": {
           "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2186,18 +2513,40 @@
           "name": "storage.modifier.chomping-indicator.yaml"
         },
         "5": {
+          "name": "entity.name.type.yaml"
+        }
+      },
+      "end": "^(?=\\S)|(?!\\G)",
+      "patterns": [
+        {
+          "begin": "(?>^|\\G)([ ]+)(?! )",
+          "end": "^(?!\\1|\\s*$)",
+          "name": "meta.embedded.inline.xsl",
           "patterns": [
             {
-              "begin": "#",
-              "beginCaptures": {
-                "0": {
-                  "name": "punctuation.definition.comment.yaml"
-                }
-              },
-              "end": "\\n"
+              "include": "text.xml.xsl"
             }
-          ],
-          "name": "comment.line.number-sign.yaml"
+          ]
+        }
+      ]
+    },
+    "yaml-block-scalar": {
+      "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:yaml)\\s*\\n)",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control.flow.block-scalar.literal.yaml"
+        },
+        "2": {
+          "name": "keyword.control.flow.block-scalar.folded.yaml"
+        },
+        "3": {
+          "name": "constant.numeric.indentation-indicator.yaml"
+        },
+        "4": {
+          "name": "storage.modifier.chomping-indicator.yaml"
+        },
+        "5": {
+          "name": "entity.name.type.yaml"
         }
       },
       "end": "^(?=\\S)|(?!\\G)",

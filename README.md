@@ -10,7 +10,7 @@
 
 ## Features
 
-Syntax highlighting within YAML block-scalars for [40+ built-in languages](#built-in-languages "Built-In Languages") and the ability to add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings "Extension Settings") configuration setting.
+Syntax highlighting within YAML block-scalars for [50+ built-in languages](#built-in-languages "Built-In Languages") and the ability to add highlighting for any other language with the [yaml-embedded-languages.include](#extension-settings "Extension Settings") configuration setting.
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
@@ -18,47 +18,73 @@ Syntax highlighting within YAML block-scalars for [40+ built-in languages](#buil
 
 The following list shows all valid identifiers for the built-in languages:
 
-- c
-- clojure
-- coffee
-- cpp or c++
-- csharp
-- css
-- diff
-- dockerfile
-- dosbatch
-- fsharp
-- go
-- groovy
-- html
-- java
-- javascript or js
-- json
-- tex or latex
-- lua
-- makefile
-- markdown
-- objc
-- perl
-- pip or requirements
-- powerfx
-- powershell
-- properties
-- python or py
-- r
-- regex
-- ruby
-- rust
-- scss
-- shaderlab
-- shell
-- slim
-- sql
-- swift
-- typescript or ts
-- tsx
-- xml
-- yaml (Yes, YAML within YAML!)
+| Language         | Identifier            |
+| ---------------- | --------------------- |
+| bat              | `bat`                 |
+| bibtex           | `bibtex`              |
+| c                | `c`                   |
+| clojure          | `clojure`             |
+| coffeescript     | `coffee`              |
+| cpp              | `cpp`, `c++`          |
+| csharp           | `csharp`, `c#`        |
+| css              | `css`                 |
+| cuda-cpp         | `cuda`                |
+| dart             | `dart`                |
+| diff             | `diff`                |
+| dockercompose    | `dockercompose`       |
+| dockerfile       | `dockerfile`          |
+| fsharp           | `fsharp`, `f#`        |
+| go               | `go`                  |
+| groovy           | `groovy`              |
+| handlebars       | `handlebars`          |
+| hlsl             | `hlsl`                |
+| html             | `html`                |
+| ini              | `ini`                 |
+| jade             | `jade`                |
+| java             | `java`                |
+| javascript       | `js`, `javascript`    |
+| javascriptreact  | `jsx`                 |
+| json             | `json`                |
+| jsonc            | `jsonc`               |
+| jsonl            | `jsonl`               |
+| julia            | `julia`               |
+| latex            | `latex`               |
+| less             | `less`                |
+| log              | `log`                 |
+| lua              | `lua`                 |
+| makefile         | `make`, `makefile`    |
+| markdown         | `markdown`            |
+| markdown-math    | `math`                |
+| objective-c      | `objc`                |
+| objective-cpp    | `objcpp`              |
+| perl             | `perl`                |
+| php              | `php`                 |
+| pip-requirements | `pip`, `requirements` |
+| powerfx\*        | `powerfx`             |
+| powershell       | `powershell`          |
+| properties       | `properties`          |
+| python           | `py`, `python`        |
+| r                | `r`                   |
+| raku             | `raku`                |
+| razor            | `razor`               |
+| regex\*          | `regex`               |
+| restructuredtext | `rst`                 |
+| ruby             | `ruby`                |
+| rust             | `rust`                |
+| scss             | `scss`                |
+| shaderlab        | `shaderlab`           |
+| shellscript      | `shell`               |
+| sql              | `sql`                 |
+| swift            | `swift`               |
+| tex              | `tex`                 |
+| typescript       | `ts`, `typescript`    |
+| typescriptreact  | `tsx`                 |
+| vb               | `vb`                  |
+| xml              | `xml`                 |
+| xsl              | `xsl`                 |
+| yaml             | `yaml`                |
+
+\*_Not a valid VS Code language_
 
 ## Requirements
 

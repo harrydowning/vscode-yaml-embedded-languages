@@ -1,7 +1,9 @@
-.vscode/**
-.vscode-test/**
-.github/**
-.gitignore
+**
 
-example.yaml
-images/icon.xcf
+!extension.js
+!syntaxes/injection.json
+!images/icon.png
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
