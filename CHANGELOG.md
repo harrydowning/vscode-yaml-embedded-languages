@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.1] - 2024-08-26
+
+### Fixed
+
+- `while` pattern used for `stripIndent` to allow empty lines
+
 ## [1.0.0] - 2024-08-26
 
 ### Added
@@ -102,7 +108,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.4.0...v1.0.0
 [0.4.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.3...v0.4.0
 [0.3.3]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.2...v0.3.3
