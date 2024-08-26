@@ -18,13 +18,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Markdown indentation ([#13](https://github.com/harrydowning/yaml-embedded-languages/issues/13))
 - Highlighting for new YAML grammar
+- `csharp` highlighting
 
 ### Changed
 
 - Fully generated `package.json` to be partially generated
 - `regex` language to use scope `source.js.regexp`
 - Extension logo
-- TextMate scope of language identifier comment to highlight recognized languages
+- Scope of language identifier comment to highlight recognized languages
 
 ### Removed
 

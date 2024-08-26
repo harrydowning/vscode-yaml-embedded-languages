@@ -84,7 +84,7 @@ The following list shows all valid identifiers for the built-in languages:
 | xsl              | `xsl`                 |
 | yaml             | `yaml`                |
 
-\*_Not actually a valid VS Code language_
+\*_Not a valid VS Code language_
 
 ## Requirements
 
