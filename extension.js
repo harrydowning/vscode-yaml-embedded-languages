@@ -5,8 +5,7 @@ const packageJson = require("./package.json");
 
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
-const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline";
-const GLOBAL_STATE_VERSION = "version";
+const VERSION_STATE = "version";
 
 /* eslint sort-keys: ["error", "asc"] */
 const LANGUAGES = {
@@ -185,6 +184,8 @@ class Writable {
 }
 
 class InjectionGrammar extends Writable {
+  embeddedScopeNamePrefix = "meta.embedded.inline";
+
   constructor(injectionScopeName, languages = LANGUAGES) {
     super(`./syntaxes/${injectionScopeName}.injection.tmLanguage.json`);
     this.scopeName = `${injectionScopeName}.injection`;
@@ -219,7 +220,7 @@ class InjectionGrammar extends Writable {
           begin: "(?>^|\\G)([ ]+)(?! )",
           end: "^(?!\\1|\\s*$)",
           while: stripIndent ? "^$|\\1" : undefined,
-          name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
+          name: `${this.embeddedScopeNamePrefix}.${id}`,
           patterns: [{ include: scopeName }],
         },
       ],
@@ -246,7 +247,10 @@ class Package extends Writable {
     const languages = injectionGrammar.languages;
     const ids = Object.keys(languages);
     return Object.fromEntries(
-      ids.map((id) => [`${LANGUAGE_SCOPE_PREFIX}.${id}`, languages[id].name]),
+      ids.map((id) => [
+        `${injectionGrammar.embeddedScopeNamePrefix}.${id}`,
+        languages[id].name,
+      ]),
     );
   }
 
@@ -320,11 +324,11 @@ const updateExtension = () => {
 
 const activate = (context) => {
   const currentVersion = packageJson.version;
-  const previousVersion = context.globalState.get(GLOBAL_STATE_VERSION);
+  const previousVersion = context.globalState.get(VERSION_STATE);
 
   if (previousVersion !== currentVersion) {
     updateExtension();
-    context.globalState.update(GLOBAL_STATE_VERSION, currentVersion);
+    context.globalState.update(VERSION_STATE, currentVersion);
   }
 
   let disposable = vscode.workspace.onDidChangeConfiguration((event) => {
