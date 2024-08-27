@@ -273,10 +273,10 @@ const generateFiles = (languages = LANGUAGES) => {
   const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
   const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
 
-  return (
-    write(`${__dirname}/package.json`, packageJson) |
+  return [
+    write(`${__dirname}/package.json`, packageJson),
     write(`${__dirname}/syntaxes/injection.json`, injectionJson)
-  );
+  ].some(Boolean);
 };
 
 const updateExtension = () => {
