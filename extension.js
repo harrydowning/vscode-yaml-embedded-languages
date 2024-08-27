@@ -3,12 +3,9 @@ const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
 const packageJson = require("./package.json");
 
-const INJECTION_PATH = "./syntaxes/injection.json";
-const SCOPE_NAME = `${packageJson.name}.injection`;
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
 const LANGUAGE_SCOPE_PREFIX = "meta.embedded.inline";
-const REPOSITORY_SUFFIX = "block-scalar";
 const GLOBAL_STATE_VERSION = "version";
 
 /* eslint sort-keys: ["error", "asc"] */
@@ -153,98 +150,121 @@ const LANGUAGES = {
 };
 /* eslint-disable sort-keys */
 
-const getEmbeddedLanguages = (languages) => {
-  const ids = Object.keys(languages);
-  return Object.fromEntries(
-    ids.map((id) => [`${LANGUAGE_SCOPE_PREFIX}.${id}`, languages[id].name]),
-  );
-};
+class Writable {
+  #absolutePath;
 
-const getPackageJson = (languages) => ({
-  ...packageJson,
-  contributes: {
-    ...packageJson.contributes,
-    grammars: [
-      {
-        path: INJECTION_PATH,
-        scopeName: SCOPE_NAME,
-        injectTo: ["source.yaml", "source.github-actions-workflow"],
-        embeddedLanguages: getEmbeddedLanguages(languages),
-      },
-    ],
-  },
-});
+  constructor(path) {
+    this.path = path;
+    this.#absolutePath = `${__dirname}/${path}`;
+  }
 
-const getPatterns = (languages) => {
-  const ids = Object.keys(languages);
-  return ids.map((id) => ({
-    include: `#${id}-${REPOSITORY_SUFFIX}`,
-  }));
-};
+  write() {
+    const data = JSON.stringify(this.valueOf(), null, 2);
+    let fileData;
 
-const getRepository = (languages) => {
-  const entries = Object.entries(languages);
-  return Object.fromEntries(
-    entries.map(([id, { scopeName, stripIndent }]) => [
-      `${id}-${REPOSITORY_SUFFIX}`,
-      {
-        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
-        beginCaptures: {
-          1: {
-            name: "keyword.control.flow.block-scalar.literal.yaml",
-          },
-          2: {
-            name: "keyword.control.flow.block-scalar.folded.yaml",
-          },
-          3: {
-            name: "constant.numeric.indentation-indicator.yaml",
-          },
-          4: {
-            name: "storage.modifier.chomping-indicator.yaml",
-          },
-          5: {
-            name: "entity.name.type.yaml",
-          },
+    try {
+      fileData = fs.readFileSync(this.#absolutePath).toString();
+    } catch {
+      fileData = undefined;
+    }
+
+    if (fileData === data) {
+      return false;
+    }
+
+    try {
+      fs.writeFileSync(this.#absolutePath, data);
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+
+    console.log(`File '${this.#absolutePath}' saved.`);
+    return true;
+  }
+}
+
+class InjectionGrammar extends Writable {
+  constructor(injectionScopeName, languages = LANGUAGES) {
+    super(`./syntaxes/${injectionScopeName}.injection.tmLanguage.json`);
+    this.scopeName = `${packageJson.name}.${injectionScopeName}.injection`;
+    this.injectionScopeName = injectionScopeName;
+    this.languages = languages;
+  }
+
+  #getPatterns() {
+    const entries = Object.entries(this.languages);
+    return entries.map(([id, { scopeName, stripIndent }]) => ({
+      begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
+      beginCaptures: {
+        1: {
+          name: "keyword.control.flow.block-scalar.literal.yaml",
         },
-        end: "^(?=\\S)|(?!\\G)",
-        patterns: [
-          {
-            begin: "(?>^|\\G)([ ]+)(?! )",
-            end: "^(?!\\1|\\s*$)",
-            while: stripIndent ? "^$|\\1" : undefined,
-            name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
-            patterns: [{ include: scopeName }],
-          },
-        ],
+        2: {
+          name: "keyword.control.flow.block-scalar.folded.yaml",
+        },
+        3: {
+          name: "constant.numeric.indentation-indicator.yaml",
+        },
+        4: {
+          name: "storage.modifier.chomping-indicator.yaml",
+        },
+        5: {
+          name: "entity.name.type.yaml",
+        },
       },
-    ]),
-  );
-};
-
-const getInjectionJson = (languages) => ({
-  scopeName: SCOPE_NAME,
-  injectionSelector: "L:source.yaml,L:source.github-actions-workflow",
-  patterns: getPatterns(languages),
-  repository: getRepository(languages),
-});
-
-const write = (filename, data) => {
-  const fileData = fs.readFileSync(filename).toString();
-
-  if (fileData === data) {
-    return false;
+      end: "^(?=\\S)|(?!\\G)",
+      patterns: [
+        {
+          begin: "(?>^|\\G)([ ]+)(?! )",
+          end: "^(?!\\1|\\s*$)",
+          while: stripIndent ? "^$|\\1" : undefined,
+          name: `${LANGUAGE_SCOPE_PREFIX}.${id}`,
+          patterns: [{ include: scopeName }],
+        },
+      ],
+    }));
   }
 
-  try {
-    fs.writeFileSync(filename, data);
-  } catch (err) {
-    console.error(err);
-    return false;
+  valueOf() {
+    return {
+      scopeName: this.scopeName,
+      injectionSelector: `L:${this.injectionScopeName}`,
+      patterns: this.#getPatterns(),
+    };
+  }
+}
+
+class Package extends Writable {
+  #injectionGrammars;
+  constructor(injectionGrammars) {
+    super(`package.json`);
+    this.#injectionGrammars = injectionGrammars;
   }
 
-  console.log(`File '${filename}' saved.`);
-  return true;
-};
+  #getEmbeddedLanguages(injectionGrammar) {
+    const languages = injectionGrammar.languages;
+    const ids = Object.keys(languages);
+    return Object.fromEntries(
+      ids.map((id) => [`${LANGUAGE_SCOPE_PREFIX}.${id}`, languages[id].name]),
+    );
+  }
+
+  valueOf() {
+    return {
+      ...packageJson,
+      contributes: {
+        ...packageJson.contributes,
+        grammars: this.#injectionGrammars.map((injectionGrammar) => ({
+          path: injectionGrammar.path,
+          scopeName: injectionGrammar.scopeName,
+          injectTo: [injectionGrammar.injectionScopeName],
+          embeddedLanguages: this.#getEmbeddedLanguages(injectionGrammar),
+        })),
+      },
+    };
+  }
+}
 
 const normalizeLanguages = (languages) => {
   const normalizedLanguages = {};
@@ -270,13 +290,14 @@ const normalizeLanguages = (languages) => {
 
 const generateFiles = (languages = LANGUAGES) => {
   languages = normalizeLanguages(languages);
-  const packageJson = JSON.stringify(getPackageJson(languages), null, 2);
-  const injectionJson = JSON.stringify(getInjectionJson(languages), null, 2);
+  const grammars = [
+    new InjectionGrammar("source.yaml", languages),
+    new InjectionGrammar("source.github-actions-workflow", languages),
+  ];
 
-  return [
-    write(`${__dirname}/package.json`, packageJson),
-    write(`${__dirname}/syntaxes/injection.json`, injectionJson)
-  ].some(Boolean);
+  const writables = [new Package(grammars), ...grammars];
+
+  return writables.map((writable) => writable.write()).some(Boolean);
 };
 
 const updateExtension = () => {
