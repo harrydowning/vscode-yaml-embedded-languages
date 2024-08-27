@@ -187,7 +187,7 @@ class Writable {
 class InjectionGrammar extends Writable {
   constructor(injectionScopeName, languages = LANGUAGES) {
     super(`./syntaxes/${injectionScopeName}.injection.tmLanguage.json`);
-    this.scopeName = `${packageJson.name}.${injectionScopeName}.injection`;
+    this.scopeName = `${injectionScopeName}.injection`;
     this.injectionScopeName = injectionScopeName;
     this.languages = languages;
   }

@@ -29,7 +29,7 @@
     "grammars": [
       {
         "path": "./syntaxes/source.yaml.injection.tmLanguage.json",
-        "scopeName": "yaml-embedded-languages.source.yaml.injection",
+        "scopeName": "source.yaml.injection",
         "injectTo": [
           "source.yaml"
         ],
@@ -109,7 +109,7 @@
       },
       {
         "path": "./syntaxes/source.github-actions-workflow.injection.tmLanguage.json",
-        "scopeName": "yaml-embedded-languages.source.github-actions-workflow.injection",
+        "scopeName": "source.github-actions-workflow.injection",
         "injectTo": [
           "source.github-actions-workflow"
         ],

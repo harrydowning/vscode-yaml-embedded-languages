@@ -1,5 +1,5 @@
 {
-  "scopeName": "yaml-embedded-languages.source.yaml.injection",
+  "scopeName": "source.yaml.injection",
   "injectionSelector": "L:source.yaml",
   "patterns": [
     {

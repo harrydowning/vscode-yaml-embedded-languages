@@ -1,5 +1,5 @@
 {
-  "scopeName": "yaml-embedded-languages.source.github-actions-workflow.injection",
+  "scopeName": "source.github-actions-workflow.injection",
   "injectionSelector": "L:source.github-actions-workflow",
   "patterns": [
     {
