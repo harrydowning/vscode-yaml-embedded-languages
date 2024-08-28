@@ -227,6 +227,8 @@
     "@types/vscode": "1.74.0",
     "@vscode/vsce": "^2.29.0",
     "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
