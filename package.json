@@ -24,7 +24,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "extension.js",
+  "main": "dist/extension.js",
   "contributes": {
     "grammars": [
       {
@@ -226,10 +226,12 @@
     "@vscode/vsce": "^2.29.0",
     "eslint": "^9.9.0",
     "globals": "^15.9.0",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   },
   "scripts": {
-    "generate": "node extension.js -dev",
+    "generate": "ts-node src/extension.ts -dev",
     "lint:check": "eslint",
     "lint:fix": "eslint --fix",
     "format:check": "prettier . --check",

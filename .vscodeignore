@@ -1,6 +1,6 @@
 **
 
-!extension.js
+!dist/
 !syntaxes/
 !images/icon.png
 !package.json

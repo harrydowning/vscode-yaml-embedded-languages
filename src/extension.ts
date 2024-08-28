@@ -1,7 +1,7 @@
 const DEV_MODE = process.argv?.[2] === "-dev";
 const vscode = DEV_MODE ? null : require("vscode");
 const fs = require("fs");
-const packageJson = require("./package.json");
+const packageJson = require("../package.json");
 
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
@@ -150,9 +150,10 @@ const LANGUAGES = {
 /* eslint-disable sort-keys */
 
 class Writable {
+  path;
   #absolutePath;
 
-  constructor(path) {
+  constructor(path: string) {
     this.path = path;
     this.#absolutePath = `${__dirname}/${path}`;
   }
@@ -185,8 +186,11 @@ class Writable {
 
 class InjectionGrammar extends Writable {
   embeddedScopeNamePrefix = "meta.embedded.inline";
+  scopeName;
+  injectionScopeName;
+  languages;
 
-  constructor(injectionScopeName, languages = LANGUAGES) {
+  constructor(injectionScopeName: string, languages = LANGUAGES) {
     super(`./syntaxes/${injectionScopeName}.injection.tmLanguage.json`);
     this.scopeName = `${injectionScopeName}.injection`;
     this.injectionScopeName = injectionScopeName;
@@ -238,12 +242,12 @@ class InjectionGrammar extends Writable {
 
 class Package extends Writable {
   #injectionGrammars;
-  constructor(injectionGrammars) {
+  constructor(injectionGrammars: InjectionGrammar[]) {
     super(`package.json`);
     this.#injectionGrammars = injectionGrammars;
   }
 
-  #getEmbeddedLanguages(injectionGrammar) {
+  #getEmbeddedLanguages(injectionGrammar: InjectionGrammar) {
     const languages = injectionGrammar.languages;
     const ids = Object.keys(languages);
     return Object.fromEntries(
