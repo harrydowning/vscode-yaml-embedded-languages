@@ -226,6 +226,7 @@
     "@types/node": "^16.18.106",
     "@types/vscode": "1.74.0",
     "@vscode/vsce": "^2.29.0",
+    "esbuild": "^0.23.1",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -235,8 +236,8 @@
     "typescript-eslint": "^8.3.0"
   },
   "scripts": {
-    "build": "tsc",
-    "generate": "ts-node src/extension.ts -dev",
+    "build": "tsc && esbuild dist/extension.js --bundle --platform=node --outfile=dist/extension.js --allow-overwrite --minify --external:vscode",
+    "generate": "ts-node -e \"import { generateFiles } from './src/extension'; generateFiles()\"",
     "lint": "eslint",
     "format": "prettier . --check"
   }
