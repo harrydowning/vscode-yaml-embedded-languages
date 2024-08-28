@@ -1,9 +1,10 @@
 import { LANGUAGES, Languages } from "./constants";
 import { InjectionGrammar } from "./injection-grammar";
 import { Package } from "./package";
+import { hasBoolKey, hasStringKey } from "./utils";
 
-const normalizeLanguages = (languages: { [key: string]: unknown }) => {
-  const normalizedLanguages: Languages = {};
+const parseLanguages = (languages: { [key: string]: unknown }): Languages => {
+  const parsedLanguages: Languages = {};
   for (const id in languages) {
     let language = languages[id];
     if (typeof language === "string") {
@@ -11,32 +12,24 @@ const normalizeLanguages = (languages: { [key: string]: unknown }) => {
     }
 
     if (typeof language === "object" && language !== null) {
-      if (!("scopeName" in language)) {
+      if (!hasStringKey(language, "scopeName")) {
         continue;
       }
 
-      if (typeof language.scopeName !== "string") {
-        continue;
-      }
-
-      normalizedLanguages[id] = {
-        name:
-          "name" in language && typeof language.name === "string"
-            ? language.name
-            : id,
+      parsedLanguages[id] = {
+        name: hasStringKey(language, "name") ? language.name : id,
         scopeName: language.scopeName,
-        stripIndent:
-          "stripIndent" in language && typeof language.stripIndent === "boolean"
-            ? language.stripIndent
-            : false,
+        stripIndent: hasBoolKey(language, "stripIndent")
+          ? language.stripIndent
+          : false,
       };
     }
   }
-  return normalizedLanguages;
+  return parsedLanguages;
 };
 
 export const generateFiles = (languages = LANGUAGES) => {
-  const parsedLanguages = normalizeLanguages(languages);
+  const parsedLanguages = parseLanguages(languages);
   const grammars = [
     new InjectionGrammar("source.yaml", parsedLanguages),
     new InjectionGrammar("source.github-actions-workflow", parsedLanguages),
