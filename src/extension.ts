@@ -353,7 +353,7 @@ export const activate = (context: vscode.ExtensionContext) => {
     context.globalState.update(VERSION_STATE, currentVersion);
   }
 
-  let disposable = vscode.workspace.onDidChangeConfiguration((event) => {
+  const disposable = vscode.workspace.onDidChangeConfiguration((event) => {
     if (event.affectsConfiguration(INCLUDE_CONFIG)) {
       updateExtension();
     }

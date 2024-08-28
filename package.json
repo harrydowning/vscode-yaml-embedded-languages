@@ -229,13 +229,13 @@
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   },
   "scripts": {
+    "build": "tsc",
     "generate": "ts-node src/extension.ts -dev",
-    "lint:check": "eslint",
-    "lint:fix": "eslint --fix",
-    "format:check": "prettier . --check",
-    "format:fix": "prettier . --write"
+    "lint": "eslint",
+    "format": "prettier . --check"
   }
 }

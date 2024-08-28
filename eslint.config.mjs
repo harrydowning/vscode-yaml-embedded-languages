@@ -1,13 +1,18 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
+// @ts-check
 
-export default [
-  pluginJs.configs.recommended,
+import globals from "globals";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    files: ["**/*.js"],
+    ignores: ["dist/*"],
+  },
+  {
     languageOptions: {
-      sourceType: "commonjs",
-      globals: globals.node,
+      globals: globals.node, // TODO: not working, check github/raise issue
     },
   },
-];
+);
