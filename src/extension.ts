@@ -1,7 +1,6 @@
-const DEV_MODE = process.argv?.[2] === "-dev";
-const vscode = DEV_MODE ? null : require("vscode");
-const fs = require("fs");
-const packageJson = require("../package.json");
+import * as vscode from "vscode";
+import fs from "fs";
+import packageJson from "../package.json";
 
 const SUB_INCLUDE_CONFIG = "include";
 const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
@@ -149,13 +148,21 @@ const LANGUAGES = {
 };
 /* eslint-disable sort-keys */
 
+type Languages = {
+  [key: string]: {
+    name: string;
+    scopeName: string;
+    stripIndent: boolean;
+  };
+};
+
 class Writable {
   path;
   #absolutePath;
 
   constructor(path: string) {
     this.path = path;
-    this.#absolutePath = `${__dirname}/${path}`;
+    this.#absolutePath = `${__dirname}/../${path}`;
   }
 
   write() {
@@ -190,7 +197,7 @@ class InjectionGrammar extends Writable {
   injectionScopeName;
   languages;
 
-  constructor(injectionScopeName: string, languages = LANGUAGES) {
+  constructor(injectionScopeName: string, languages: Languages) {
     super(`./syntaxes/${injectionScopeName}.injection.tmLanguage.json`);
     this.scopeName = `${injectionScopeName}.injection`;
     this.injectionScopeName = injectionScopeName;
@@ -274,33 +281,44 @@ class Package extends Writable {
   }
 }
 
-const normalizeLanguages = (languages) => {
-  const normalizedLanguages = {};
+const normalizeLanguages = (languages: { [key: string]: unknown }) => {
+  const normalizedLanguages: Languages = {};
   for (const id in languages) {
     let language = languages[id];
     if (typeof language === "string") {
       language = { scopeName: language };
     }
 
-    if (
-      typeof language === "object" &&
-      typeof language.scopeName === "string"
-    ) {
+    if (typeof language === "object" && language !== null) {
+      if (!("scopeName" in language)) {
+        continue;
+      }
+
+      if (typeof language.scopeName !== "string") {
+        continue;
+      }
+
       normalizedLanguages[id] = {
-        name: language.name || id,
+        name:
+          "name" in language && typeof language.name === "string"
+            ? language.name
+            : id,
         scopeName: language.scopeName,
-        stripIndent: language.stripIndent || false,
+        stripIndent:
+          "stripIndent" in language && typeof language.stripIndent === "boolean"
+            ? language.stripIndent
+            : false,
       };
     }
   }
   return normalizedLanguages;
 };
 
-const generateFiles = (languages = LANGUAGES) => {
-  languages = normalizeLanguages(languages);
+export const generateFiles = (languages = LANGUAGES) => {
+  const parsedLanguages = normalizeLanguages(languages);
   const grammars = [
-    new InjectionGrammar("source.yaml", languages),
-    new InjectionGrammar("source.github-actions-workflow", languages),
+    new InjectionGrammar("source.yaml", parsedLanguages),
+    new InjectionGrammar("source.github-actions-workflow", parsedLanguages),
   ];
 
   const writables = [new Package(grammars), ...grammars];
@@ -326,7 +344,7 @@ const updateExtension = () => {
   }
 };
 
-const activate = (context) => {
+export const activate = (context: vscode.ExtensionContext) => {
   const currentVersion = packageJson.version;
   const previousVersion = context.globalState.get(VERSION_STATE);
 
@@ -344,13 +362,4 @@ const activate = (context) => {
   context.subscriptions.push(disposable);
 };
 
-const deactivate = () => {};
-
-if (DEV_MODE) {
-  generateFiles();
-}
-
-module.exports = {
-  activate,
-  deactivate,
-};
+export const deactivate = () => {};
