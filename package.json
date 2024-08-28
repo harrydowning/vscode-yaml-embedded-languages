@@ -239,6 +239,7 @@
     "build": "tsc && esbuild dist/extension.js --bundle --platform=node --outfile=dist/extension.js --allow-overwrite --minify --external:vscode",
     "generate": "ts-node src/generate.ts",
     "lint": "eslint",
-    "format": "prettier . --check"
+    "format": "prettier . --check",
+    "type": "tsc --noEmit"
   }
 }
