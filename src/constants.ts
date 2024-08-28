@@ -147,3 +147,11 @@ export const LANGUAGES = {
   yaml: "source.yaml",
 };
 /* eslint-disable sort-keys */
+
+export type Languages = {
+  [key: string]: {
+    name: string;
+    scopeName: string;
+    stripIndent: boolean;
+  };
+};
