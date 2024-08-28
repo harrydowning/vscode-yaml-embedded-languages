@@ -12,7 +12,7 @@ export default tseslint.config(
   },
   {
     languageOptions: {
-      globals: globals.node, // TODO: not working, check github/raise issue
+      globals: globals.node, // For JS only
     },
   },
 );
