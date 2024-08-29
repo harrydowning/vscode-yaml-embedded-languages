@@ -26,9 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: npm run build
+      - uses: ./.github/actions/build
       - run: npx vsce package
-      - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
       - run: gh release create v$VERSION --generate-notes yaml-embedded-languages-$VERSION.vsix
         env:
           GH_TOKEN: ${{ github.token }}
@@ -42,9 +41,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: npm run build
+      - uses: ./.github/actions/build
       - run: npx vsce package --pre-release
-      - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
       - run: gh release create v$VERSION --prerelease --generate-notes yaml-embedded-languages-$VERSION.vsix
         env:
           GH_TOKEN: ${{ github.token }}
