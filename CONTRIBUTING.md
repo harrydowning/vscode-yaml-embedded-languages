@@ -19,5 +19,5 @@ Thank you for taking an interest in contributing to this project. All contributi
 ## Release Workflow
 
 - Update `version` in `package.json` and run `npm i` to update `package-lock.json`
-- Update `CHANGELOG.md`, ensuring version links are set
+- Update `CHANGELOG.md` (ensure version links are set)
 - Merge to master with `[release]` in the commit message
