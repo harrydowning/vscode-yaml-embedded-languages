@@ -1,25 +1,25 @@
 import { LANGUAGES, Languages } from "./constants";
 import { InjectionGrammar } from "./injection-grammar";
 import { Package } from "./package";
-import { hasBoolKey, hasStringKey } from "./utils";
+import { hasKey, isBoolean, isObject, isString } from "./utils";
 
 const parseLanguages = (languages: { [key: string]: unknown }): Languages => {
   const parsedLanguages: Languages = {};
   for (const id in languages) {
     let language = languages[id];
-    if (typeof language === "string") {
+    if (isString(language)) {
       language = { scopeName: language };
     }
 
-    if (typeof language === "object" && language !== null) {
-      if (!hasStringKey(language, "scopeName")) {
+    if (isObject(language)) {
+      if (!hasKey(language, "scopeName", isString)) {
         continue;
       }
 
       parsedLanguages[id] = {
-        name: hasStringKey(language, "name") ? language.name : id,
+        name: hasKey(language, "name", isString) ? language.name : id,
         scopeName: language.scopeName,
-        stripIndent: hasBoolKey(language, "stripIndent")
+        stripIndent: hasKey(language, "stripIndent", isBoolean)
           ? language.stripIndent
           : false,
       };

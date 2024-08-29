@@ -11,7 +11,7 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 ## Development Workflow
 
-- Implement changes, noting that `package.json` is partially generated and `syntaxes/*` is fully generated so relevant changes to these should be made in `extension.js`
+- Implement changes, noting that `package.json` is partially generated and `syntaxes/*` is fully generated so relevant changes to these should be made in `src`
 - Run `npm run generate` to update `package.json` and `syntaxes/*`
 - Use F5 within VS Code to test the extension
 
