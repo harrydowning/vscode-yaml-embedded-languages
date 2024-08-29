@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: check
     if: github.ref == 'refs/heads/master'
+    steps:
+      - run: true
   release:
     runs-on: ubuntu-latest
     needs: release-check
