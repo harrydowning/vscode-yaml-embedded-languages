@@ -13,8 +13,6 @@ jobs:
       - run: npm run type
       - run: npm run lint
       - run: npm run format
-      - uses: ./.github/actions/build
-      - run: echo $VERSION
   release-check:
     runs-on: ubuntu-latest
     needs: check
