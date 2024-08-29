@@ -10,14 +10,16 @@ export function isBoolean(value: unknown): value is boolean {
   return typeof value === "boolean";
 }
 
-function _hasKey<K extends string>(
+type Index = string | number | symbol;
+
+function _hasKey<K extends Index>(
   obj: object,
   key: K,
 ): obj is { [P in K]: unknown } {
   return key in obj;
 }
 
-export function hasKey<K extends string, T>(
+export function hasKey<K extends Index, T>(
   obj: object,
   key: K,
   isType: (value: unknown) => value is T,
