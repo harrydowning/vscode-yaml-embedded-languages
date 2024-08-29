@@ -1,223 +1,8 @@
 {
-  "scopeName": "yaml-embedded-languages.injection",
-  "injectionSelector": "L:source.yaml,L:source.github-actions-workflow",
+  "scopeName": "source.yaml.injection",
+  "injectionSelector": "L:source.yaml",
   "patterns": [
     {
-      "include": "#bat-block-scalar"
-    },
-    {
-      "include": "#bibtex-block-scalar"
-    },
-    {
-      "include": "#c-block-scalar"
-    },
-    {
-      "include": "#c#-block-scalar"
-    },
-    {
-      "include": "#c\\+\\+-block-scalar"
-    },
-    {
-      "include": "#clojure-block-scalar"
-    },
-    {
-      "include": "#coffee-block-scalar"
-    },
-    {
-      "include": "#cpp-block-scalar"
-    },
-    {
-      "include": "#csharp-block-scalar"
-    },
-    {
-      "include": "#css-block-scalar"
-    },
-    {
-      "include": "#cuda-block-scalar"
-    },
-    {
-      "include": "#dart-block-scalar"
-    },
-    {
-      "include": "#diff-block-scalar"
-    },
-    {
-      "include": "#dockercompose-block-scalar"
-    },
-    {
-      "include": "#dockerfile-block-scalar"
-    },
-    {
-      "include": "#f#-block-scalar"
-    },
-    {
-      "include": "#fsharp-block-scalar"
-    },
-    {
-      "include": "#go-block-scalar"
-    },
-    {
-      "include": "#groovy-block-scalar"
-    },
-    {
-      "include": "#handlebars-block-scalar"
-    },
-    {
-      "include": "#hlsl-block-scalar"
-    },
-    {
-      "include": "#html-block-scalar"
-    },
-    {
-      "include": "#ini-block-scalar"
-    },
-    {
-      "include": "#jade-block-scalar"
-    },
-    {
-      "include": "#java-block-scalar"
-    },
-    {
-      "include": "#javascript-block-scalar"
-    },
-    {
-      "include": "#js-block-scalar"
-    },
-    {
-      "include": "#json-block-scalar"
-    },
-    {
-      "include": "#jsonc-block-scalar"
-    },
-    {
-      "include": "#jsonl-block-scalar"
-    },
-    {
-      "include": "#jsx-block-scalar"
-    },
-    {
-      "include": "#julia-block-scalar"
-    },
-    {
-      "include": "#latex-block-scalar"
-    },
-    {
-      "include": "#less-block-scalar"
-    },
-    {
-      "include": "#log-block-scalar"
-    },
-    {
-      "include": "#lua-block-scalar"
-    },
-    {
-      "include": "#make-block-scalar"
-    },
-    {
-      "include": "#makefile-block-scalar"
-    },
-    {
-      "include": "#markdown-block-scalar"
-    },
-    {
-      "include": "#math-block-scalar"
-    },
-    {
-      "include": "#objc-block-scalar"
-    },
-    {
-      "include": "#objcpp-block-scalar"
-    },
-    {
-      "include": "#perl-block-scalar"
-    },
-    {
-      "include": "#php-block-scalar"
-    },
-    {
-      "include": "#pip-block-scalar"
-    },
-    {
-      "include": "#powerfx-block-scalar"
-    },
-    {
-      "include": "#powershell-block-scalar"
-    },
-    {
-      "include": "#properties-block-scalar"
-    },
-    {
-      "include": "#py-block-scalar"
-    },
-    {
-      "include": "#python-block-scalar"
-    },
-    {
-      "include": "#r-block-scalar"
-    },
-    {
-      "include": "#raku-block-scalar"
-    },
-    {
-      "include": "#razor-block-scalar"
-    },
-    {
-      "include": "#regex-block-scalar"
-    },
-    {
-      "include": "#requirements-block-scalar"
-    },
-    {
-      "include": "#rst-block-scalar"
-    },
-    {
-      "include": "#ruby-block-scalar"
-    },
-    {
-      "include": "#rust-block-scalar"
-    },
-    {
-      "include": "#scss-block-scalar"
-    },
-    {
-      "include": "#shaderlab-block-scalar"
-    },
-    {
-      "include": "#shell-block-scalar"
-    },
-    {
-      "include": "#sql-block-scalar"
-    },
-    {
-      "include": "#swift-block-scalar"
-    },
-    {
-      "include": "#tex-block-scalar"
-    },
-    {
-      "include": "#ts-block-scalar"
-    },
-    {
-      "include": "#tsx-block-scalar"
-    },
-    {
-      "include": "#typescript-block-scalar"
-    },
-    {
-      "include": "#vb-block-scalar"
-    },
-    {
-      "include": "#xml-block-scalar"
-    },
-    {
-      "include": "#xsl-block-scalar"
-    },
-    {
-      "include": "#yaml-block-scalar"
-    }
-  ],
-  "repository": {
-    "bat-block-scalar": {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bat)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -250,7 +35,7 @@
         }
       ]
     },
-    "bibtex-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bibtex)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -283,7 +68,7 @@
         }
       ]
     },
-    "c-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -316,7 +101,7 @@
         }
       ]
     },
-    "c#-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c#)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -349,7 +134,7 @@
         }
       ]
     },
-    "c\\+\\+-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:c\\+\\+)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -382,7 +167,7 @@
         }
       ]
     },
-    "clojure-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:clojure)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -415,7 +200,7 @@
         }
       ]
     },
-    "coffee-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:coffee)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -448,7 +233,7 @@
         }
       ]
     },
-    "cpp-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cpp)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -481,7 +266,7 @@
         }
       ]
     },
-    "csharp-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:csharp)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -514,7 +299,7 @@
         }
       ]
     },
-    "css-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:css)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -547,7 +332,7 @@
         }
       ]
     },
-    "cuda-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:cuda)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -580,7 +365,7 @@
         }
       ]
     },
-    "dart-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dart)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -613,7 +398,7 @@
         }
       ]
     },
-    "diff-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:diff)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -647,7 +432,7 @@
         }
       ]
     },
-    "dockercompose-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockercompose)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -680,7 +465,7 @@
         }
       ]
     },
-    "dockerfile-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:dockerfile)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -713,7 +498,7 @@
         }
       ]
     },
-    "f#-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:f#)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -746,7 +531,7 @@
         }
       ]
     },
-    "fsharp-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:fsharp)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -779,7 +564,7 @@
         }
       ]
     },
-    "go-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:go)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -812,7 +597,7 @@
         }
       ]
     },
-    "groovy-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:groovy)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -845,7 +630,7 @@
         }
       ]
     },
-    "handlebars-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:handlebars)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -878,7 +663,7 @@
         }
       ]
     },
-    "hlsl-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:hlsl)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -911,7 +696,7 @@
         }
       ]
     },
-    "html-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:html)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -944,7 +729,7 @@
         }
       ]
     },
-    "ini-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ini)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -977,7 +762,7 @@
         }
       ]
     },
-    "jade-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jade)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1010,7 +795,7 @@
         }
       ]
     },
-    "java-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:java)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1043,7 +828,7 @@
         }
       ]
     },
-    "javascript-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:javascript)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1076,7 +861,7 @@
         }
       ]
     },
-    "js-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:js)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1109,7 +894,7 @@
         }
       ]
     },
-    "json-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:json)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1142,7 +927,7 @@
         }
       ]
     },
-    "jsonc-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonc)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1175,7 +960,7 @@
         }
       ]
     },
-    "jsonl-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsonl)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1208,7 +993,7 @@
         }
       ]
     },
-    "jsx-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:jsx)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1241,7 +1026,7 @@
         }
       ]
     },
-    "julia-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:julia)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1274,7 +1059,7 @@
         }
       ]
     },
-    "latex-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:latex)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1308,7 +1093,7 @@
         }
       ]
     },
-    "less-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:less)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1341,7 +1126,7 @@
         }
       ]
     },
-    "log-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:log)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1374,7 +1159,7 @@
         }
       ]
     },
-    "lua-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:lua)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1407,7 +1192,7 @@
         }
       ]
     },
-    "make-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:make)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1440,7 +1225,7 @@
         }
       ]
     },
-    "makefile-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:makefile)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1473,7 +1258,7 @@
         }
       ]
     },
-    "markdown-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:markdown)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1507,7 +1292,7 @@
         }
       ]
     },
-    "math-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:math)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1540,7 +1325,7 @@
         }
       ]
     },
-    "objc-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objc)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1573,7 +1358,7 @@
         }
       ]
     },
-    "objcpp-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:objcpp)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1606,7 +1391,7 @@
         }
       ]
     },
-    "perl-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:perl)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1639,7 +1424,7 @@
         }
       ]
     },
-    "php-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:php)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1672,7 +1457,7 @@
         }
       ]
     },
-    "pip-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:pip)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1705,7 +1490,7 @@
         }
       ]
     },
-    "powerfx-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powerfx)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1738,7 +1523,7 @@
         }
       ]
     },
-    "powershell-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:powershell)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1771,7 +1556,7 @@
         }
       ]
     },
-    "properties-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:properties)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1804,7 +1589,7 @@
         }
       ]
     },
-    "py-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:py)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1837,7 +1622,7 @@
         }
       ]
     },
-    "python-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:python)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1870,7 +1655,7 @@
         }
       ]
     },
-    "r-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:r)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1903,7 +1688,7 @@
         }
       ]
     },
-    "raku-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:raku)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1936,7 +1721,7 @@
         }
       ]
     },
-    "razor-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:razor)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -1969,7 +1754,7 @@
         }
       ]
     },
-    "regex-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:regex)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2002,7 +1787,7 @@
         }
       ]
     },
-    "requirements-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:requirements)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2035,7 +1820,7 @@
         }
       ]
     },
-    "rst-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rst)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2068,7 +1853,7 @@
         }
       ]
     },
-    "ruby-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ruby)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2101,7 +1886,7 @@
         }
       ]
     },
-    "rust-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:rust)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2134,7 +1919,7 @@
         }
       ]
     },
-    "scss-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:scss)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2167,7 +1952,7 @@
         }
       ]
     },
-    "shaderlab-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shaderlab)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2200,7 +1985,7 @@
         }
       ]
     },
-    "shell-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:shell)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2233,7 +2018,7 @@
         }
       ]
     },
-    "sql-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:sql)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2266,7 +2051,7 @@
         }
       ]
     },
-    "swift-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:swift)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2299,7 +2084,7 @@
         }
       ]
     },
-    "tex-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tex)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2332,7 +2117,7 @@
         }
       ]
     },
-    "ts-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:ts)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2365,7 +2150,7 @@
         }
       ]
     },
-    "tsx-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:tsx)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2398,7 +2183,7 @@
         }
       ]
     },
-    "typescript-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:typescript)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2431,7 +2216,7 @@
         }
       ]
     },
-    "vb-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:vb)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2464,7 +2249,7 @@
         }
       ]
     },
-    "xml-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xml)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2497,7 +2282,7 @@
         }
       ]
     },
-    "xsl-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:xsl)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2530,7 +2315,7 @@
         }
       ]
     },
-    "yaml-block-scalar": {
+    {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:yaml)\\s*\\n)",
       "beginCaptures": {
         "1": {
@@ -2563,5 +2348,5 @@
         }
       ]
     }
-  }
+  ]
 }

@@ -1,7 +1,7 @@
 **
 
-!extension.js
-!syntaxes/injection.json
+!dist/extension.js
+!syntaxes/
 !images/icon.png
 !package.json
 !README.md

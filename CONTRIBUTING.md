@@ -11,8 +11,8 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 ## Development Workflow
 
-- Implement changes, noting that `package.json` is partially generated and `syntaxes/injection.json` is fully generated so relevant changes to these should be made in `extension.js`
-- Run `npm run generate` to update `package.json` and `syntaxes/injection.json`
+- Implement changes, noting that `package.json` is partially generated and `syntaxes` is fully generated so relevant changes to these should be made in `src`
+- Run `npm run generate` to update `package.json` and `syntaxes`
 - Use F5 within VS Code to test the extension
 
 ## Release Workflow
