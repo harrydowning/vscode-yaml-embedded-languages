@@ -13,10 +13,11 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 - Implement changes, noting that `package.json` is partially generated and `syntaxes` is fully generated so relevant changes to these should be made in `src`
 - Run `npm run generate` to update `package.json` and `syntaxes`
+- Run `npm run build` to update `dist/extension.js`
 - Use F5 within VS Code to test the extension
 
 ## Release Workflow
 
 - Update `version` in `package.json` and run `npm i` to update `package-lock.json`
-- Update `CHANGELOG.md`
+- Update `CHANGELOG.md` (ensure version links are set)
 - Merge to master with `[release]` in the commit message
