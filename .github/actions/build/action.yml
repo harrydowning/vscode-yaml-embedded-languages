@@ -1,9 +1,0 @@
-name: build
-
-runs:
-  using: composite
-  steps:
-    - run: npm run build
-      shell: bash
-    - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
-      shell: bash

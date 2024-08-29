@@ -26,7 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - uses: ./.github/actions/build
       - run: npx vsce package
       - run: gh release create v$VERSION --generate-notes yaml-embedded-languages-$VERSION.vsix
         env:
@@ -41,7 +40,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - uses: ./.github/actions/build
       - run: npx vsce package --pre-release
       - run: gh release create v$VERSION --prerelease --generate-notes yaml-embedded-languages-$VERSION.vsix
         env:

@@ -8,3 +8,7 @@ runs:
         node-version: "18"
     - run: npm i
       shell: bash
+    - run: npm run build
+      shell: bash
+    - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
+      shell: bash
