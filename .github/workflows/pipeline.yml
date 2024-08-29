@@ -6,11 +6,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-      - run: npm i
+      - uses: ./.github/actions/setup.yml
       - run: npm run generate
       - run: "[[ -z $(git status --porcelain) ]]"
       - run: npm run type
@@ -27,11 +23,7 @@ jobs:
     needs: release-check
     if: contains(github.event.head_commit.message, '[release]') && !contains(github.event.head_commit.message, '[pre-release]')
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-      - run: npm i
+      - uses: ./.github/actions/setup.yml
       - run: npm run build
       - run: npx vsce package
       - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
@@ -46,11 +38,7 @@ jobs:
     needs: release-check
     if: contains(github.event.head_commit.message, '[pre-release]') && !contains(github.event.head_commit.message, '[release]')
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-      - run: npm i
+      - uses: ./.github/actions/setup.yml
       - run: npm run build
       - run: npx vsce package --pre-release
       - run: echo "VERSION=$(node -p "require('./package.json').version")" >> "$GITHUB_ENV"
