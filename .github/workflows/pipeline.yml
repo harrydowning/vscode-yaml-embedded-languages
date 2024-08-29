@@ -6,6 +6,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: npm run generate
       - run: "[[ -z $(git status --porcelain) ]]"
@@ -23,6 +24,7 @@ jobs:
     needs: release-check
     if: contains(github.event.head_commit.message, '[release]') && !contains(github.event.head_commit.message, '[pre-release]')
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: npm run build
       - run: npx vsce package
@@ -38,6 +40,7 @@ jobs:
     needs: release-check
     if: contains(github.event.head_commit.message, '[pre-release]') && !contains(github.event.head_commit.message, '[release]')
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: npm run build
       - run: npx vsce package --pre-release
