@@ -236,7 +236,7 @@
     "typescript-eslint": "^8.3.0"
   },
   "scripts": {
-    "build": "tsc && esbuild dist/extension.js --bundle --platform=node --outfile=dist/extension.js --allow-overwrite --minify --external:vscode",
+    "build": "tsc && esbuild dist/extension.js --bundle --platform=node --outfile=dist/extension.js --allow-overwrite --minify --external:vscode --external:../package.json --alias:@package=../package.json",
     "generate": "ts-node src/generate.ts",
     "lint": "eslint",
     "format": "prettier . --check",

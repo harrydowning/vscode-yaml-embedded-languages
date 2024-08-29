@@ -1,8 +1,8 @@
 import vscode from "vscode";
+import packageJson from "@package";
 import {
   INCLUDE_CONFIG,
   LANGUAGES,
-  packageJson,
   SUB_INCLUDE_CONFIG,
   VERSION_STATE,
 } from "./constants";

@@ -16,7 +16,7 @@ export class Writable {
     try {
       fileData = fs.readFileSync(this.#absolutePath).toString();
     } catch {
-      fileData = undefined;
+      fileData = null;
     }
 
     if (fileData === data) {

@@ -1,4 +1,4 @@
-import { packageJson } from "./constants";
+import packageJson from "@package";
 import { InjectionGrammar } from "./injection-grammar";
 import { Writable } from "./writable";
 

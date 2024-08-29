@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 - `scopeName` to be required
+- Output to be bundled and minified
+- Injection grammar to be separated into `source.yaml.injection` and `source.github-actions-workflow.injection`
 
 ## [1.0.1] - 2024-08-26
 

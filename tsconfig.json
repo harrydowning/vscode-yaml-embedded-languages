@@ -9,7 +9,10 @@
     "resolveJsonModule": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@package": ["./package.json"]
+    }
   },
   "include": ["src/**/*"]
 }
