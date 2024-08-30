@@ -51,7 +51,7 @@ export class InjectionGrammar extends Writable {
   valueOf() {
     return {
       scopeName: this.scopeName,
-      injectionSelector: `L:${this.injectionScopeName}`,
+      injectionSelector: `L:${this.injectionScopeName} -comment`,
       patterns: this.#getPatterns(),
     };
   }

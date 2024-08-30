@@ -1,6 +1,6 @@
 {
   "scopeName": "source.yaml.injection",
-  "injectionSelector": "L:source.yaml",
+  "injectionSelector": "L:source.yaml -comment",
   "patterns": [
     {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bat)\\s*\\n)",
