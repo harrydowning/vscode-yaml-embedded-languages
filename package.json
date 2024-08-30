@@ -1,6 +1,6 @@
 {
   "name": "yaml-embedded-languages",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
   "icon": "images/icon.png",
@@ -241,6 +241,9 @@
     "generate": "ts-node -r tsconfig-paths/register src/generate.ts",
     "lint": "eslint",
     "format": "prettier . --check",
-    "type": "tsc --noEmit"
+    "type": "tsc --noEmit",
+    "package": "vsce package",
+    "release": "gh release create v$npm_package_version --generate-notes yaml-embedded-languages-$npm_package_version.vsix",
+    "publish": "vsce publish"
   }
 }
