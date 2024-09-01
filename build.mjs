@@ -13,4 +13,7 @@ await esbuild.build({
     "@package": "../package.json",
   },
   external: ["vscode", "../package.json"],
+  define: {
+    PRE_RELEASE: JSON.stringify(process.argv.includes("--pre-release")),
+  },
 });

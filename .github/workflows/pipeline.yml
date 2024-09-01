@@ -30,6 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+      - run: npm run build
       - run: npm run package
       - run: npm run release
         env:
@@ -44,10 +45,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: npm run package --pre-release
-      - run: npm run release --prerelease
+      - run: npm run build -- --pre-release
+      - run: npm run package -- --pre-release
+      - run: npm run release -- --prerelease
         env:
           GH_TOKEN: ${{ github.token }}
-      - run: npm run publish --pre-release
+      - run: npm run publish -- --pre-release
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}

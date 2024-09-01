@@ -8,5 +8,3 @@ runs:
         node-version: "18"
     - run: npm i
       shell: bash
-    - run: npm run build
-      shell: bash
