@@ -30,6 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+      - run: npm run build
       - run: npm run package
       - run: npm run release
         env:
@@ -41,13 +42,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: release-check
     if: contains(github.event.head_commit.message, '[pre-release]') && !contains(github.event.head_commit.message, '[release]')
+    env:
+      PRE_RELEASE: true
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: npm run package --pre-release
-      - run: npm run release --prerelease
+      - run: npm run generate
+      - run: npm run build
+      - run: npm run package -- --pre-release
+      - run: npm run release -- --prerelease
         env:
           GH_TOKEN: ${{ github.token }}
-      - run: npm run publish --pre-release
+      - run: npm run publish -- --pre-release
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}

@@ -230,6 +230,7 @@
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -237,7 +238,7 @@
     "typescript-eslint": "^8.3.0"
   },
   "scripts": {
-    "build": "tsc && esbuild dist/extension.js --bundle --platform=node --outfile=dist/extension.js --allow-overwrite --minify --external:vscode --external:../package.json --alias:@package=../package.json",
+    "build": "tsc && node build.mjs",
     "generate": "ts-node -r tsconfig-paths/register src/generate.ts",
     "lint": "eslint",
     "format": "prettier . --check",

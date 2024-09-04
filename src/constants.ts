@@ -3,6 +3,7 @@ import packageJson from "@package";
 export const SUB_INCLUDE_CONFIG = "include";
 export const INCLUDE_CONFIG = `${packageJson.name}.${SUB_INCLUDE_CONFIG}`;
 export const VERSION_STATE = "version";
+export const PRE_RELEASE = process.env.PRE_RELEASE === "true";
 
 export type Languages = {
   [key: string]: {
