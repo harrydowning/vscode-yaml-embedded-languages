@@ -16,11 +16,10 @@ Thank you for taking an interest in contributing to this project. All contributi
 - Run `npm run build` to update `dist/extension.js`
 - Use F5 within VS Code to test the extension
 
-> [!NOTE]  
-> `package.json` is partially generated and `syntaxes` is fully generated. Relevant changes to these should be made in `src`.
-
-> [!NOTE]  
-> Any features intended for pre-release should be kept behind the `PRE_RELEASE` flag. These features can be enabled by setting the environment variable `PRE_RELEASE=true` on build and generate.
+> [!NOTE]
+>
+> - `package.json` is partially generated and `syntaxes` is fully generated. Relevant changes to these should be made in `src`.
+> - Any features intended for pre-release should be kept behind the `PRE_RELEASE` flag. These features can be enabled by setting the environment variable `PRE_RELEASE=true` on build and generate.
 
 ## Release Workflow
 
