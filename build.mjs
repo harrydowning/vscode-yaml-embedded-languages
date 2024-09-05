@@ -8,15 +8,22 @@ const envRegExp = (name) => {
   return new RegExp(String.raw`\bprocess\.env\.(${name})\b`, "g");
 };
 
-const env = () => ({
+/**
+ * @param {Object} options
+ * @param {RegExp} [options.filter]
+ * @param {string[]} [options.exclude]
+ */
+const env = ({ filter = /.*/, exclude = [] } = {}) => ({
   name: "env",
   setup: (build) => {
-    build.onLoad({ filter: /.*/ }, (args) => {
+    build.onLoad({ filter }, (args) => {
       let src = fs.readFileSync(args.path, "utf8");
       for (const match of src.matchAll(envRegExp(".+?"))) {
         const name = match[1];
-        const value = JSON.stringify(process.env[name]) || "undefined";
-        src = src.replace(envRegExp(name), value);
+        if (!exclude.includes(name)) {
+          const value = JSON.stringify(process.env[name]) || "undefined";
+          src = src.replace(envRegExp(name), value);
+        }
       }
       return { contents: src, loader: "default" };
     });
@@ -35,7 +42,7 @@ const result = await esbuild.build({
     "@package": "../package.json",
   },
   external: ["vscode", "../package.json"],
-  plugins: [env()],
+  plugins: [env({ filter: /dist/ })],
 });
 
 const stats = {};

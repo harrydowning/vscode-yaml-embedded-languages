@@ -3,8 +3,6 @@ import { InjectionGrammar } from "./injection-grammar";
 import { Package } from "./package";
 import { hasKey, isBoolean, isObject, isString } from "./utils";
 
-console.log(process.env.PRE_RELEASE, process.env.OTHER, process.env.ANOTHER);
-
 const parseLanguages = (languages: { [key: string]: unknown }): Languages => {
   const parsedLanguages: Languages = {};
   for (const id in languages) {
