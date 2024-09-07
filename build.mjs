@@ -3,46 +3,20 @@ import fs from "fs";
 import esbuild from "esbuild";
 import bytes from "bytes";
 import chalk from "chalk";
-
-const envRegExp = (name) => {
-  return new RegExp(String.raw`\bprocess\.env\.(${name})\b`, "g");
-};
-
-/**
- * @param {Object} options
- * @param {RegExp} [options.filter]
- * @param {string[]} [options.exclude]
- */
-const env = ({ filter = /.*/, exclude = [] } = {}) => ({
-  name: "env",
-  setup: (build) => {
-    build.onLoad({ filter }, (args) => {
-      let src = fs.readFileSync(args.path, "utf8");
-      for (const match of src.matchAll(envRegExp(".+?"))) {
-        const name = match[1];
-        if (!exclude.includes(name)) {
-          const value = JSON.stringify(process.env[name]) || "undefined";
-          src = src.replace(envRegExp(name), value);
-        }
-      }
-      return { contents: src, loader: "default" };
-    });
-  },
-});
+import { autoEnv } from "esbuild-plugin-auto-env";
 
 const result = await esbuild.build({
-  entryPoints: ["dist/extension.js"],
+  entryPoints: ["src/extension.ts"],
   bundle: true,
   platform: "node",
   outfile: "dist/extension.js",
-  allowOverwrite: true,
   minify: true,
   metafile: true,
   alias: {
     "@package": "../package.json",
   },
   external: ["vscode", "../package.json"],
-  plugins: [env({ filter: /dist/ })],
+  plugins: [autoEnv({ filter: /src/ })],
 });
 
 const stats = {};
