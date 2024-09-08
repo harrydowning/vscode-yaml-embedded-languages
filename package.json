@@ -9,10 +9,10 @@
     "name": "Harry Downing",
     "email": "harrydowning.dev@gmail.com"
   },
-  "homepage": "https://github.com/harrydowning/yaml-embedded-languages#readme",
+  "homepage": "https://github.com/harrydowning/vscode-yaml-embedded-languages#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/harrydowning/yaml-embedded-languages.git"
+    "url": "https://github.com/harrydowning/vscode-yaml-embedded-languages.git"
   },
   "license": "MIT",
   "engines": {

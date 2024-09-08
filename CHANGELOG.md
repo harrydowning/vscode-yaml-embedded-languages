@@ -36,7 +36,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Markdown indentation ([#13](https://github.com/harrydowning/yaml-embedded-languages/issues/13))
+- Markdown indentation ([#13](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/13))
 - Highlighting for new YAML grammar
 - `csharp` highlighting
 
@@ -59,7 +59,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Built-in language names ([#12](https://github.com/harrydowning/yaml-embedded-languages/issues/12))
+- Built-in language names ([#12](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/12))
 
 ## [0.3.3] - 2024-07-06
 
@@ -72,7 +72,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- User languages reset on extension update ([#24](https://github.com/harrydowning/yaml-embedded-languages/issues/24))
+- User languages reset on extension update ([#24](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/24))
 - User language override precedence
 
 ## [0.3.1] - 2024-06-29
@@ -85,19 +85,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Support for Power Fx ([#17](https://github.com/harrydowning/yaml-embedded-languages/issues/17))
+- Support for Power Fx ([#17](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/17))
 
 ## [0.2.0] - 2023-07-29
 
 ### Added
 
-- Support for GitHub Actions ([#9](https://github.com/harrydowning/yaml-embedded-languages/issues/9))
+- Support for GitHub Actions ([#9](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/9))
 - `CONTRIBUTING.md` documentation
 - `-dev` flag on `extension.js`
 
 ### Fixed
 
-- Path separators on macOS ([#7](https://github.com/harrydowning/yaml-embedded-languages/issues/7))
+- Path separators on macOS ([#7](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues/7))
 
 ### Changed
 
@@ -122,17 +122,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.3...HEAD
-[1.0.3]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.4.0...v1.0.0
-[0.4.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.3...v0.4.0
-[0.3.3]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.2...v0.3.3
-[0.3.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.1...v0.3.2
-[0.3.1]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.0.2...v0.1.0
-[0.0.2]: https://github.com/harrydowning/yaml-embedded-languages/compare/v0.0.1...v0.0.2
-[0.0.1]: https://github.com/harrydowning/yaml-embedded-languages/releases/tag/v0.0.1
+[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.4.0...v1.0.0
+[0.4.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.3.3...v0.4.0
+[0.3.3]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.0.2...v0.1.0
+[0.0.2]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/harrydowning/vscode-yaml-embedded-languages/releases/tag/v0.0.1
