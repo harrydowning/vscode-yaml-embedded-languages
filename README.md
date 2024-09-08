@@ -98,7 +98,7 @@ None
 
 ## Known Issues
 
-See [Issues](https://github.com/harrydowning/yaml-embedded-languages/issues)
+See [Issues](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues)
 
 ## Contribution Notes
 

@@ -4,7 +4,7 @@ Thank you for taking an interest in contributing to this project. All contributi
 
 ## Contribution Workflow
 
-- Raise/find an [issue](https://github.com/harrydowning/yaml-embedded-languages/issues) to fix
+- Raise/find an [issue](https://github.com/harrydowning/vscode-yaml-embedded-languages/issues) to fix
 - Fork the repository
 - Implement changes (see [development workflow](#development-workflow))
 - Create pull request
