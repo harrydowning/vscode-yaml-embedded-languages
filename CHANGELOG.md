@@ -6,19 +6,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.6] - <!-- TODO: date -->
+
 ### Fixed
 
-- Revert temporary grammar fix in v1.0.5
+- Grammar for VS Code <!-- TODO: version -->
+- Changelog markup
 
 ## [1.0.5] - 2024-09-09
 
 ### Fixed
 
-- Grammar temporarily for VS Code 1.93.0 YAML [bug](https://github.com/microsoft/vscode/issues/224978)
+- Grammar for VS Code 1.93.0 [microsoft/vscode#224978](https://github.com/microsoft/vscode/issues/224978)
 
 ## [1.0.4] - 2024-09-08
 
-## Changed
+### Changed
 
 - Repository name to `vscode-yaml-embedded-languages`
 
@@ -138,7 +141,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...HEAD
+[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...HEAD
+[1.0.6]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.2...v1.0.3
