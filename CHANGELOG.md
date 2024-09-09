@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.5] - 2024-09-09
+
+### Fixed
+
+- Grammar temporarily for VS Code 1.93.0 YAML [bug](https://github.com/microsoft/vscode/issues/224978)
+
 ## [1.0.4] - 2024-09-08
 
 ## Changed
