@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Fixed
 
-- Revert temporary fix in v1.0.5
+- Revert temporary grammar fix in v1.0.5
 
 ## [1.0.5] - 2024-09-09
 
