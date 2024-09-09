@@ -17,7 +17,7 @@ export class InjectionGrammar extends Writable {
   #getPatterns() {
     const entries = Object.entries(this.languages);
     return entries.map(([id, { scopeName, stripIndent }]) => ({
-      begin: `(?i)[ \t]*(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
+      begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
       beginCaptures: {
         1: {
           name: "keyword.control.flow.block-scalar.literal.yaml",
