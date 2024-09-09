@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Fixed
+
+- Revert temporary fix in v1.0.5
+
 ## [1.0.5] - 2024-09-09
 
 ### Fixed
