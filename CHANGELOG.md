@@ -6,11 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-## [1.0.6] - <!-- TODO: date -->
-
 ### Fixed
 
-- Grammar for VS Code <!-- TODO: version -->
+- Grammar for VS Code 1.94.0 <!-- check version -->
 - Changelog markup
 
 ## [1.0.5] - 2024-09-09

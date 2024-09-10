@@ -43,7 +43,10 @@ export const LANGUAGES = {
     scopeName: "source.diff",
     stripIndent: true,
   },
-  dockercompose: "source.yaml",
+  dockercompose: {
+    scopeName: "source.yaml",
+    stripIndent: true,
+  },
   dockerfile: "source.dockerfile",
   "f#": {
     name: "fsharp",
@@ -151,5 +154,8 @@ export const LANGUAGES = {
   vb: "source.asp.vb.net",
   xml: "text.xml",
   xsl: "text.xml.xsl",
-  yaml: "source.yaml",
+  yaml: {
+    scopeName: "source.yaml",
+    stripIndent: true,
+  },
 };

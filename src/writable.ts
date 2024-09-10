@@ -9,17 +9,21 @@ export class Writable {
     this.#absolutePath = `${__dirname}/../${path}`;
   }
 
+  serialize() {
+    return Buffer.from(JSON.stringify(this.valueOf(), null, 2));
+  }
+
   write() {
-    const data = JSON.stringify(this.valueOf(), null, 2);
+    const data = this.serialize();
     let fileData;
 
     try {
-      fileData = fs.readFileSync(this.#absolutePath).toString();
+      fileData = fs.readFileSync(this.#absolutePath);
     } catch {
       fileData = null;
     }
 
-    if (fileData === data) {
+    if (fileData !== null && fileData.equals(data)) {
       return false;
     }
 
