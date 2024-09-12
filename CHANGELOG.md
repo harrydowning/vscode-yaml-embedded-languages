@@ -6,9 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.0.6]
+
 ### Fixed
 
-- Grammar for VS Code 1.94.0 <!-- check version -->
+- Grammar for VS Code 1.93.1 [microsoft/vscode#228250](https://github.com/microsoft/vscode/pull/228250)
+- Indentation on YAML-based embedded languages
 - Changelog markup
 
 ## [1.0.5] - 2024-09-09
@@ -139,7 +142,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...HEAD
+[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...HEAD
+[1.0.6]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.2...v1.0.3
