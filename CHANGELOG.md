@@ -6,13 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-## [1.0.6]
+## [1.0.6] - 2024-09-12
 
 ### Fixed
 
-- Grammar for VS Code 1.93.1 [microsoft/vscode#228250](https://github.com/microsoft/vscode/pull/228250)
-- Indentation on YAML-based embedded languages
+- Indentation in YAML-based embedded languages
 - Changelog markup
+
+### Reverted
+
+- Grammar fix introduced in v1.0.5
 
 ## [1.0.5] - 2024-09-09
 
