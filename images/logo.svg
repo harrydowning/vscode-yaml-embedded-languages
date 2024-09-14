@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="30" fill="#fff"/>
+  <text x="2.5%" y="50%" font-size="108px" text-anchor="start" dominant-baseline="middle" font-style="italic" font-weight="bold">Y</text>
+  <text x="97.5%" y="50%" font-size="108px" text-anchor="end" dominant-baseline="middle" font-style="italic" font-weight="bold">L</text>
+  <text x="35%" y="45%" font-size="54px" text-anchor="start" font-style="italic" font-weight="bold">AM</text>
+</svg>
