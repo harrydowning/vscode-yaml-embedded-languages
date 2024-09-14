@@ -17,34 +17,29 @@ export class InjectionGrammar extends Writable {
   #getPatterns() {
     const entries = Object.entries(this.languages);
     return [
-      ...entries.map(([id, { scopeName, stripIndent }]) => ({
-        begin: `#\\s*yaml-embedded-languages\\s*:\\s*${id}`,
+      {
+        begin: `#\\s*yaml-embedded-languages\\s*$`,
         beginCaptures: {
-          "0": {
-            name: "entity.name.type.yaml",
-          },
+          "0": { name: "entity.name.type.yaml" },
+        },
+        patterns: [{ include: this.injectionScopeName }],
+      },
+      ...entries.map(([id, { scopeName, stripIndent }]) => ({
+        begin: `#\\s*yaml-embedded-languages\\s*:\\s*${id}\\s*$`,
+        beginCaptures: {
+          0: { name: "entity.name.type.yaml" },
         },
         patterns: [
           {
             begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)`,
             beginCaptures: {
-              1: {
-                name: "keyword.control.flow.block-scalar.literal.yaml",
-              },
-              2: {
-                name: "keyword.control.flow.block-scalar.folded.yaml",
-              },
-              3: {
-                name: "constant.numeric.indentation-indicator.yaml",
-              },
-              4: {
-                name: "storage.modifier.chomping-indicator.yaml",
-              },
+              1: { name: "keyword.control.flow.block-scalar.literal.yaml" },
+              2: { name: "keyword.control.flow.block-scalar.folded.yaml" },
+              3: { name: "constant.numeric.indentation-indicator.yaml" },
+              4: { name: "storage.modifier.chomping-indicator.yaml" },
               5: {
                 patterns: [
-                  {
-                    include: "source.yaml#comment",
-                  },
+                  { include: `${this.injectionScopeName}#comment` },
                   {
                     match: ".+",
                     name: "invalid.illegal.expected-comment-or-newline.yaml",
@@ -63,29 +58,17 @@ export class InjectionGrammar extends Writable {
               },
             ],
           },
-          {
-            include: this.injectionScopeName,
-          },
+          { include: this.injectionScopeName },
         ],
       })),
       ...entries.map(([id, { scopeName, stripIndent }]) => ({
         begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
         beginCaptures: {
-          1: {
-            name: "keyword.control.flow.block-scalar.literal.yaml",
-          },
-          2: {
-            name: "keyword.control.flow.block-scalar.folded.yaml",
-          },
-          3: {
-            name: "constant.numeric.indentation-indicator.yaml",
-          },
-          4: {
-            name: "storage.modifier.chomping-indicator.yaml",
-          },
-          5: {
-            name: "entity.name.type.yaml",
-          },
+          1: { name: "keyword.control.flow.block-scalar.literal.yaml" },
+          2: { name: "keyword.control.flow.block-scalar.folded.yaml" },
+          3: { name: "constant.numeric.indentation-indicator.yaml" },
+          4: { name: "storage.modifier.chomping-indicator.yaml" },
+          5: { name: "entity.name.type.yaml" },
         },
         end: "^(?=\\S)|(?!\\G)",
         patterns: [
