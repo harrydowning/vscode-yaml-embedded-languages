@@ -1,6 +1,6 @@
 {
   "scopeName": "source.github-actions-workflow.injection",
-  "injectionSelector": "L:source.github-actions-workflow -comment",
+  "injectionSelector": "L:source.github-actions-workflow -comment -string -meta.embedded",
   "patterns": [
     {
       "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:bat)\\s*\\n)",
