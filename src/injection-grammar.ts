@@ -24,7 +24,7 @@ export class InjectionGrammar extends Writable {
         {
           begin: `#\\s*${packageJson.name}\\s*$`,
           beginCaptures: {
-            "0": { name: "entity.name.type.yaml" },
+            0: { name: "entity.name.type.yaml" },
           },
           patterns: [{ include: this.injectionScopeName }],
         },
