@@ -1,0 +1,7 @@
+{
+  "yaml-embedded-languages": {
+    "prefix": "yaml-embedded-languages",
+    "body": ["# yaml-embedded-languages: $1"],
+    "description": "Language command"
+  }
+}
