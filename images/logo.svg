@@ -1,8 +1,8 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" rx="25" fill="#fff"/>
-  <text x="0%" y="50%" font-size="54px" dominant-baseline="middle" font-style="italic" font-weight="bolder" font-family="monospace">Y</text>
-  <text x="100%" y="50%" font-size="54px" text-anchor="end" dominant-baseline="middle" font-style="italic" font-weight="bolder" font-family="monospace">L</text>
-  <text x="52%" y="47%" font-size="30px" text-anchor="middle" font-style="italic" font-weight="bold" font-family="monospace">AM</text>
-  <text x="45%" y="56%" font-size="9px" font-style="italic" text-anchor="middle" font-family="monospace">EMBEDDED</text>
-  <text x="45%" y="64%" font-size="9px" font-style="italic" text-anchor="middle" font-family="monospace">LANGUAGES</text>
+  <text x="0%" y="50%" font-size="54" text-anchor="start" dominant-baseline="central" font-style="italic" font-weight="bolder" font-family="monospace">Y</text>
+  <text x="100%" y="50%" font-size="54" text-anchor="end" dominant-baseline="central" font-style="italic" font-weight="bolder" font-family="monospace">L</text>
+  <text x="51%" y="41%" font-size="30" text-anchor="middle" dominant-baseline="central" font-style="italic" font-weight="bold" font-family="monospace">AM</text>
+  <text x="46%" y="57%" font-size="9" text-anchor="middle" dominant-baseline="central" font-style="italic" font-family="monospace">EMBEDDED</text>
+  <text x="45%" y="65%" font-size="9" text-anchor="middle" dominant-baseline="central" font-style="italic" font-family="monospace">LANGUAGES</text>
 </svg>
