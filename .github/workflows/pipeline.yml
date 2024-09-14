@@ -43,7 +43,7 @@ jobs:
     needs: release-check
     if: contains(github.event.head_commit.message, '[pre-release]') && !contains(github.event.head_commit.message, '[release]')
     env:
-      PRE_RELEASE: true
+      PRE_RELEASE: "true"
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
