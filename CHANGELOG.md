@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Comment command snippet
+- Language command snippet
+
+### Changed
+
+- Extension icon
 
 ## [1.1.0] - 2024-09-14 (pre-release)
 
@@ -77,7 +81,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Fully generated `package.json` to be partially generated
 - `regex` language to use scope `source.js.regexp`
-- Extension logo
+- Extension icon
 - Scope of language identifier comment to highlight recognized languages
 
 ### Removed
