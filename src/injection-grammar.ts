@@ -1,3 +1,4 @@
+import packageJson from "@package";
 import { Languages } from "./constants";
 import { Writable } from "./writable";
 
@@ -18,14 +19,14 @@ export class InjectionGrammar extends Writable {
     const entries = Object.entries(this.languages);
     return [
       {
-        begin: `#\\s*yaml-embedded-languages\\s*$`,
+        begin: `#\\s*${packageJson.name}\\s*$`,
         beginCaptures: {
           "0": { name: "entity.name.type.yaml" },
         },
         patterns: [{ include: this.injectionScopeName }],
       },
       ...entries.map(([id, { scopeName, stripIndent }]) => ({
-        begin: `#\\s*yaml-embedded-languages\\s*:\\s*${id}\\s*$`,
+        begin: `#\\s*${packageJson.name}\\s*:\\s*${id}\\s*$`,
         beginCaptures: {
           0: { name: "entity.name.type.yaml" },
         },
