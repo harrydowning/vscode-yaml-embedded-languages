@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.1.0] (pre-release) - 2024-09-14
+
+### Added
+
+- Comment commands to allow highlighting complete sections
+
 ## [1.0.6] - 2024-09-12
 
 ### Fixed
@@ -145,7 +151,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...HEAD
+[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...v1.1.0
 [1.0.6]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.3...v1.0.4
