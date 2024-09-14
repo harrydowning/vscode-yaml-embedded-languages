@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+### Added
+
+- Comment command snippet
+
 ## [1.1.0] - 2024-09-14 (pre-release)
 
 ### Added
