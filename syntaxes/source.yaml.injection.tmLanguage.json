@@ -3,8 +3,7 @@
   "injectionSelector": "L:source.yaml -comment",
   "patterns": [
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*bat$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*bat)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*bat",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -12,7 +11,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -58,8 +57,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*bibtex$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*bibtex)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*bibtex",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -67,7 +65,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -113,8 +111,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*c$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*c)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -122,7 +119,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -168,8 +165,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*c#$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*c#)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c#",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -177,7 +173,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -223,8 +219,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*c\\+\\+$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*c\\+\\+)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*c\\+\\+",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -232,7 +227,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -278,8 +273,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*clojure$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*clojure)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*clojure",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -287,7 +281,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -333,8 +327,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*coffee$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*coffee)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*coffee",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -342,7 +335,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -388,8 +381,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*cpp$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*cpp)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*cpp",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -397,7 +389,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -443,8 +435,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*csharp$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*csharp)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*csharp",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -452,7 +443,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -498,8 +489,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*css$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*css)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*css",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -507,7 +497,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -553,8 +543,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*cuda$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*cuda)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*cuda",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -562,7 +551,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -608,8 +597,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*dart$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*dart)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dart",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -617,7 +605,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -663,8 +651,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*diff$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*diff)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*diff",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -672,7 +659,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -719,8 +706,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*dockercompose$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*dockercompose)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dockercompose",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -728,7 +714,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -775,8 +761,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*dockerfile$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*dockerfile)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*dockerfile",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -784,7 +769,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -830,8 +815,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*f#$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*f#)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*f#",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -839,7 +823,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -885,8 +869,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*fsharp$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*fsharp)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*fsharp",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -894,7 +877,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -940,8 +923,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*go$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*go)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*go",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -949,7 +931,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -995,8 +977,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*groovy$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*groovy)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*groovy",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1004,7 +985,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1050,8 +1031,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*handlebars$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*handlebars)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*handlebars",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1059,7 +1039,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1105,8 +1085,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*hlsl$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*hlsl)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*hlsl",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1114,7 +1093,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1160,8 +1139,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*html$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*html)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*html",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1169,7 +1147,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1215,8 +1193,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*ini$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*ini)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ini",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1224,7 +1201,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1270,8 +1247,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*jade$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*jade)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jade",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1279,7 +1255,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1325,8 +1301,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*java$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*java)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*java",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1334,7 +1309,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1380,8 +1355,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*javascript$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*javascript)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*javascript",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1389,7 +1363,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1435,8 +1409,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*js$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*js)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*js",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1444,7 +1417,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1490,8 +1463,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*json$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*json)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*json",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1499,7 +1471,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1545,8 +1517,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*jsonc$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*jsonc)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsonc",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1554,7 +1525,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1600,8 +1571,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*jsonl$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*jsonl)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsonl",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1609,7 +1579,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1655,8 +1625,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*jsx$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*jsx)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*jsx",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1664,7 +1633,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1710,8 +1679,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*julia$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*julia)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*julia",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1719,7 +1687,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1765,8 +1733,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*latex$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*latex)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*latex",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1774,7 +1741,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1821,8 +1788,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*less$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*less)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*less",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1830,7 +1796,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1876,8 +1842,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*log$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*log)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*log",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1885,7 +1850,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1931,8 +1896,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*lua$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*lua)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*lua",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1940,7 +1904,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -1986,8 +1950,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*make$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*make)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*make",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -1995,7 +1958,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2041,8 +2004,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*makefile$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*makefile)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*makefile",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2050,7 +2012,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2096,8 +2058,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*markdown$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*markdown)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*markdown",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2105,7 +2066,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2152,8 +2113,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*math$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*math)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*math",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2161,7 +2121,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2207,8 +2167,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*objc$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*objc)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*objc",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2216,7 +2175,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2262,8 +2221,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*objcpp$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*objcpp)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*objcpp",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2271,7 +2229,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2317,8 +2275,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*perl$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*perl)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*perl",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2326,7 +2283,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2372,8 +2329,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*php$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*php)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*php",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2381,7 +2337,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2427,8 +2383,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*pip$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*pip)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*pip",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2436,7 +2391,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2482,8 +2437,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*powerfx$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*powerfx)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*powerfx",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2491,7 +2445,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2537,8 +2491,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*powershell$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*powershell)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*powershell",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2546,7 +2499,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2592,8 +2545,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*properties$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*properties)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*properties",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2601,7 +2553,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2647,8 +2599,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*py$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*py)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*py",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2656,7 +2607,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2702,8 +2653,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*python$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*python)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*python",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2711,7 +2661,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2757,8 +2707,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*r$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*r)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*r",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2766,7 +2715,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2812,8 +2761,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*raku$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*raku)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*raku",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2821,7 +2769,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2867,8 +2815,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*razor$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*razor)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*razor",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2876,7 +2823,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2922,8 +2869,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*regex$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*regex)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*regex",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2931,7 +2877,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -2977,8 +2923,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*requirements$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*requirements)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*requirements",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -2986,7 +2931,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3032,8 +2977,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*rst$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*rst)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*rst",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3041,7 +2985,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3087,8 +3031,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*ruby$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*ruby)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ruby",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3096,7 +3039,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3142,8 +3085,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*rust$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*rust)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*rust",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3151,7 +3093,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3197,8 +3139,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*scss$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*scss)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*scss",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3206,7 +3147,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3252,8 +3193,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*shaderlab$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*shaderlab)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*shaderlab",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3261,7 +3201,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3307,8 +3247,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*shell$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*shell)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*shell",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3316,7 +3255,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3362,8 +3301,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*sql$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*sql)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*sql",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3371,7 +3309,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3417,8 +3355,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*swift$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*swift)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*swift",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3426,7 +3363,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3472,8 +3409,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*tex$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*tex)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*tex",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3481,7 +3417,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3527,8 +3463,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*ts$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*ts)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*ts",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3536,7 +3471,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3582,8 +3517,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*tsx$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*tsx)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*tsx",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3591,7 +3525,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3637,8 +3571,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*typescript$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*typescript)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*typescript",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3646,7 +3579,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3692,8 +3625,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*vb$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*vb)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*vb",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3701,7 +3633,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3747,8 +3679,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*xml$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*xml)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*xml",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3756,7 +3687,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3802,8 +3733,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*xsl$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*xsl)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*xsl",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3811,7 +3741,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"
@@ -3857,8 +3787,7 @@
       ]
     },
     {
-      "begin": "^#\\s*yaml-embedded-languages\\s*:\\s*yaml$",
-      "while": "^(?!#\\s*yaml-embedded-languages\\s*:\\s*yaml)",
+      "begin": "#\\s*yaml-embedded-languages\\s*:\\s*yaml",
       "beginCaptures": {
         "0": {
           "name": "entity.name.type.yaml"
@@ -3866,7 +3795,7 @@
       },
       "patterns": [
         {
-          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)",
+          "begin": "(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.flow.block-scalar.literal.yaml"

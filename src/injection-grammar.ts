@@ -18,8 +18,7 @@ export class InjectionGrammar extends Writable {
     const entries = Object.entries(this.languages);
     return [
       ...entries.map(([id, { scopeName, stripIndent }]) => ({
-        begin: `^#\\s*yaml-embedded-languages\\s*:\\s*${id}$`,
-        while: `^(?!#\\s*yaml-embedded-languages\\s*:\\s*${id})`,
+        begin: `#\\s*yaml-embedded-languages\\s*:\\s*${id}`,
         beginCaptures: {
           "0": {
             name: "entity.name.type.yaml",
@@ -27,7 +26,7 @@ export class InjectionGrammar extends Writable {
         },
         patterns: [
           {
-            begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\n?)`,
+            begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)`,
             beginCaptures: {
               1: {
                 name: "keyword.control.flow.block-scalar.literal.yaml",
