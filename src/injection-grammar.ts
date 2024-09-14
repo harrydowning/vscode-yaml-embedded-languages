@@ -35,7 +35,7 @@ export class InjectionGrammar extends Writable {
           },
           patterns: [
             {
-              begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*\\n?)`,
+              begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?(.*)\\s*$`,
               beginCaptures: {
                 1: { name: "keyword.control.flow.block-scalar.literal.yaml" },
                 2: { name: "keyword.control.flow.block-scalar.folded.yaml" },
@@ -70,7 +70,7 @@ export class InjectionGrammar extends Writable {
 
     patterns.push(
       ...entries.map(([id, { scopeName, stripIndent }]) => ({
-        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*\\n)`,
+        begin: `(?i)(?:(\\|)|(>))([1-9])?([-+])?\\s+(#\\s*(?:${id})\\s*)$`,
         beginCaptures: {
           1: { name: "keyword.control.flow.block-scalar.literal.yaml" },
           2: { name: "keyword.control.flow.block-scalar.folded.yaml" },
