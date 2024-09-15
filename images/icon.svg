@@ -1,6 +1,6 @@
 <svg viewBox="0 0 100 100" width="128" height="128" xmlns="http://www.w3.org/2000/svg">
   <rect width="100%" height="100%" rx="25" fill="#2e2e2e"/>
-  <g font-family="monospace" fill="gold">
+  <g font-family="monospace" fill="#FFD700">
     <text x="0%" y="50%" font-size="54" text-anchor="start" dominant-baseline="central" font-style="italic" font-weight="bold" >Y</text>
     <text x="100%" y="50%" font-size="54" text-anchor="end" dominant-baseline="central" font-style="italic" font-weight="bold">L</text>
     <text x="51%" y="41%" font-size="30" text-anchor="middle" dominant-baseline="central" font-style="italic" font-weight="bold">AM</text>
