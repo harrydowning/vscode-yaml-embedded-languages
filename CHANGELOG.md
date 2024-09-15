@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Ability highlight all blocks from a point onwards
+- Ability to highlight all blocks from a point onwards
 - Comment snippet
 - Feature & settings documentation
 
@@ -22,7 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Ability highlight all blocks from a point onwards
+- Ability to highlight all blocks from a point onwards
 
 ## [1.0.6] - 2024-09-12
 
