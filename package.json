@@ -210,12 +210,13 @@
                 },
                 "stripIndent": {
                   "type": "boolean",
-                  "description": "Ignore any indentation caused by nesting of properties"
+                  "description": "Ignore any indentation caused by nested properties"
                 }
               },
               "required": [
                 "scopeName"
-              ]
+              ],
+              "description": "The language identifier"
             }
           },
           "default": {},
