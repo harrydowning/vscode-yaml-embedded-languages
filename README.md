@@ -14,6 +14,31 @@ Syntax highlighting within YAML block-scalars for [50+ built-in languages](#buil
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
+### Usage
+
+To highlight a single block, place a comment with the language identifier next to the block identifier.
+
+```yaml
+example: | # <language-identifier>
+  highlighted
+```
+
+To highlight all blocks from a point onwards, place a comment with the extension name followed by the language identifier.
+
+```yaml
+# yaml-embedded-languages: <language-identifier>
+example: |
+  highlighted
+```
+
+To stop highlighting blocks place a comment with the extension name.
+
+```yaml
+# yaml-embedded-languages
+example: |
+  not highlighted
+```
+
 ### Built-In Languages
 
 The following list shows all valid identifiers for the built-in languages:
