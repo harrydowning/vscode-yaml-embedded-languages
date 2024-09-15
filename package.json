@@ -1,6 +1,6 @@
 {
   "name": "yaml-embedded-languages",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "displayName": "YAML Embedded Languages",
   "description": "Support for syntax highlighting within YAML block-scalars.",
   "icon": "images/icon.png",

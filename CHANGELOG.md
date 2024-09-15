@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.2.0] - 2024-09-15
+
 ### Added
 
+- Ability to highlight all blocks from a point onwards
 - Comment snippet
 - Feature & settings documentation
 
@@ -19,7 +22,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Added
 
-- Ability highlight all blocks from a point onwards
+- Ability to highlight all blocks from a point onwards
 
 ## [1.0.6] - 2024-09-12
 
@@ -160,7 +163,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - Highlighting support for 40 languages in YAML block-scalars
 
-[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...HEAD
+[unreleased]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.6...v1.1.0
 [1.0.6]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/harrydowning/vscode-yaml-embedded-languages/compare/v1.0.4...v1.0.5
