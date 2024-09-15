@@ -2,6 +2,7 @@
 
 !dist/extension.js
 !syntaxes/
+!snippets/snippets.json
 !images/icon.png
 !package.json
 !README.md

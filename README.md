@@ -14,6 +14,31 @@ Syntax highlighting within YAML block-scalars for [50+ built-in languages](#buil
 
 ![Example yaml file showing syntax highlighting](https://raw.githubusercontent.com/harrydowning/yaml-embedded-languages/master/images/example.png)
 
+### Usage
+
+To highlight a single block, place a comment with the language identifier next to the block identifier.
+
+```yaml
+example: | # <language-identifier>
+  highlighted
+```
+
+To highlight all blocks from a point onwards, place a comment with the extension name followed by the language identifier.
+
+```yaml
+# yaml-embedded-languages: <language-identifier>
+example: |
+  highlighted
+```
+
+To stop highlighting blocks place a comment with the extension name.
+
+```yaml
+# yaml-embedded-languages
+example: |
+  not highlighted
+```
+
 ### Built-In Languages
 
 The following list shows all valid identifiers for the built-in languages:
@@ -92,9 +117,9 @@ None
 
 ## Extension Settings
 
-| Name                              | Description                                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `yaml-embedded-languages.include` | Allows the user to include their own languages, the languages of other extensions, or aliases for existing languages. Use the key to define the language identifier with regex. Use the value to specify the language TextMate `scopeName`. By default the language identifier will be used as the language name. To change this, an object can be specified with the properties `name` and `scopeName` (required). |
+| Name                              | Description                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `yaml-embedded-languages.include` | An object where the key defines the language identifier with regex and the value specifies the language TextMate scope name. By default the language identifier will be used as the language name. To change this, the value can be specified as an object with properties including `name`, `scopeName` (required), and `stripIndent`. Hover over these in VS Code to find out more. |
 
 ## Known Issues
 
