@@ -3,8 +3,8 @@
   <g font-family="Menlo" fill="#4EC9B0" dominant-baseline="central" font-style="italic">
     <text x="0%" y="50%" font-size="54" text-anchor="start" font-weight="bold" >Y</text>
     <text x="100%" y="50%" font-size="54" text-anchor="end" font-weight="bold">L</text>
-    <text x="51%" y="41%" font-size="30" text-anchor="middle" font-weight="bold">AM</text>
-    <text x="45%" y="57%" font-size="9" text-anchor="middle">EMBEDDED</text>
-    <text x="44%" y="65%" font-size="9" text-anchor="middle">LANGUAGES</text>
+    <text x="51%" y="43%" font-size="35" text-anchor="middle" font-weight="bold">AM</text>
+    <rect width="48%" height="5%" rx="1" x="31%" y="57%" transform="skewX(-10)" />
+    <rect width="48%" height="5%" rx="1" x="31%" y="63%" transform="skewX(-10)" />
   </g>
 </svg>
