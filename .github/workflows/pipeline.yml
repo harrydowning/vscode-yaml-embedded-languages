@@ -12,6 +12,7 @@ jobs:
     with:
       repository-owner: harrydowning
       check-run: | # shell
+        set -x
         npm i
         npm run generate
         [[ -z $(git status --porcelain) ]]
@@ -19,12 +20,14 @@ jobs:
         npm run lint
         npm run format
       release-run: | # shell
+        set -x
         npm i
         npm run build
         npm run package
         npm run release
         npm run publish
       pre-release-run: | # shell
+        set -x
         npm i
         PRE_RELEASE=true
         npm run generate
