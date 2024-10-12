@@ -7,52 +7,29 @@ on:
   pull_request:
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-      - run: npm run generate
-      - run: "[[ -z $(git status --porcelain) ]]"
-      - run: npm run type
-      - run: npm run lint
-      - run: npm run format
-  release-check:
-    runs-on: ubuntu-latest
-    needs: check
-    if: github.ref == 'refs/heads/master' && github.repository_owner == 'harrydowning'
-    steps:
-      - run: true
-  release:
-    runs-on: ubuntu-latest
-    needs: release-check
-    if: contains(github.event.head_commit.message, '[release]') && !contains(github.event.head_commit.message, '[pre-release]')
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-      - run: npm run build
-      - run: npm run package
-      - run: npm run release
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - run: npm run publish
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
-  pre-release:
-    runs-on: ubuntu-latest
-    needs: release-check
-    if: contains(github.event.head_commit.message, '[pre-release]') && !contains(github.event.head_commit.message, '[release]')
-    env:
-      PRE_RELEASE: "true"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-      - run: npm run generate
-      - run: npm run build
-      - run: npm run package -- --pre-release
-      - run: npm run release -- --prerelease
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - run: npm run publish -- --pre-release
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+  node-pipeline:
+    uses: harrydowning/github-workflows/.github/workflows/node-pipeline.yml@v1.0.0
+    with:
+      repository-owner: harrydowning
+      check-run: | # shell
+        npm i
+        npm run generate
+        [[ -z $(git status --porcelain) ]]
+        npm run type
+        npm run lint
+        npm run format
+      release-run: | # shell
+        npm i
+        npm run build
+        npm run package
+        npm run release
+        npm run publish
+      pre-release-run: | # shell
+        npm i
+        PRE_RELEASE=true
+        npm run generate
+        npm run build
+        npm run package -- --pre-release
+        npm run release -- --prerelease
+        npm run publish -- --pre-release
+    secrets: inherit
