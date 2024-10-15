@@ -1,6 +1,6 @@
 {
   "scopeName": "source.yaml.injection",
-  "injectionSelector": "L:source.yaml -comment -string -meta.embedded",
+  "injectionSelector": "L:source.yaml -comment -string",
   "patterns": [
     {
       "begin": "#\\s*yaml-embedded-languages\\s*$",
