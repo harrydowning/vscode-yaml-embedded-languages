@@ -1,6 +1,6 @@
 {
   "scopeName": "source.github-actions-workflow.injection",
-  "injectionSelector": "L:source.github-actions-workflow -comment -string -meta.embedded",
+  "injectionSelector": "L:source.github-actions-workflow -comment -string",
   "patterns": [
     {
       "begin": "#\\s*yaml-embedded-languages\\s*$",

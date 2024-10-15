@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.3.0] - 2024-10-15
+
+### Changed
+
+- `injectionSelector` to allow nested embedded languages
+
 ## [1.2.0] - 2024-09-15
 
 ### Added

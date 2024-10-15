@@ -89,7 +89,7 @@ export class InjectionGrammar extends Writable {
   valueOf() {
     return {
       scopeName: this.scopeName,
-      injectionSelector: `L:${this.injectionScopeName} -comment -string -meta.embedded`,
+      injectionSelector: `L:${this.injectionScopeName} -comment -string`,
       patterns: this.#getPatterns(),
     };
   }
